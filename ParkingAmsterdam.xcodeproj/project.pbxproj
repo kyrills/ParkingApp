@@ -15,6 +15,7 @@
 		D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */; };
 		D022AC411FB1983500B00003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC401FB1983500B00003 /* Constants.swift */; };
 		D022AC431FB1A8B200B00003 /* ParkingAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */; };
+		D0B797101FB206780092AD6D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7970F1FB206780092AD6D /* StringExtension.swift */; };
 		D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAB1FB0C6400013659D /* AppDelegate.swift */; };
 		D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAD1FB0C6400013659D /* MapViewController.swift */; };
 		D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EAF1FB0C6400013659D /* Main.storyboard */; };
@@ -32,6 +33,8 @@
 		D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		D022AC401FB1983500B00003 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAnnotations.swift; sourceTree = "<group>"; };
+		D0B7970D1FB1C8540092AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/kyrillvanseventer/ParkingAmsterdamApp/ParkingAmsterdam/Assets.xcassets; sourceTree = "<absolute>"; };
+		D0B7970F1FB206780092AD6D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F06EAB1FB0C6400013659D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F06EAD1FB0C6400013659D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +84,14 @@
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
+		D0B7970E1FB206590092AD6D /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				D0B7970F1FB206780092AD6D /* StringExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		D0F06E9F1FB0C6400013659D = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F06EAB1FB0C6400013659D /* AppDelegate.swift */,
+				D0B7970E1FB206590092AD6D /* Extension */,
 				D022AC3F1FB1982B00B00003 /* DataLayer */,
 				D022AC381FB18DC000B00003 /* MapViewControllers */,
 				D0F06EAF1FB0C6400013659D /* Main.storyboard */,
@@ -256,6 +268,7 @@
 				D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */,
 				D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */,
 				817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */,
+				D0B797101FB206780092AD6D /* StringExtension.swift in Sources */,
 				D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */,
 				D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */,
 				D022AC431FB1A8B200B00003 /* ParkingAnnotations.swift in Sources */,
@@ -397,7 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R27PQ6L3EN;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
 				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -414,7 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = R27PQ6L3EN;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
 				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
