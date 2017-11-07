@@ -23,7 +23,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        ParkingAmsterdamService.sharedInstance.searchDiveMap()
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
         

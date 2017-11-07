@@ -6,6 +6,5 @@ target 'ParkingAmsterdam' do
   use_frameworks!
 
   # Pods for ParkingAmsterdam
-	pod 'AlamofireDomain', '~> 4.1'
-
+pod 'Alamofire', '~> 4.5'
 end

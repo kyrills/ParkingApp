@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */; };
+		817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572A61FB1A77C00BF3D24 /* ParkingAmsterdamService.swift */; };
+		817572A91FB1A7AE00BF3D24 /* ParkingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */; };
 		D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */; };
 		D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */; };
 		D022AC411FB1983500B00003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC401FB1983500B00003 /* Constants.swift */; };
@@ -20,6 +22,8 @@
 
 /* Begin PBXFileReference section */
 		2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.release.xcconfig"; sourceTree = "<group>"; };
+		817572A61FB1A77C00BF3D24 /* ParkingAmsterdamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAmsterdamService.swift; sourceTree = "<group>"; };
+		817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingObjects.swift; sourceTree = "<group>"; };
 		89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.debug.xcconfig"; sourceTree = "<group>"; };
 		8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingAmsterdam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewControllerExtension.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 			isa = PBXGroup;
 			children = (
 				D022AC401FB1983500B00003 /* Constants.swift */,
+				817572A61FB1A77C00BF3D24 /* ParkingAmsterdamService.swift */,
+				817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -224,11 +230,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AlamofireDomain/AlamofireDomain.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireDomain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -242,9 +248,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817572A91FB1A7AE00BF3D24 /* ParkingObjects.swift in Sources */,
 				D022AC411FB1983500B00003 /* Constants.swift in Sources */,
 				D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */,
 				D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */,
+				817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */,
 				D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */,
 				D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */,
 			);
@@ -385,8 +393,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				DEVELOPMENT_TEAM = R27PQ6L3EN;
 				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TheAppAcademy.ParkingAmsterdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -401,8 +410,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				DEVELOPMENT_TEAM = R27PQ6L3EN;
 				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = TheAppAcademy.ParkingAmsterdam;
 				PRODUCT_NAME = "$(TARGET_NAME)";
