@@ -95,8 +95,8 @@ class ParkingAmsterdamService {
     
     func parseCoord(geometry: NSDictionary) -> (lat: Double, lng: Double){
         if let coordinates: NSArray = geometry["coordinates"] as? NSArray,
-            let latitude = coordinates[0] as? Double,
-            let longitude = coordinates[1] as? Double{
+            let longitude = coordinates[0] as? Double,
+            let latitude = coordinates[1] as? Double{
             return(lat: latitude, lng: longitude) //reutnring a tuple, to combine values
         }
         

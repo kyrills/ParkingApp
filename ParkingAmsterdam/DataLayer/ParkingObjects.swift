@@ -11,14 +11,14 @@ import Foundation
 struct ParkingObjects {
     
     var id: String
-    var latitude: Double = 0.0
-    var longitude: Double = 0.0
-    var Name : String = ""
-    var PubDate: String = ""
-    var State: String = ""
-    var FreeSpaceShort: Int = 0
-    var FreeSpaceLong: Int = 0
-    var ShortCapacity : Int = 0
-    var LongCapacity : Int = 0
+    var latitude: Double
+    var longitude: Double
+    var Name : String
+    var PubDate: String
+    var State: String
+    var FreeSpaceShort: Int
+    var FreeSpaceLong: Int
+    var ShortCapacity : Int
+    var LongCapacity : Int
     
 }

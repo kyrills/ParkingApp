@@ -42,4 +42,8 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
     }
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
+    }
 }
