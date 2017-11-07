@@ -10,6 +10,7 @@
 		6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */; };
 		817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572A61FB1A77C00BF3D24 /* ParkingAmsterdamService.swift */; };
 		817572A91FB1A7AE00BF3D24 /* ParkingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */; };
+		95C0C5BB1FB1DC80008A3BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95C0C5BA1FB1DC7F008A3BED /* Assets.xcassets */; };
 		D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */; };
 		D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */; };
 		D022AC411FB1983500B00003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC401FB1983500B00003 /* Constants.swift */; };
@@ -26,11 +27,11 @@
 		817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingObjects.swift; sourceTree = "<group>"; };
 		89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.debug.xcconfig"; sourceTree = "<group>"; };
 		8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingAmsterdam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		95C0C5BA1FB1DC7F008A3BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewControllerExtension.swift; sourceTree = "<group>"; };
 		D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		D022AC401FB1983500B00003 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAnnotations.swift; sourceTree = "<group>"; };
-		D0B7970D1FB1C8540092AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/kyrillvanseventer/ParkingAmsterdamApp/ParkingAmsterdam/Assets.xcassets; sourceTree = "<absolute>"; };
 		D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F06EAB1FB0C6400013659D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F06EAD1FB0C6400013659D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +107,7 @@
 				D022AC381FB18DC000B00003 /* MapViewControllers */,
 				D0F06EAF1FB0C6400013659D /* Main.storyboard */,
 				D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */,
-				D0B7970D1FB1C8540092AD6D /* Assets.xcassets */,
+				95C0C5BA1FB1DC7F008A3BED /* Assets.xcassets */,
 				D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */,
 				D0F06EB71FB0C6400013659D /* Info.plist */,
 			);
@@ -184,6 +185,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */,
+				95C0C5BB1FB1DC80008A3BED /* Assets.xcassets in Resources */,
 				D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
