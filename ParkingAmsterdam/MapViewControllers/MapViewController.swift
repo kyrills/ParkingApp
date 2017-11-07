@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  ParkingAmsterdam
-//
-//  Created by Kyrill van Seventer on 06/11/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 import MapKit
 import CoreLocation
@@ -31,8 +23,6 @@ class MapViewController: UIViewController {
         parkingMapView.showsUserLocation = true
         parkingMapView.delegate = self
         
-        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
-        
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(MapViewController.setInitialData(notification:)),
                                                name: NSNotification.Name(rawValue: NotificationID.setInitialData),
@@ -45,8 +35,8 @@ class MapViewController: UIViewController {
     }
 
     func setZoomInitialLocation(location: CLLocationCoordinate2D){
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 2.0,
-                                                                  regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 0.2,
+                                                                  regionRadius * 0.2)
         parkingMapView.setRegion(coordinateRegion, animated: true)
     }
     
