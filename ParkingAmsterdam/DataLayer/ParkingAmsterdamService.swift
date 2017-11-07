@@ -1,11 +1,3 @@
-//
-//  ParkingAmsterdamService.swift
-//  ParkingAmsterdam
-//
-//  Created by Trym Lintzen on 07-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 import Alamofire
 

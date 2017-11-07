@@ -9,6 +9,7 @@ class MapViewController: UIViewController {
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
     
+    var parkingGarages: [ParkingObjects] = []
 
 
     
@@ -16,7 +17,7 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ParkingAmsterdamService.sharedInstance.searchDiveMap()
+        ParkingAmsterdamService.sharedInstance.getParkingData()
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
         
@@ -42,10 +43,18 @@ class MapViewController: UIViewController {
     
     @objc func setInitialData(notification: NSNotification){
         
-//        var parkingDict = notification.userInfo as! Dictionary<String, []>
-//
-//        var annotations: [ParkingAnnotations] = []
+        var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
+        parkingGarages = parkingDict["data"]!
+        var annotationObject: [ParkingAnnotations] = []
         
+        for garage in parkingGarages{
+            let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude, longitude: garage.longitude)
+            let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
+            
+            annotation.title = garage.Name
+            annotationObject.append(annotation)
+        }
+        self.parkingMapView.showAnnotations(annotationObject, animated: true)
         
     }
 
