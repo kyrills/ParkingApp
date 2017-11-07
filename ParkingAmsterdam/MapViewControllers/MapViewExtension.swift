@@ -1,25 +1,42 @@
-//
-//  MapViewExtension.swift
-//  ParkingAmsterdam
-//
-//  Created by Kyrill van Seventer on 07/11/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 import MapKit
 
 extension MapViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
+        parkingMapView.showsCompass =  true
+        parkingMapView.showsTraffic = true
+        parkingMapView.showsBuildings = true
+        parkingMapView.showsPointsOfInterest = true
         
-       return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        if let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "pin"){
+            return pinView
+        } else {
+            let pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "pin")
+            pinView.pinTintColor = UIColor.magenta
+            pinView.rightCalloutAccessoryView = UIButton(type: .detailDisclosure) as UIView
+            pinView.canShowCallout = true
+            pinView.animatesDrop = true
+            return pinView
+        }
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-        let tempReturn = MKCircleRenderer(overlay: overlay)
+        let circleRenderer = MKCircleRenderer(overlay: overlay)
+        circleRenderer.strokeColor = UIColor.blue
+        circleRenderer.fillColor = UIColor(
+            red: 0,
+            green: 0,
+            blue: 1.0,
+            alpha: 0.3)
         
-        return tempReturn
+        return circleRenderer
     }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {

@@ -16,6 +16,7 @@ class MapViewController: UIViewController {
     
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
+    
 
 
     
@@ -29,6 +30,8 @@ class MapViewController: UIViewController {
         
         parkingMapView.showsUserLocation = true
         parkingMapView.delegate = self
+        
+        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
         
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(MapViewController.setInitialData(notification:)),
@@ -49,8 +52,16 @@ class MapViewController: UIViewController {
     
     @objc func setInitialData(notification: NSNotification){
         
+//        var parkingDict = notification.userInfo as! Dictionary<String, []>
+//
+//        var annotations: [ParkingAnnotations] = []
+        
         
     }
 
+    @IBAction func locationButton(_ sender: Any) {
+        parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
+        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
+    }
 }
 

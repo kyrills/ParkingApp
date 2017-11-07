@@ -13,10 +13,10 @@
 		D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */; };
 		D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */; };
 		D022AC411FB1983500B00003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC401FB1983500B00003 /* Constants.swift */; };
+		D022AC431FB1A8B200B00003 /* ParkingAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */; };
 		D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAB1FB0C6400013659D /* AppDelegate.swift */; };
 		D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAD1FB0C6400013659D /* MapViewController.swift */; };
 		D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EAF1FB0C6400013659D /* Main.storyboard */; };
-		D0F06EB31FB0C6400013659D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EB21FB0C6400013659D /* Assets.xcassets */; };
 		D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -29,11 +29,12 @@
 		D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewControllerExtension.swift; sourceTree = "<group>"; };
 		D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		D022AC401FB1983500B00003 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAnnotations.swift; sourceTree = "<group>"; };
+		D0B7970D1FB1C8540092AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/kyrillvanseventer/ParkingAmsterdamApp/ParkingAmsterdam/Assets.xcassets; sourceTree = "<absolute>"; };
 		D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0F06EAB1FB0C6400013659D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0F06EAD1FB0C6400013659D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D0F06EB01FB0C6400013659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D0F06EB21FB0C6400013659D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0F06EB51FB0C6400013659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0F06EB71FB0C6400013659D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,7 +105,8 @@
 				D022AC3F1FB1982B00B00003 /* DataLayer */,
 				D022AC381FB18DC000B00003 /* MapViewControllers */,
 				D0F06EAF1FB0C6400013659D /* Main.storyboard */,
-				D0F06EB21FB0C6400013659D /* Assets.xcassets */,
+				D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */,
+				D0B7970D1FB1C8540092AD6D /* Assets.xcassets */,
 				D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */,
 				D0F06EB71FB0C6400013659D /* Info.plist */,
 			);
@@ -182,7 +184,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */,
-				D0F06EB31FB0C6400013659D /* Assets.xcassets in Resources */,
 				D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -255,6 +256,7 @@
 				817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */,
 				D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */,
 				D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */,
+				D022AC431FB1A8B200B00003 /* ParkingAnnotations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
