@@ -4,6 +4,7 @@ import MapKit
 extension MapViewController: MKMapViewDelegate {
     
     func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
+        
         parkingMapView.showsCompass =  true
         parkingMapView.showsTraffic = true
         parkingMapView.showsBuildings = true
@@ -42,8 +43,5 @@ extension MapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
     }
-    
-    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
-        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
-    }
+
 }

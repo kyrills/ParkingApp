@@ -55,9 +55,13 @@ class MapViewController: UIViewController {
             annotationObject.append(annotation)
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
+        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
         
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    
     @IBAction func locationButton(_ sender: Any) {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
