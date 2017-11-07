@@ -51,7 +51,7 @@ class MapViewController: UIViewController {
             let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude, longitude: garage.longitude)
             let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
             
-            annotation.title = garage.Name
+            annotation.title = garage.Name.removeFirstCharacters()
             annotationObject.append(annotation)
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)

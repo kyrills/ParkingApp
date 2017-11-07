@@ -18,7 +18,7 @@ extension MapViewController: CLLocationManagerDelegate {
 //            //function getParkingData does not yet take parameters
 ////            ParkingAmsterdamService.sharedInstance.getParkingData(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
             self.locationmanager.stopUpdatingLocation()
-        }
+//        }
         
     }
     
