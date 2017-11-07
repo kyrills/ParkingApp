@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Th5-nv-3F4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Th5-nv-3F4">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,9 +20,15 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JYu-1h-xxh">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-nB-ND3">
-                                <rect key="frame" x="296" y="128" width="63" height="39"/>
-                                <state key="normal" title="Button"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-nB-ND3">
+                                <rect key="frame" x="330" y="64" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="HCJ-5T-zE2"/>
+                                    <constraint firstAttribute="height" constant="45" id="an4-y4-nNE"/>
+                                </constraints>
+                                <state key="normal" image="blue_button_circle">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
                                 <connections>
                                     <action selector="locationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ki3-WV-Wbl"/>
                                 </connections>
@@ -31,10 +36,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="296" id="0bB-ND-Lf7"/>
-                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="64" id="71o-2G-PZi"/>
+                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="trailing" secondItem="JYu-1h-xxh" secondAttribute="trailing" id="8bo-yo-XyN"/>
+                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CPN-xj-hcL"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DGx-Dq-MPr"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Itn-0q-bjO"/>
+                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aJi-V8-5kM"/>
+                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bkU-eu-WMs"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rD0-s5-laR"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="stU-PV-D1l"/>
                         </constraints>
@@ -47,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.80000000000001" y="118.29085457271366"/>
+            <point key="canvasLocation" x="456.5" y="117.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DrW-ny-j4j">
@@ -68,4 +75,7 @@
             <point key="canvasLocation" x="-361" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="blue_button_circle" width="186" height="186"/>
+    </resources>
 </document>

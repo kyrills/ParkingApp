@@ -24,10 +24,11 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ParkingAmsterdamService.sharedInstance.searchDiveMap()
+        ParkingAmsterdamService.sharedInstance.getParkingData()
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
-        
+//        var timer = Timer.scheduledTimer(timeInterval: 300.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
+
         parkingMapView.showsUserLocation = true
         parkingMapView.delegate = self
         
@@ -63,5 +64,9 @@ class MapViewController: UIViewController {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
+    
+//    @objc func update() {
+//        // func that reloads data in correct var
+//    }
 }
 

@@ -15,7 +15,16 @@ class ParkingAmsterdamService {
     
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
-
+//
+//    var helloWorldTimer = Timer.scheduledTimerWithTimeInterval(60.0, target: self, selector: Selector("sayHello"), userInfo: nil, repeats: true)
+//    
+//    class func scheduledTimer() {
+//       var getDataTimer = Timer.scheduledTimer(timeInterval: 300.0,
+//                                               target: self,
+//                                               selector: MapViewController.set,
+//                                               userInfo: nil,
+//                                               repeats: true)
+//    }
     
     func getParkingData()  {
         
