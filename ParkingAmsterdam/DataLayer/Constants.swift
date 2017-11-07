@@ -10,5 +10,9 @@ import Foundation
 
 struct NotificationID {
     static let setInitialData = "setInitialData"
-    
 }
+
+struct urls {
+    static let baseURL = "http://opd.it-t.nl/data/amsterdam/ParkingLocation.json"
+}
+
