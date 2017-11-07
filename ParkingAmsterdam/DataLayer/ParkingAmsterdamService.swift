@@ -7,7 +7,7 @@ class ParkingAmsterdamService {
     
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
-
+    
     
     func getParkingData()  {
         
@@ -32,32 +32,18 @@ class ParkingAmsterdamService {
     
     func parseData (result: NSDictionary)    {
         var parkingObj: [ParkingObjects] = []
-        
         if let features = result["features"] as? NSArray {
             for feature in features {
-                if let dict = feature as? NSDictionary,
-                    let geometry = dict["geometry"] as? NSDictionary,
-                    let properties = dict["properties"] as? NSDictionary,
-                    let id = dict["Id"] as? String {
-                    
-                    if let coordinates: NSArray = geometry["coordinates"] as? NSArray,
-                        let latitude = coordinates[0] as? Double,
-                        let longitude = coordinates[1] as? Double{
-                        
-                        
-                        if let name = properties["Name"] as? String,
-                            let pubDate = properties["PubDate"] as? String,
-                            let state = properties["State"] as? String,
-                            let freeSpaceShort = properties["FreeSpaceShort"] as? Int,
-                            let freeSpaceLong = properties["FreeSpaceLong"] as? Int,
-                            let shortCapacity = properties["ShortCapacity"] as? Int,
-                            let longCapacity = properties["LongCapacity"] as? Int{
-                            let parkingAppObject = ParkingObjects.init(id: id, latitude: latitude, longitude: longitude, Name: name, PubDate: pubDate, State: state, FreeSpaceShort: freeSpaceShort, FreeSpaceLong: freeSpaceLong, ShortCapacity: shortCapacity, LongCapacity: longCapacity)
-                            parkingObj.append(parkingAppObject)
-                            
-                        }
+                if let key = feature as? NSDictionary{
+                        let properties = getDictionary(with: "properties", from: key) ?? [:]
+                        let geometry = getDictionary(with: "geometry", from: key) ?? [:]
+                        let coords = parseCoord(geometry: geometry)
+                        if let parkAppObject = parseProperties(properties: properties,
+                                                               id: key["Id"] as? String ?? "",
+                                                               latitude: coords.lat,
+                                                               longitude: coords.lng) {
+                        parkingObj.append(parkAppObject)
                     }
-                    
                     
                 }
             }
@@ -66,11 +52,57 @@ class ParkingAmsterdamService {
                                             userInfo: ["data" : parkingObj])
             
         }
-        
-        
     }
+    
+    func getDictionary(with key: String, from feature: NSDictionary) -> NSDictionary? {
+        if let geo = feature[key] as? NSDictionary{
+            return geo
+        } else {
+            return nil
+        }
+    }
+    
+    func parseProperties(properties: NSDictionary, id: String, latitude: Double, longitude: Double) -> ParkingObjects?{
+        if let name = properties["Name"] as? String,
+            let pubDate = properties["PubDate"] as? String,
+            let state = properties["State"] as? String {
+            
+            let freeSpaceShortString = properties["FreeSpaceShort"] as? String ?? ""
+            let freeSpaceShort = Int(freeSpaceShortString) ?? 0
+            let freeSpaceLongString = properties["FreeSpaceLong"] as? String ?? ""
+            let freeSpaceLong = Int(freeSpaceLongString) ?? 0
+            let shortCapacityString = properties["ShortCapacity"] as? String ?? ""
+            let shortCapacity = Int(shortCapacityString) ?? 0
+            let longCapacityString = properties["LongCapacity"] as? String ?? ""
+            let longCapacity = Int(longCapacityString) ?? 0
+            
+            let parkingAppObject = ParkingObjects.init(id: id,
+                                                       latitude: latitude,
+                                                       longitude: longitude,
+                                                       Name: name,
+                                                       PubDate: pubDate,
+                                                       State: state,
+                                                       FreeSpaceShort: freeSpaceShort,
+                                                       FreeSpaceLong: freeSpaceLong,
+                                                       ShortCapacity: shortCapacity,
+                                                       LongCapacity: longCapacity)
+            return parkingAppObject
+        }
+        
+        return nil
+    }
+  
+    
+    func parseCoord(geometry: NSDictionary) -> (lat: Double, lng: Double){
+        if let coordinates: NSArray = geometry["coordinates"] as? NSArray,
+            let latitude = coordinates[0] as? Double,
+            let longitude = coordinates[1] as? Double{
+            return(lat: latitude, lng: longitude) //reutnring a tuple, to combine values
+        }
+        
+        return (0,0)
+    }
+    
+    
 }
-
-
-
 
