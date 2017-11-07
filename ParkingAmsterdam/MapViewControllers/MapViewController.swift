@@ -52,6 +52,10 @@ class MapViewController: UIViewController {
     
     @objc func setInitialData(notification: NSNotification){
         
+//        var parkingDict = notification.userInfo as! Dictionary<String, []>
+//
+//        var annotations: [ParkingAnnotations] = []
+        
         
     }
 

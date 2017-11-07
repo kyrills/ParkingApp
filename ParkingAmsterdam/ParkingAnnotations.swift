@@ -1,7 +1,7 @@
 import Foundation
 import MapKit
 
-//class DiveMapAnnotation: NSObject, MKAnnotation{
+//class ParkingAnnotations: NSObject, MKAnnotation{
 //    var parkingGarage = parkingGarageProperties
 //    var coordinate: CLLocationCoordinate2D
 //    var title: String?
