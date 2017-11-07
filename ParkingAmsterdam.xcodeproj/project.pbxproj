@@ -1,0 +1,438 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */; };
+		D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */; };
+		D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */; };
+		D022AC411FB1983500B00003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC401FB1983500B00003 /* Constants.swift */; };
+		D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAB1FB0C6400013659D /* AppDelegate.swift */; };
+		D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAD1FB0C6400013659D /* MapViewController.swift */; };
+		D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EAF1FB0C6400013659D /* Main.storyboard */; };
+		D0F06EB31FB0C6400013659D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EB21FB0C6400013659D /* Assets.xcassets */; };
+		D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.release.xcconfig"; sourceTree = "<group>"; };
+		89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.debug.xcconfig"; sourceTree = "<group>"; };
+		8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingAmsterdam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewControllerExtension.swift; sourceTree = "<group>"; };
+		D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
+		D022AC401FB1983500B00003 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0F06EAB1FB0C6400013659D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D0F06EAD1FB0C6400013659D /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		D0F06EB01FB0C6400013659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D0F06EB21FB0C6400013659D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0F06EB51FB0C6400013659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0F06EB71FB0C6400013659D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D0F06EA51FB0C6400013659D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B26B357B0AEEB30226A6263E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */,
+				2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D022AC381FB18DC000B00003 /* MapViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0F06EAD1FB0C6400013659D /* MapViewController.swift */,
+				D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */,
+				D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */,
+			);
+			path = MapViewControllers;
+			sourceTree = "<group>";
+		};
+		D022AC3F1FB1982B00B00003 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D022AC401FB1983500B00003 /* Constants.swift */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		D0F06E9F1FB0C6400013659D = {
+			isa = PBXGroup;
+			children = (
+				D0F06EAA1FB0C6400013659D /* ParkingAmsterdam */,
+				D0F06EA91FB0C6400013659D /* Products */,
+				B26B357B0AEEB30226A6263E /* Pods */,
+				EE3D0F2FA855F0D929AE0583 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D0F06EA91FB0C6400013659D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D0F06EAA1FB0C6400013659D /* ParkingAmsterdam */ = {
+			isa = PBXGroup;
+			children = (
+				D0F06EAB1FB0C6400013659D /* AppDelegate.swift */,
+				D022AC3F1FB1982B00B00003 /* DataLayer */,
+				D022AC381FB18DC000B00003 /* MapViewControllers */,
+				D0F06EAF1FB0C6400013659D /* Main.storyboard */,
+				D0F06EB21FB0C6400013659D /* Assets.xcassets */,
+				D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */,
+				D0F06EB71FB0C6400013659D /* Info.plist */,
+			);
+			path = ParkingAmsterdam;
+			sourceTree = "<group>";
+		};
+		EE3D0F2FA855F0D929AE0583 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D0F06EA71FB0C6400013659D /* ParkingAmsterdam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0F06EBA1FB0C6400013659D /* Build configuration list for PBXNativeTarget "ParkingAmsterdam" */;
+			buildPhases = (
+				210AE23A289A670D57F1C65F /* [CP] Check Pods Manifest.lock */,
+				D0F06EA41FB0C6400013659D /* Sources */,
+				D0F06EA51FB0C6400013659D /* Frameworks */,
+				D0F06EA61FB0C6400013659D /* Resources */,
+				E046098C86152F586D1D80D7 /* [CP] Embed Pods Frameworks */,
+				344A1B3FF15559A1C5A45CEE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParkingAmsterdam;
+			productName = ParkingAmsterdam;
+			productReference = D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D0F06EA01FB0C6400013659D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Kyrill van Seventer";
+				TargetAttributes = {
+					D0F06EA71FB0C6400013659D = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = D0F06EA31FB0C6400013659D /* Build configuration list for PBXProject "ParkingAmsterdam" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D0F06E9F1FB0C6400013659D;
+			productRefGroup = D0F06EA91FB0C6400013659D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D0F06EA71FB0C6400013659D /* ParkingAmsterdam */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D0F06EA61FB0C6400013659D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */,
+				D0F06EB31FB0C6400013659D /* Assets.xcassets in Resources */,
+				D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		210AE23A289A670D57F1C65F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParkingAmsterdam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		344A1B3FF15559A1C5A45CEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E046098C86152F586D1D80D7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AlamofireDomain/AlamofireDomain.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireDomain.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D0F06EA41FB0C6400013659D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D022AC411FB1983500B00003 /* Constants.swift in Sources */,
+				D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */,
+				D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */,
+				D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */,
+				D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D0F06EAF1FB0C6400013659D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F06EB01FB0C6400013659D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D0F06EB51FB0C6400013659D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D0F06EB81FB0C6400013659D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D0F06EB91FB0C6400013659D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D0F06EBB1FB0C6400013659D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheAppAcademy.ParkingAmsterdam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D0F06EBC1FB0C6400013659D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheAppAcademy.ParkingAmsterdam;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D0F06EA31FB0C6400013659D /* Build configuration list for PBXProject "ParkingAmsterdam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F06EB81FB0C6400013659D /* Debug */,
+				D0F06EB91FB0C6400013659D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0F06EBA1FB0C6400013659D /* Build configuration list for PBXNativeTarget "ParkingAmsterdam" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0F06EBB1FB0C6400013659D /* Debug */,
+				D0F06EBC1FB0C6400013659D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D0F06EA01FB0C6400013659D /* Project object */;
+}
