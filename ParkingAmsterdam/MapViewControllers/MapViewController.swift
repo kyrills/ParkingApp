@@ -8,12 +8,17 @@ class MapViewController: UIViewController {
     
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
-    
     var parkingGarages: [ParkingObjects] = []
-
-
+    var destinationCoordinate = CLLocationCoordinate2D()
+    var sourceCoordinate = CLLocationCoordinate2D()
     
+   
     
+    var selectedGarage : ParkingObjects?
+    let request = MKDirectionsRequest()
+//    var sourceCoordinates = CLLocationCoordinate2D()
+//    var destinationCoordinates : CLLocationCoordinate2D?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,15 +61,29 @@ class MapViewController: UIViewController {
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
-        
     }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
     }
     
     @IBAction func locationButton(_ sender: Any) {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
+    }
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        // Hier schrijf je wat moet geproberen als er op "i" geklikt wordt
+        
+        if let mapAannotation = view.annotation as? ParkingAnnotations {
+            destinationCoordinate.latitude = mapAannotation.coordinate.latitude
+            destinationCoordinate.longitude = mapAannotation.coordinate.longitude
+            coordinatesToMapViewRepresentation()
+        }
     }
 }
 
