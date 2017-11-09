@@ -16,8 +16,6 @@ class MapViewController: UIViewController {
     
     var selectedGarage : ParkingObjects?
     let request = MKDirectionsRequest()
-//    var sourceCoordinates = CLLocationCoordinate2D()
-//    var destinationCoordinates : CLLocationCoordinate2D?
 
     
     override func viewDidLoad() {
