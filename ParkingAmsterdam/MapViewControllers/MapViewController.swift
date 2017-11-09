@@ -2,8 +2,11 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, GarageDetailMapViewDelegate {
+protocol HandleMapSearch: class {
+    func dropPinZoomIn(_ placemark:MKPlacemark)
+}
 
+class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     @IBOutlet weak var parkingMapView: MKMapView!
     
@@ -13,14 +16,32 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     var parkingGarages: [ParkingObjects] = []
     var selectedGarage: ParkingObjects!
     
-    override func viewWillAppear(_ animated: Bool) {        
-    }
+    var searchAnnotationArray: [MKPointAnnotation] = []
+    
+    var selectedPin: MKPlacemark?
+    var resultSearchController: UISearchController!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ParkingAmsterdamService.sharedInstance.getParkingData()
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
+        
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController.searchResultsUpdater = locationSearchTable
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        navigationItem.titleView = resultSearchController?.searchBar
+        resultSearchController.hidesNavigationBarDuringPresentation = false
+        resultSearchController.dimsBackgroundDuringPresentation = true
+        definesPresentationContext = true
+        locationSearchTable.mapView = parkingMapView
+        locationSearchTable.handleMapSearchDelegate = self
+        
         parkingMapView.showsUserLocation = true
         parkingMapView.delegate = self
         
@@ -29,6 +50,8 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                                object: nil)
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -53,7 +76,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
             annotationObject.append(annotation)
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
-        
+        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
     
     @IBAction func locationButton(_ sender: Any) {
@@ -67,7 +90,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     }
     func detailsRequested(for parkingGarages: ParkingObjects) {
         self.selectedGarage = parkingGarages
-        self.performSegue(withIdentifier: "detailView", sender: nil)
+        self.performSegue(withIdentifier: "goToDetailView", sender: nil)
     }
     
 }

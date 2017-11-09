@@ -1,29 +1,24 @@
 import Foundation
 import CoreLocation
+import MapKit
 
 extension MapViewController: CLLocationManagerDelegate {
-    
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedAlways || status == .authorizedWhenInUse{
             self.locationmanager.requestLocation()
         }
-        
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-//        if let location = locations.last {
-//            //function getParkingData does not yet take parameters
-////            ParkingAmsterdamService.sharedInstance.getParkingData(lat: location.coordinate.latitude, lng: location.coordinate.longitude)
-            self.locationmanager.stopUpdatingLocation()
-//        }
-        
+        guard let location = locations.first else { return }
+        let span = MKCoordinateSpanMake(0.05, 0.05)
+        let region = MKCoordinateRegion(center: location.coordinate, span: span)
+        parkingMapView.setRegion(region, animated: true)
+        self.locationmanager.stopUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error")
     }
-
 }

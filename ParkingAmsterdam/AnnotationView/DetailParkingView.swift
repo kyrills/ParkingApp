@@ -29,8 +29,8 @@ class DetailParkingView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
    
-//        goToDetailButton.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
-//        routeToGarageButton.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
+    backgroundContentButton.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
+
     }
     func configureWithGarage(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages

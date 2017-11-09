@@ -14,7 +14,7 @@ class GarageDetailViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var backButton: UIButton!
+//    @IBOutlet weak var backButton: UIButton!
     
     var parkingGarages: [ParkingObjects] = []
     var selectedGarage: ParkingObjects!
@@ -29,10 +29,10 @@ class GarageDetailViewController: UIViewController, UITableViewDataSource, UITab
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
-    
-    @IBAction func goBack(_ sender: Any) {
-        self.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
+//
+//    @IBAction func goBack(_ sender: Any) {
+//        self.presentingViewController?.dismiss(animated: true, completion: nil)
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return parkingGarages.count
