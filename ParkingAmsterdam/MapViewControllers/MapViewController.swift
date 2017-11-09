@@ -6,7 +6,7 @@ protocol HandleMapSearch: class {
     func dropPinZoomIn(_ placemark:MKPlacemark)
 }
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     @IBOutlet weak var parkingMapView: MKMapView!
     
@@ -14,6 +14,7 @@ class MapViewController: UIViewController {
     let regionRadius: CLLocationDistance = 12000
     
     var parkingGarages: [ParkingObjects] = []
+    var selectedGarage: ParkingObjects!
     
     var searchAnnotationArray: [MKPointAnnotation] = []
     
@@ -72,10 +73,7 @@ class MapViewController: UIViewController {
             let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude, longitude: garage.longitude)
             let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
             
-            annotation.title = garage.Name.removeFirstCharacters()
             annotationObject.append(annotation)
-
-            setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
@@ -84,6 +82,15 @@ class MapViewController: UIViewController {
     @IBAction func locationButton(_ sender: Any) {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gdvc = segue.destination as? GarageDetailViewController {
+            gdvc.selectedGarage = self.selectedGarage
+        }
+    }
+    func detailsRequested(for parkingGarages: ParkingObjects) {
+        self.selectedGarage = parkingGarages
+        self.performSegue(withIdentifier: "goToDetailView", sender: nil)
     }
     
 }

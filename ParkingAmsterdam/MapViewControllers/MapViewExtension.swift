@@ -12,33 +12,25 @@ extension MapViewController: MKMapViewDelegate {
         
     }
     
+  
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation { return nil }
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "mapPin")
         
-        guard !(annotation is MKUserLocation) else { return nil }
-        
-        let reuseId = "pin"
-        guard let pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView else { return nil }
-        
-        pinView.pinTintColor = UIColor.orange
-        pinView.canShowCallout = true
-        
-        return pinView
+        if annotationView == nil {
+            annotationView = DetailAnnotationView(annotation: annotation, reuseIdentifier: "mapPin")
+            (annotationView as! DetailAnnotationView).delegate = self
+        } else {
+            annotationView!.annotation = annotation
         }
-    
-//    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-////        let circleRenderer = MKCircleRenderer(overlay: overlay)
-////        circleRenderer.strokeColor = UIColor.blue
-////        circleRenderer.fillColor = UIColor(
-////            red: 0,
-////            green: 0,
-////            blue: 1.0,
-////            alpha: 0.3)
-//
-//        return nil
-//    }
+        return annotationView
+    }
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
 
     }
-
+    
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
+    }
 }
