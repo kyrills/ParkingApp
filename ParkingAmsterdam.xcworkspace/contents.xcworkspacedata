@@ -2,12 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:searchTable.storyboard">
-   </FileRef>
-   <FileRef
-      location = "group:ParkingAmsterdam/Base.lproj/detailView.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:ParkingAmsterdam.xcodeproj">
    </FileRef>
    <FileRef

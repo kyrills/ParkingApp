@@ -8,16 +8,19 @@ protocol HandleMapSearch: class {
 
 class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
+  
     @IBOutlet weak var parkingMapView: MKMapView!
     
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
-    
     var parkingGarages: [ParkingObjects] = []
-    var selectedGarage: ParkingObjects!
+    var destinationCoordinate = CLLocationCoordinate2D()
+    var sourceCoordinate = CLLocationCoordinate2D()
     
     var searchAnnotationArray: [MKPointAnnotation] = []
     
+    var selectedGarage : ParkingObjects?
+    let request = MKDirectionsRequest()
     var selectedPin: MKPlacemark?
     var resultSearchController: UISearchController!
     
@@ -78,6 +81,14 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+    }
     
     @IBAction func locationButton(_ sender: Any) {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
@@ -93,6 +104,12 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         self.performSegue(withIdentifier: "goToDetailView", sender: nil)
     }
     
+    func routeToRequested(for parkingGarages: ParkingObjects) {
+        destinationCoordinate.latitude = parkingGarages.latitude
+        destinationCoordinate.longitude = parkingGarages.longitude
+        coordinatesToMapViewRepresentation()
+    }
+
 }
 
 

@@ -20,6 +20,6 @@ extension MapViewController: HandleMapSearch{
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         parkingMapView.setRegion(region, animated: true)
-        searchAnnotationArray.append(searchAnnotation)
+//        searchAnnotationArray.append(searchAnnotation)
     }
 }

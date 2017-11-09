@@ -11,6 +11,7 @@ import UIKit
 
 protocol GarageDetailMapViewDelegate: class {
     func detailsRequested(for parkingGarages: ParkingObjects)
+    func routeToRequested(for parkingGarages: ParkingObjects)
 }
 
 class DetailParkingView: UIView {
@@ -44,8 +45,7 @@ class DetailParkingView: UIView {
         delegate?.detailsRequested(for: parkingGarages)
     }
     @IBAction func routeToGarageButton(_ sender: Any) {
-        delegate?.detailsRequested(for: parkingGarages)
-        // hier komt route func
+        delegate?.routeToRequested(for: parkingGarages)
     }
     
     
