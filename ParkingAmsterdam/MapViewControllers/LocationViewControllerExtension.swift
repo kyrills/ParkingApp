@@ -13,8 +13,12 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            self.locationmanager.stopUpdatingLocation()
-
+        self.locationmanager.stopUpdatingLocation()
+        if let coord = locations.first {
+            sourceCoordinate.latitude = coord.coordinate.latitude
+            sourceCoordinate.longitude = coord.coordinate.longitude
+        }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
