@@ -14,6 +14,8 @@
 		D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */; };
 		D022AC411FB1983500B00003 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC401FB1983500B00003 /* Constants.swift */; };
 		D022AC431FB1A8B200B00003 /* ParkingAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */; };
+		D06ECC7A1FB33D9900C1B3E1 /* LocationSearchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06ECC791FB33D9900C1B3E1 /* LocationSearchTable.swift */; };
+		D06ECC7E1FB3459E00C1B3E1 /* HandleMapSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06ECC7D1FB3459E00C1B3E1 /* HandleMapSearch.swift */; };
 		D0B797101FB206780092AD6D /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B7970F1FB206780092AD6D /* StringExtension.swift */; };
 		D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAB1FB0C6400013659D /* AppDelegate.swift */; };
 		D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAD1FB0C6400013659D /* MapViewController.swift */; };
@@ -31,6 +33,8 @@
 		D022AC3D1FB1907C00B00003 /* MapViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewExtension.swift; sourceTree = "<group>"; };
 		D022AC401FB1983500B00003 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAnnotations.swift; sourceTree = "<group>"; };
+		D06ECC791FB33D9900C1B3E1 /* LocationSearchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchTable.swift; sourceTree = "<group>"; };
+		D06ECC7D1FB3459E00C1B3E1 /* HandleMapSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandleMapSearch.swift; sourceTree = "<group>"; };
 		D0B7970D1FB1C8540092AD6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = /Users/kyrillvanseventer/ParkingAmsterdamApp/ParkingAmsterdam/Assets.xcassets; sourceTree = "<absolute>"; };
 		D0B7970F1FB206780092AD6D /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingAmsterdam.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +86,15 @@
 			path = DataLayer;
 			sourceTree = "<group>";
 		};
+		D06ECC7F1FB354BC00C1B3E1 /* TableSearchController */ = {
+			isa = PBXGroup;
+			children = (
+				D06ECC791FB33D9900C1B3E1 /* LocationSearchTable.swift */,
+				D06ECC7D1FB3459E00C1B3E1 /* HandleMapSearch.swift */,
+			);
+			name = TableSearchController;
+			sourceTree = "<group>";
+		};
 		D0B7970E1FB206590092AD6D /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +130,7 @@
 				D022AC381FB18DC000B00003 /* MapViewControllers */,
 				D0F06EAF1FB0C6400013659D /* Main.storyboard */,
 				D022AC421FB1A8B200B00003 /* ParkingAnnotations.swift */,
+				D06ECC7F1FB354BC00C1B3E1 /* TableSearchController */,
 				D0B7970D1FB1C8540092AD6D /* Assets.xcassets */,
 				D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */,
 				D0F06EB71FB0C6400013659D /* Info.plist */,
@@ -263,10 +277,12 @@
 				817572A91FB1A7AE00BF3D24 /* ParkingObjects.swift in Sources */,
 				D022AC411FB1983500B00003 /* Constants.swift in Sources */,
 				D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */,
+				D06ECC7E1FB3459E00C1B3E1 /* HandleMapSearch.swift in Sources */,
 				D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */,
 				817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */,
 				D0B797101FB206780092AD6D /* StringExtension.swift in Sources */,
 				D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */,
+				D06ECC7A1FB33D9900C1B3E1 /* LocationSearchTable.swift in Sources */,
 				D022AC3E1FB1907C00B00003 /* MapViewExtension.swift in Sources */,
 				D022AC431FB1A8B200B00003 /* ParkingAnnotations.swift in Sources */,
 			);
