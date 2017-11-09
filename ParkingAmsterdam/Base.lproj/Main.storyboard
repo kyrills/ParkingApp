@@ -54,7 +54,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="456.5" y="117.5"/>
+            <point key="canvasLocation" x="98" y="116"/>
+        </scene>
+        <!--Garage Detail View Controller-->
+        <scene sceneID="ScM-PR-tuC">
+            <objects>
+                <viewController storyboardIdentifier="detailView" id="7IA-tT-Asc" customClass="GarageDetailViewController" customModule="ParkingAmsterdam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dst-g9-h0M">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SUc-XN-0On">
+                                <rect key="frame" x="16" y="195" width="343" height="388"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vM4-vz-bE1">
+                                <rect key="frame" x="210" y="97" width="149" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LeZ-K1-qZC">
+                                <rect key="frame" x="210" y="37" width="149" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="carexample" translatesAutoresizingMaskIntoConstraints="NO" id="AKU-fR-g3S">
+                                <rect key="frame" x="16" y="20" width="186" height="154"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NiU-Ja-pft"/>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem systemItem="bookmarks" id="7Gr-2y-bPe">
+                            <color key="tintColor" red="0.15836426615715027" green="0.68790519237518311" blue="0.77371031045913696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="bj4-34-Nkw"/>
+                        <barButtonItem systemItem="search" id="mCy-w1-8qz">
+                            <color key="tintColor" red="0.15836426615715027" green="0.68790519237518311" blue="0.77371031045913696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="SQc-4h-LxK"/>
+                        <barButtonItem style="done" systemItem="camera" id="BXT-k4-eyX">
+                            <color key="tintColor" red="0.15836426615715027" green="0.68790519237518311" blue="0.77371031045913696" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="garageImage" destination="AKU-fR-g3S" id="Jsw-df-MqX"/>
+                        <outlet property="subTitleLabel" destination="vM4-vz-bE1" id="hQs-S7-5GT"/>
+                        <outlet property="tableView" destination="SUc-XN-0On" id="bch-3a-zjK"/>
+                        <outlet property="titleLabel" destination="LeZ-K1-qZC" id="bHq-86-QUa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tt1-a1-Lu0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890" y="116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DrW-ny-j4j">
@@ -72,10 +132,11 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZy-6S-abp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="118"/>
+            <point key="canvasLocation" x="-655" y="117"/>
         </scene>
     </scenes>
     <resources>
         <image name="blue_button_circle" width="186" height="186"/>
+        <image name="carexample" width="237" height="139"/>
     </resources>
 </document>
