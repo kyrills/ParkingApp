@@ -1,11 +1,3 @@
-//
-//  UIViewExtension.swift
-//  ParkingAmsterdam
-//
-//  Created by Michiel Everts on 08-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
@@ -62,7 +54,6 @@ func dialogBezierPathWithFrame(_ frame: CGRect, arrowOrientation orientation: UI
         path.apply(CGAffineTransform(rotationAngle: degreesToRadians(90.0)))
         path.apply(CGAffineTransform(translationX: transposedFrame.size.height, y: 0))
     }
-    
     return path
 }
 

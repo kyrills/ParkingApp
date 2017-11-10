@@ -7,7 +7,6 @@ class LocationSearchTable: UITableViewController {
     var matchingItems: [MKMapItem] = []
     var mapView: MKMapView?
     
-    
     func parseAddress(_ selectedItem:MKPlacemark) -> String {
         
         let firstSpace = (selectedItem.subThoroughfare != nil &&
@@ -37,7 +36,6 @@ class LocationSearchTable: UITableViewController {
         return addressLine
     }
     
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
     }
@@ -49,7 +47,6 @@ class LocationSearchTable: UITableViewController {
         cell.detailTextLabel?.text = parseAddress(selectedItem)
         return cell
     }
-    
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedItem = matchingItems[(indexPath as NSIndexPath).row].placemark

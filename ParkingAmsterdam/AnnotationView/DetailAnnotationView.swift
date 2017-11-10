@@ -1,11 +1,3 @@
-//
-//  DetailAnnotationView.swift
-//  ParkingAmsterdam
-//
-//  Created by Michiel Everts on 08-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 import MapKit
 
@@ -21,13 +13,13 @@ class DetailAnnotationView: MKAnnotationView {
     override var annotation: MKAnnotation? {
         willSet { customCalloutView?.removeFromSuperview() }
     }
-    // MARK: - life cycle
     
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         self.canShowCallout = false // 1
         self.image = kGarageMapPinImage
     }
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.canShowCallout = false // 1
@@ -87,8 +79,6 @@ class DetailAnnotationView: MKAnnotationView {
         super.prepareForReuse()
         self.customCalloutView?.removeFromSuperview()
     }
-    
-    // MARK: - Detecting and reaction to taps on custom callout.
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         // if super passed hit test, return the result

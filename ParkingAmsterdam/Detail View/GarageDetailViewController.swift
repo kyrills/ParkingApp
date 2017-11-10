@@ -1,18 +1,8 @@
-//
-//  GarageDetailViewController.swift
-//  ParkingAmsterdam
-//
-//  Created by Michiel Everts on 08-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 import UIKit
 
 class GarageDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var titleLabel: UILabel!
-//    @IBOutlet weak var subTitleLabel: UILabel!
-    
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
@@ -52,6 +42,7 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         carImage.image = image
         dismiss(animated: true, completion: nil)
         
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +51,7 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+
         blur1.layer.cornerRadius = 10
         blur1.layer.masksToBounds = true
         blur2.layer.cornerRadius = 10
@@ -86,5 +77,4 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         label4.text = "long time parking spaces left - \(selectedGarage.FreeSpaceLong)"
         carImage.image = #imageLiteral(resourceName: "carplacehlder1")
     }
-    
 }
