@@ -1,11 +1,3 @@
-//
-//  Constants.swift
-//  ParkingAmsterdam
-//
-//  Created by Kyrill van Seventer on 07/11/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 
 struct NotificationID {
@@ -16,3 +8,7 @@ struct urls {
     static let baseURL = "http://opd.it-t.nl/data/amsterdam/ParkingLocation.json"
 }
 
+struct coordinates {
+    static let startLat = 52.373
+    static let startLng = 4.893
+}

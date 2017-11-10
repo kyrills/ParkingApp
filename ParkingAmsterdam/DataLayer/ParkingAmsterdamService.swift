@@ -8,8 +8,7 @@ class ParkingAmsterdamService {
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
     
-    
-    func getParkingData()  {
+    @objc func getParkingData()  {
         
         let ParkingData =  "\(urls.baseURL)"
         Alamofire.request( ParkingData ,
@@ -26,7 +25,6 @@ class ParkingAmsterdamService {
                             case .failure(let error):
                                 print(error)
                             }
-                            
         }
     }
     
@@ -35,16 +33,15 @@ class ParkingAmsterdamService {
         if let features = result["features"] as? NSArray {
             for feature in features {
                 if let key = feature as? NSDictionary{
-                        let properties = getDictionary(with: "properties", from: key) ?? [:]
-                        let geometry = getDictionary(with: "geometry", from: key) ?? [:]
-                        let coords = parseCoord(geometry: geometry)
-                        if let parkAppObject = parseProperties(properties: properties,
-                                                               id: key["Id"] as? String ?? "",
-                                                               latitude: coords.lat,
-                                                               longitude: coords.lng) {
+                    let properties = getDictionary(with: "properties", from: key) ?? [:]
+                    let geometry = getDictionary(with: "geometry", from: key) ?? [:]
+                    let coords = parseCoord(geometry: geometry)
+                    if let parkAppObject = parseProperties(properties: properties,
+                                                           id: key["Id"] as? String ?? "",
+                                                           latitude: coords.lat,
+                                                           longitude: coords.lng) {
                         parkingObj.append(parkAppObject)
                     }
-                    
                 }
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationID.setInitialData),
@@ -88,21 +85,16 @@ class ParkingAmsterdamService {
                                                        LongCapacity: longCapacity)
             return parkingAppObject
         }
-        
         return nil
     }
-  
     
     func parseCoord(geometry: NSDictionary) -> (lat: Double, lng: Double){
         if let coordinates: NSArray = geometry["coordinates"] as? NSArray,
             let longitude = coordinates[0] as? Double,
             let latitude = coordinates[1] as? Double{
-            return(lat: latitude, lng: longitude) //reutnring a tuple, to combine values
+            return(lat: latitude, lng: longitude)
         }
-        
         return (0,0)
     }
-    
-    
 }
 

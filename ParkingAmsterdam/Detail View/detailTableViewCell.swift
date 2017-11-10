@@ -1,11 +1,3 @@
-//
-//  detailTableViewCell.swift
-//  ParkingAmsterdam
-//
-//  Created by Michiel Everts on 08-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-
-
 import UIKit
 
 class detailTableViewCell: UITableViewCell {
