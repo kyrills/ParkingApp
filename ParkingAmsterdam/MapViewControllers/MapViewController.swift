@@ -16,9 +16,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     var parkingGarages: [ParkingObjects] = []
     var destinationCoordinate = CLLocationCoordinate2D()
     var sourceCoordinate = CLLocationCoordinate2D()
-//    var polyline: MKPolyline = MKPolyline()
     var searchAnnotationArray: [MKPointAnnotation] = []
-    
     var selectedGarage : ParkingObjects?
     let request = MKDirectionsRequest()
     var selectedPin: MKPlacemark?
