@@ -67,7 +67,9 @@ class DetailAnnotationView: MKAnnotationView {
             let garageDetailMapView = views.first!
             garageDetailMapView.delegate = self.delegate
             if let detailAnnotation = annotation as? ParkingAnnotations {
-                garageDetailMapView.configureWithGarage(parkingGarages: detailAnnotation.parkingGarage)
+                
+                let loadedGarageObjectFromRealm = detailAnnotation.parkingGarage.retrieveData()
+                garageDetailMapView.configureWithGarage(parkingGarages:loadedGarageObjectFromRealm)
                 
                 return garageDetailMapView
             }

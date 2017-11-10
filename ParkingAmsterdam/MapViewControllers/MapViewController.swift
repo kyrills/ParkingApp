@@ -33,10 +33,11 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ParkingAmsterdamService.sharedInstance.getParkingData()
         
-//  ToDo Fix timer stuff
-//        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
+        //  ToDo Fix timer stuff
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
         
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
@@ -82,17 +83,20 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     }
     
     @objc func setInitialData(notification: NSNotification){
-        var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
-        parkingGarages = parkingDict["data"]!
-        
-        guard self.parkingMapView.annotations.count == 0 else{
+        //this ensures map is only loaded once, after that the data must be requested from REALM
+        guard self.parkingMapView.annotations.count == 1 else {
             return
         }
+        
+        var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
+        parkingGarages = parkingDict["data"]!
+
         
         var annotationObject: [ParkingAnnotations] = []
         
         for garage in parkingGarages{
-            let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude, longitude: garage.longitude)
+            let coordinate = CLLocationCoordinate2D.init(latitude: Double(garage.latitude!)!,
+                                                         longitude: Double(garage.longitude!)!)
             let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
             
             annotationObject.append(annotation)
@@ -124,8 +128,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     }
     
     func routeToRequested(for parkingGarages: ParkingObjects) {
-        destinationCoordinate.latitude = parkingGarages.latitude
-        destinationCoordinate.longitude = parkingGarages.longitude
+        
+        if let lat = Double(parkingGarages.latitude!),
+            let lng = Double(parkingGarages.longitude!) {
+            destinationCoordinate.latitude = lat
+            destinationCoordinate.longitude = lng
+        }
+        
         coordinatesToMapViewRepresentation()
         parkingMapView.removeOverlays(parkingMapView.overlays)
     }
