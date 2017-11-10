@@ -5,21 +5,28 @@ extension MapViewController: HandleMapSearch{
     
     func dropPinZoomIn(_ placemark: MKPlacemark){
         selectedPin = placemark
-        parkingMapView.removeAnnotations(searchAnnotationArray)
-        let searchAnnotation = MKPointAnnotation()
-                
-        searchAnnotation.coordinate = placemark.coordinate
-        searchAnnotation.title = placemark.name
-        
-        if let city = placemark.locality,
-            let state = placemark.administrativeArea {
-            searchAnnotation.subtitle = "\(city) \(state)"
+
+        if let droppedPinAnnotation = droppedPin?.annotation {
+            parkingMapView.removeAnnotation(droppedPinAnnotation)
         }
         
-        parkingMapView.addAnnotation(searchAnnotation)
+        let pointAnnotation = MKPointAnnotation.init()
+        pointAnnotation.coordinate = placemark.coordinate
+        pointAnnotation.title = placemark.name
+        
+        droppedPin = MKPinAnnotationView.init(annotation: pointAnnotation, reuseIdentifier: "droppedPin")
+        droppedPin?.canShowCallout = true
+        droppedPin?.animatesDrop = true
+        self.parkingMapView.selectAnnotation((droppedPin?.annotation)!, animated: true)
+
+        if let droppedAnnotation = droppedPin?.annotation {
+            parkingMapView.addAnnotation(droppedAnnotation)
+        }
+        self.parkingMapView.selectAnnotation((self.droppedPin?.annotation)!, animated: true)
+
         let span = MKCoordinateSpanMake(0.05, 0.05)
         let region = MKCoordinateRegionMake(placemark.coordinate, span)
         parkingMapView.setRegion(region, animated: true)
-//        searchAnnotationArray.append(searchAnnotation)
+        setZoomInitialLocation(location: placemark.coordinate)
     }
 }

@@ -1,6 +1,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Foundation
 
 protocol HandleMapSearch: class {
     func dropPinZoomIn(_ placemark:MKPlacemark)
@@ -8,40 +9,49 @@ protocol HandleMapSearch: class {
 
 class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
-  
     @IBOutlet weak var parkingMapView: MKMapView!
     
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
-    var parkingGarages: [ParkingObjects] = []
+    
     var destinationCoordinate = CLLocationCoordinate2D()
     var sourceCoordinate = CLLocationCoordinate2D()
     
-    var searchAnnotationArray: [MKPointAnnotation] = []
-    
-    var selectedGarage : ParkingObjects?
     let request = MKDirectionsRequest()
-    var selectedPin: MKPlacemark?
+    
+    var parkingGarages: [ParkingObjects] = []
+    var selectedGarage : ParkingObjects?
+    
     var resultSearchController: UISearchController!
     
-    
+    var droppedPin: MKPinAnnotationView?
+    var selectedPin: MKPlacemark?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         ParkingAmsterdamService.sharedInstance.getParkingData()
+        
+//  ToDo Fix timer stuff
+//        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
+        
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
         
         let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
         resultSearchController = UISearchController(searchResultsController: locationSearchTable)
         resultSearchController.searchResultsUpdater = locationSearchTable
+        resultSearchController.hidesNavigationBarDuringPresentation = false
+        resultSearchController.dimsBackgroundDuringPresentation = true
+        
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
+        
         navigationItem.titleView = resultSearchController?.searchBar
-        resultSearchController.hidesNavigationBarDuringPresentation = false
-        resultSearchController.dimsBackgroundDuringPresentation = true
+        
         definesPresentationContext = true
+        
         locationSearchTable.mapView = parkingMapView
         locationSearchTable.handleMapSearchDelegate = self
         
@@ -54,10 +64,12 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                object: nil)
     }
     
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    @objc func getParkingData() {
+        ParkingAmsterdamService.sharedInstance.getParkingData()
     }
     
     func setZoomInitialLocation(location: CLLocationCoordinate2D){
@@ -67,9 +79,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     }
     
     @objc func setInitialData(notification: NSNotification){
-        
         var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
         parkingGarages = parkingDict["data"]!
+        
+        guard self.parkingMapView.annotations.count == 0 else{
+            return
+        }
+        
         var annotationObject: [ParkingAnnotations] = []
         
         for garage in parkingGarages{
@@ -79,13 +95,11 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
             annotationObject.append(annotation)
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
-        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
     }
@@ -94,11 +108,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gdvc = segue.destination as? GarageDetailViewController {
             gdvc.selectedGarage = self.selectedGarage
         }
     }
+    
     func detailsRequested(for parkingGarages: ParkingObjects) {
         self.selectedGarage = parkingGarages
         self.performSegue(withIdentifier: "goToDetailView", sender: nil)
@@ -109,7 +125,6 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         destinationCoordinate.longitude = parkingGarages.longitude
         coordinatesToMapViewRepresentation()
     }
-
 }
 
 

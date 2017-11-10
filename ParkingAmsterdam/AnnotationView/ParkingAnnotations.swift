@@ -9,8 +9,8 @@ class ParkingAnnotations: NSObject, MKAnnotation{
         self.parkingGarage = parkingGarage
         self.coordinate = coordinate
         super.init()
-        
     }
+    
     var title: String?{
         return parkingGarage.Name.removeFirstCharacters()
     }
