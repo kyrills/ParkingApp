@@ -16,3 +16,11 @@ struct urls {
     static let baseURL = "http://opd.it-t.nl/data/amsterdam/ParkingLocation.json"
 }
 
+struct cellID {
+    static let detailTableViewCell = "detailTableViewCell"
+}
+
+struct tableCellID {
+    static let detailTableViewCell = "detailTableViewCell"
+}
+

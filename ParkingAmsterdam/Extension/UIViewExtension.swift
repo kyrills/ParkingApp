@@ -74,5 +74,12 @@ extension UIView {
         shapeLayer.fillRule = kCAFillRuleEvenOdd
         self.layer.mask = shapeLayer
     }
-    
+   
+    func setRadiusWithShadow(radius: CGFloat? = nil) {
+        self.layer.cornerRadius = radius ?? self.frame.width / 2
+        self.layer.shadowColor = UIColor.brown.cgColor
+        self.layer.shadowOffset = CGSize(width: 1.6, height: 1.6)
+        self.layer.shadowRadius = 1
+        self.layer.masksToBounds = true
+    }
 }

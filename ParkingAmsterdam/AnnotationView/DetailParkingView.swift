@@ -26,19 +26,21 @@ class DetailParkingView: UIView {
     // data
     var parkingGarages: ParkingObjects!
     weak var delegate: GarageDetailMapViewDelegate?
+    let blur = UIVisualEffectView(effect: UIBlurEffect(style:
+        UIBlurEffectStyle.light))
     
     override func awakeFromNib() {
         super.awakeFromNib()
-   
-    backgroundContentButton.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
+        setRadiusWithShadow(radius: 15)
+        self.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
 
     }
     func configureWithGarage(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
         
-        ImageView.image = #imageLiteral(resourceName: "carexample")
+        ImageView.image = #imageLiteral(resourceName: "parkinglot")
         TitleLabel.text = parkingGarages.Name.removeFirstCharacters()
-        parkingSpaceLabel.text = parkingGarages.State
+        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
     }
     
     @IBAction func goToDetailButton(_ sender: Any) {
@@ -51,10 +53,12 @@ class DetailParkingView: UIView {
     
     func configureWithParkingGarages(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
-
-        ImageView.image = #imageLiteral(resourceName: "carexample")
+        
+        blur.layer.cornerRadius = 10
+        blur.clipsToBounds = true
+        ImageView.image = #imageLiteral(resourceName: "parkinglot")
         TitleLabel.text = parkingGarages.Name.removeFirstCharacters()
-        parkingSpaceLabel.text = parkingGarages.State
+        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
     }
     
     // MARK: - Hit test. We need to override this to detect hits in our custom callout.
