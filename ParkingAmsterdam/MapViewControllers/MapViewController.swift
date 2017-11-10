@@ -16,10 +16,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     var destinationCoordinate = CLLocationCoordinate2D()
     var sourceCoordinate = CLLocationCoordinate2D()
+
+    var searchAnnotationArray: [MKPointAnnotation] = []
     
     let request = MKDirectionsRequest()
     
     var parkingGarages: [ParkingObjects] = []
+  
     var selectedGarage : ParkingObjects?
     
     var resultSearchController: UISearchController!
@@ -124,6 +127,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         destinationCoordinate.latitude = parkingGarages.latitude
         destinationCoordinate.longitude = parkingGarages.longitude
         coordinatesToMapViewRepresentation()
+        parkingMapView.removeOverlays(parkingMapView.overlays)
     }
 }
 

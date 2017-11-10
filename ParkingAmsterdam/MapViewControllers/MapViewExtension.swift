@@ -59,9 +59,10 @@ extension MapViewController: MKMapViewDelegate {
     func coordinatesToMapViewRepresentation() {
         
         let directions = getDirections()
+        
         directions.calculate { [unowned self] response, error in
             guard let unwrappedResponse = response else { return }
-            
+           
             for route in unwrappedResponse.routes {
                 self.parkingMapView.add(route.polyline)
                 
