@@ -17,20 +17,21 @@ class DetailParkingView: UIView {
     
     var parkingGarages: ParkingObjects!
     weak var delegate: GarageDetailMapViewDelegate?
+    let blur = UIVisualEffectView(effect: UIBlurEffect(style:
+        UIBlurEffectStyle.light))
     
     override func awakeFromNib() {
         super.awakeFromNib()
-   
-    backgroundContentButton.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
+        setRadiusWithShadow(radius: 15)
+        self.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
 
     }
     
     func configureWithGarage(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
         
-        ImageView.image = #imageLiteral(resourceName: "carexample")
-        TitleLabel.text = parkingGarages.Name?.removeFirstCharacters()
-        parkingSpaceLabel.text = parkingGarages.State
+        TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
+        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
     }
     
     @IBAction func goToDetailButton(_ sender: Any) {
@@ -43,10 +44,16 @@ class DetailParkingView: UIView {
     
     func configureWithParkingGarages(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
+        
+        blur.layer.cornerRadius = 10
+        blur.clipsToBounds = true
+        if let name = parkingGarages.Name {
+            TitleLabel.text = name.removeFirstCharacters()
 
-        ImageView.image = #imageLiteral(resourceName: "carexample")
-        TitleLabel.text = parkingGarages.Name?.removeFirstCharacters()
+        }
         parkingSpaceLabel.text = parkingGarages.State
+        TitleLabel.tintColor = UIColor.white
+        TitleLabel.textColor = UIColor.black
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

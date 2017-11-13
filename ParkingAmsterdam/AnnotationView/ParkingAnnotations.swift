@@ -12,11 +12,14 @@ class ParkingAnnotations: NSObject, MKAnnotation{
     }
     
     var title: String?{
-        return parkingGarage.Name?.removeFirstCharacters()
+        return parkingGarage.Name!.removeFirstCharacters()
     }
     
     var subtitle: String?{
-        return "\(parkingGarage.FreeSpaceShort)"
+        if let FreeSpaceShort = parkingGarage.FreeSpaceShort {
+            return "\(FreeSpaceShort)"
+        }
+        return "0"
     }
 }
 

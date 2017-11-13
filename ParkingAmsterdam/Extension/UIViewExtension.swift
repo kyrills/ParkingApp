@@ -9,7 +9,7 @@ func radiansToDegrees (_ value:CGFloat) -> CGFloat {
     return value * 180.0 / CGFloat(M_PI)
 }
 
-func dialogBezierPathWithFrame(_ frame: CGRect, arrowOrientation orientation: UIImageOrientation, arrowLength: CGFloat = 20.0) -> UIBezierPath {
+func dialogBezierPathWithFrame(_ frame: CGRect, arrowOrientation orientation: UIImageOrientation, arrowLength: CGFloat = 25.0) -> UIBezierPath {
     // Translate frame to neutral coordinate system & transpose it to fit the orientation.
     var transposedFrame = CGRect.zero
     switch orientation {
@@ -65,5 +65,12 @@ extension UIView {
         shapeLayer.fillRule = kCAFillRuleEvenOdd
         self.layer.mask = shapeLayer
     }
-    
+   
+    func setRadiusWithShadow(radius: CGFloat? = nil) {
+        self.layer.cornerRadius = radius ?? self.frame.width / 2
+        self.layer.shadowColor = UIColor.brown.cgColor
+        self.layer.shadowOffset = CGSize(width: 1.6, height: 1.6)
+        self.layer.shadowRadius = 1
+        self.layer.masksToBounds = true
+    }
 }

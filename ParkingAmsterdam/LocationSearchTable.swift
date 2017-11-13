@@ -26,7 +26,7 @@ class LocationSearchTable: UITableViewController {
             // street name
             selectedItem.thoroughfare ?? "",
             comma,
-            // city
+            // city®
             selectedItem.locality ?? "",
             secondSpace,
             // state

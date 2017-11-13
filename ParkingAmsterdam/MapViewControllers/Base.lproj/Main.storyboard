@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-nB-ND3">
-                                <rect key="frame" x="330" y="64" width="45" height="45"/>
+                                <rect key="frame" x="330" y="105" width="45" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="HCJ-5T-zE2"/>
                                     <constraint firstAttribute="height" constant="45" id="an4-y4-nNE"/>
@@ -37,11 +37,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ZK4-nB-ND3" firstAttribute="trailing" secondItem="JYu-1h-xxh" secondAttribute="trailing" id="8bo-yo-XyN"/>
-                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="CPN-xj-hcL"/>
+                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="CPN-xj-hcL"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="DGx-Dq-MPr"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Itn-0q-bjO"/>
                             <constraint firstItem="ZK4-nB-ND3" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aJi-V8-5kM"/>
-                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="bkU-eu-WMs"/>
+                            <constraint firstItem="ZK4-nB-ND3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="41" id="bkU-eu-WMs"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rD0-s5-laR"/>
                             <constraint firstItem="JYu-1h-xxh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="stU-PV-D1l"/>
                         </constraints>
