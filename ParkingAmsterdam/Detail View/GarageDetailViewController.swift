@@ -51,17 +51,14 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        navigationController?.navigationBar.barTintColor = UIColor.white
 
-        blur1.layer.cornerRadius = 10
-        blur1.layer.masksToBounds = true
-        blur2.layer.cornerRadius = 10
-        blur2.layer.masksToBounds = true
-        blur3.layer.cornerRadius = 10
-        blur3.layer.masksToBounds = true
-        blur4.layer.cornerRadius = 10
-        blur4.layer.masksToBounds = true
-        blur5.layer.cornerRadius = 10
-        blur5.layer.masksToBounds = true
         titleLabel.text = selectedGarage.Name.removeFirstCharacters()
         label1.layer.masksToBounds = true
         label2.layer.masksToBounds = true

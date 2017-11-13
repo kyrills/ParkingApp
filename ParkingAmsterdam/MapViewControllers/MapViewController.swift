@@ -46,13 +46,19 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         resultSearchController.searchResultsUpdater = locationSearchTable
         resultSearchController.hidesNavigationBarDuringPresentation = false
         resultSearchController.dimsBackgroundDuringPresentation = true
+        resultSearchController.searchBar.barTintColor = UIColor.darkGray
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
         
-        navigationItem.titleView = resultSearchController?.searchBar
+        UINavigationBar.appearance().barTintColor = .darkGray
+        UINavigationBar.appearance().tintColor = .darkGray
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.darkGray]
+        UINavigationBar.appearance().isTranslucent = false
         
+        navigationItem.titleView = resultSearchController?.searchBar
+        navigationItem.titleView?.backgroundColor = UIColor.darkGray
         definesPresentationContext = true
         
         locationSearchTable.mapView = parkingMapView

@@ -1,7 +1,7 @@
 import Foundation
 import MapKit
 
-private let kGarageMapPinImage = UIImage(named: "mapPin")!
+private let kGarageMapPinImage = UIImage(named: "location_pin")!
 private let kGarageMapAnimationTime = 0.300
 
 class DetailAnnotationView: MKAnnotationView {
