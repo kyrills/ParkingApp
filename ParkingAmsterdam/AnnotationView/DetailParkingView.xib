@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-1h-EOs">
-                    <rect key="frame" x="33" y="0.0" width="0.0" height="232"/>
+                    <rect key="frame" x="39" y="0.0" width="0.0" height="232"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal">
                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -69,8 +69,8 @@
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAN-PG-iU4">
-                    <rect key="frame" x="102" y="57" width="100" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SubTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="YAN-PG-iU4">
+                    <rect key="frame" x="108" y="57" width="94" height="25"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
@@ -78,8 +78,8 @@
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tdG-OX-vUe">
-                    <rect key="frame" x="102" y="15" width="100" height="34"/>
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="free spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tdG-OX-vUe">
+                    <rect key="frame" x="108" y="15" width="94" height="34"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -90,8 +90,8 @@
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="parkingdesign" translatesAutoresizingMaskIntoConstraints="NO" id="qyW-GD-OWP">
-                    <rect key="frame" x="-6" y="0.0" width="106" height="101"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkingdesign" translatesAutoresizingMaskIntoConstraints="NO" id="qyW-GD-OWP">
+                    <rect key="frame" x="0.0" y="0.0" width="100" height="101"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -111,6 +111,8 @@
                 <constraint firstItem="WWq-8u-NTT" firstAttribute="leading" secondItem="iW7-qt-0Gb" secondAttribute="leading" constant="22" id="YLQ-o8-UY5"/>
                 <constraint firstItem="4t7-nf-uvp" firstAttribute="centerY" secondItem="ET6-l8-Gcr" secondAttribute="centerY" id="Z9U-8L-6RV"/>
                 <constraint firstItem="WWq-8u-NTT" firstAttribute="top" secondItem="qyW-GD-OWP" secondAttribute="bottom" constant="68" id="ffJ-yz-zcc"/>
+                <constraint firstItem="qyW-GD-OWP" firstAttribute="leading" secondItem="ET6-l8-Gcr" secondAttribute="leading" id="gYG-7l-L2u"/>
+                <constraint firstItem="qyW-GD-OWP" firstAttribute="top" secondItem="iW7-qt-0Gb" secondAttribute="top" id="h9p-e4-bOj"/>
                 <constraint firstItem="qyW-GD-OWP" firstAttribute="leading" secondItem="bmY-1h-EOs" secondAttribute="trailing" constant="-39" id="hz8-xT-Gu3"/>
                 <constraint firstItem="iW7-qt-0Gb" firstAttribute="trailing" secondItem="WWq-8u-NTT" secondAttribute="trailing" constant="30" id="i5d-Lc-WGl"/>
                 <constraint firstAttribute="trailing" secondItem="4t7-nf-uvp" secondAttribute="trailing" id="miA-SX-27p"/>

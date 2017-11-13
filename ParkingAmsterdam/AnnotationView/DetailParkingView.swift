@@ -30,7 +30,7 @@ class DetailParkingView: UIView {
     func configureWithGarage(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
         
-        TitleLabel.text = parkingGarages.Name.removeFirstCharacters()
+        TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
         parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
     }
     
@@ -47,13 +47,13 @@ class DetailParkingView: UIView {
         
         blur.layer.cornerRadius = 10
         blur.clipsToBounds = true
-        TitleLabel.text = parkingGarages.Name.removeFirstCharacters()
-        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
+        if let name = parkingGarages.Name {
+            TitleLabel.text = name.removeFirstCharacters()
+
+        }
+        parkingSpaceLabel.text = parkingGarages.State
         TitleLabel.tintColor = UIColor.white
-        TitleLabel.textColor = UIColor.white
-//        TitleLabel.motionEffects
-//        UIBlurEffectStyle?
-//        UIMotionEffectGroup?
+        TitleLabel.textColor = UIColor.black
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

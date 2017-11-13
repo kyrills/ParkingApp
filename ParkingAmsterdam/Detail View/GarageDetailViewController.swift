@@ -59,7 +59,7 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         
         navigationController?.navigationBar.barTintColor = UIColor.white
 
-        titleLabel.text = selectedGarage.Name.removeFirstCharacters()
+        titleLabel.text = selectedGarage.Name!.removeFirstCharacters()
         label1.layer.masksToBounds = true
         label2.layer.masksToBounds = true
         label3.layer.masksToBounds = true
