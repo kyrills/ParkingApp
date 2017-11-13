@@ -92,7 +92,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         var annotationObject: [ParkingAnnotations] = []
         
         for garage in parkingGarages{
-            let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude, longitude: garage.longitude)
+            let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude as! CLLocationDegrees, longitude: garage.longitude as! CLLocationDegrees)
             let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
             
             annotationObject.append(annotation)
@@ -124,8 +124,8 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     }
     
     func routeToRequested(for parkingGarages: ParkingObjects) {
-        destinationCoordinate.latitude = parkingGarages.latitude
-        destinationCoordinate.longitude = parkingGarages.longitude
+        destinationCoordinate.latitude = parkingGarages.latitude as! CLLocationDegrees
+        destinationCoordinate.longitude = parkingGarages.longitude as! CLLocationDegrees
         coordinatesToMapViewRepresentation()
         parkingMapView.removeOverlays(parkingMapView.overlays)
     }

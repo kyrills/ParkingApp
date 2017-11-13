@@ -41,6 +41,7 @@ class ParkingAmsterdamService {
                                                            latitude: coords.lat,
                                                            longitude: coords.lng) {
                         parkingObj.append(parkAppObject)
+                        parkAppObject.saveData()
                     }
                 }
             }
@@ -65,24 +66,24 @@ class ParkingAmsterdamService {
             let state = properties["State"] as? String {
             
             let freeSpaceShortString = properties["FreeSpaceShort"] as? String ?? ""
-            let freeSpaceShort = Int(freeSpaceShortString) ?? 0
+//            let freeSpaceShort = Int(freeSpaceShortString) ?? 0
             let freeSpaceLongString = properties["FreeSpaceLong"] as? String ?? ""
-            let freeSpaceLong = Int(freeSpaceLongString) ?? 0
+//            let freeSpaceLong = Int(freeSpaceLongString) ?? 0
             let shortCapacityString = properties["ShortCapacity"] as? String ?? ""
-            let shortCapacity = Int(shortCapacityString) ?? 0
+//            let shortCapacity = Int(shortCapacityString) ?? 0
             let longCapacityString = properties["LongCapacity"] as? String ?? ""
-            let longCapacity = Int(longCapacityString) ?? 0
+//            let longCapacity = Int(longCapacityString) ?? 0
             
             let parkingAppObject = ParkingObjects.init(id: id,
-                                                       latitude: latitude,
-                                                       longitude: longitude,
+                                                       latitude: NSNumber(value: latitude),
+                                                       longitude: NSNumber(value: longitude),
                                                        Name: name,
                                                        PubDate: pubDate,
                                                        State: state,
-                                                       FreeSpaceShort: freeSpaceShort,
-                                                       FreeSpaceLong: freeSpaceLong,
-                                                       ShortCapacity: shortCapacity,
-                                                       LongCapacity: longCapacity)
+                                                       FreeSpaceShort: freeSpaceShortString,
+                                                       FreeSpaceLong: freeSpaceLongString,
+                                                       ShortCapacity: shortCapacityString,
+                                                       LongCapacity: longCapacityString)
             return parkingAppObject
         }
         return nil
