@@ -1,6 +1,6 @@
 import Foundation
 import Alamofire
-
+import RealmSwift
 class ParkingAmsterdamService {
     
     public static let sharedInstance = ParkingAmsterdamService()  // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
@@ -41,6 +41,8 @@ class ParkingAmsterdamService {
                                                            latitude: coords.lat,
                                                            longitude: coords.lng) {
                         parkingObj.append(parkAppObject)
+                        
+                        parkAppObject.saveData()
                     }
                 }
             }
@@ -64,18 +66,14 @@ class ParkingAmsterdamService {
             let pubDate = properties["PubDate"] as? String,
             let state = properties["State"] as? String {
             
-            let freeSpaceShortString = properties["FreeSpaceShort"] as? String ?? ""
-            let freeSpaceShort = Int(freeSpaceShortString) ?? 0
-            let freeSpaceLongString = properties["FreeSpaceLong"] as? String ?? ""
-            let freeSpaceLong = Int(freeSpaceLongString) ?? 0
-            let shortCapacityString = properties["ShortCapacity"] as? String ?? ""
-            let shortCapacity = Int(shortCapacityString) ?? 0
-            let longCapacityString = properties["LongCapacity"] as? String ?? ""
-            let longCapacity = Int(longCapacityString) ?? 0
+            let freeSpaceShort = properties["FreeSpaceShort"] as? String ?? ""
+            let freeSpaceLong = properties["FreeSpaceLong"] as? String ?? ""
+            let shortCapacity = properties["ShortCapacity"] as? String ?? ""
+            let longCapacity = properties["LongCapacity"] as? String ?? ""
             
             let parkingAppObject = ParkingObjects.init(id: id,
-                                                       latitude: latitude,
-                                                       longitude: longitude,
+                                                       latitude: "\(latitude)",
+                                                       longitude: "\(longitude)",
                                                        Name: name,
                                                        PubDate: pubDate,
                                                        State: state,

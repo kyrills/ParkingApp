@@ -29,7 +29,7 @@ class DetailParkingView: UIView {
         self.parkingGarages = parkingGarages
         
         ImageView.image = #imageLiteral(resourceName: "carexample")
-        TitleLabel.text = parkingGarages.Name.removeFirstCharacters()
+        TitleLabel.text = parkingGarages.Name?.removeFirstCharacters()
         parkingSpaceLabel.text = parkingGarages.State
     }
     
@@ -45,7 +45,7 @@ class DetailParkingView: UIView {
         self.parkingGarages = parkingGarages
 
         ImageView.image = #imageLiteral(resourceName: "carexample")
-        TitleLabel.text = parkingGarages.Name.removeFirstCharacters()
+        TitleLabel.text = parkingGarages.Name?.removeFirstCharacters()
         parkingSpaceLabel.text = parkingGarages.State
     }
     
