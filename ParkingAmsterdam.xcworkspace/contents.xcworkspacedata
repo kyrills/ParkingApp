@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/kyrillvanseventer/ParkingAmsterdamApp/ParkingAmsterdam/Assets.xcassets">
+   </FileRef>
+   <FileRef
       location = "group:ParkingAmsterdam.xcodeproj">
    </FileRef>
    <FileRef
