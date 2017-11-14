@@ -48,7 +48,7 @@ class ParkingAmsterdamService {
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                             object: self,
-                                            userInfo: ["data" : parkingObj])
+                                            userInfo: [dictKey.parkingAmsterdamData : parkingObj])
             
         }
     }

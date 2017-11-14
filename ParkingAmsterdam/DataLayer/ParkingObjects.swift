@@ -38,6 +38,17 @@ class ParkingObjects: Object {
         }
     }
 
+    static func retrieveAllData() -> [ParkingObjects] {
+        var allParkingData: [ParkingObjects] = []
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self)
+        for object in parkingData{
+            allParkingData += [object]
+        }
+        return allParkingData
+    }
+    
+    
     func retrieveData() -> ParkingObjects{
         // Get the default Realm
         let realm = try! Realm()

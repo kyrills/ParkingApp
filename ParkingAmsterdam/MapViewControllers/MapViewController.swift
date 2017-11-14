@@ -121,12 +121,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let gdvc = segue.destination as? GarageDetailViewController {
             gdvc.selectedGarage = self.selectedGarage
         }
     }
+    
     
     func detailsRequested(for parkingGarages: ParkingObjects) {
         self.selectedGarage = parkingGarages

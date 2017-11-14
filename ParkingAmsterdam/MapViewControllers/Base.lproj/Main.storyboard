@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Th5-nv-3F4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QGg-pQ-7Af">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="JYu-1h-xxh">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-nB-ND3">
                                 <rect key="frame" x="330" y="105" width="45" height="45"/>
@@ -55,12 +55,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="98" y="116"/>
+            <point key="canvasLocation" x="436" y="115.59220389805098"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="DrW-ny-j4j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Th5-nv-3F4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" selectedImage="paper-map-7" id="Tsa-j5-2O8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c6M-ZV-Wtj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -73,7 +74,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZy-6S-abp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-655" y="117"/>
+            <point key="canvasLocation" x="-455" y="116"/>
         </scene>
         <!--detailView-->
         <scene sceneID="C5e-le-XxN">
@@ -81,7 +82,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="detailView" storyboardName="detailView" referencedIdentifier="detailView" id="Tp1-ft-qya" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3f-lL-3YV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="890" y="116"/>
+            <point key="canvasLocation" x="1228.8" y="115.14242878560721"/>
         </scene>
         <!--LocationSearchTable-->
         <scene sceneID="NNu-MF-3Zh">
@@ -91,8 +92,39 @@
             </objects>
             <point key="canvasLocation" x="97" y="829"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Wg2-UO-7SV">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QGg-pQ-7Af" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xxg-Se-rYZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Th5-nv-3F4" kind="relationship" relationship="viewControllers" id="7jR-eB-Uct"/>
+                        <segue destination="02X-tb-XX5" kind="relationship" relationship="viewControllers" id="BcI-9f-3ig"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vZf-2y-wCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1290" y="116"/>
+        </scene>
+        <!--ParkingList-->
+        <scene sceneID="Cx8-O4-6XJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="parkingList" storyboardName="ParkingList" referencedIdentifier="ParkingList" id="02X-tb-XX5" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List parking garages" image="list-fat-7" selectedImage="listIcon" id="cik-dy-5Vd"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bDw-EH-vad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1290" y="595"/>
+        </scene>
     </scenes>
     <resources>
         <image name="blue_button_circle" width="186" height="186"/>
+        <image name="list-fat-7" width="30" height="30"/>
+        <image name="listIcon" width="512" height="512"/>
+        <image name="paper-map-7" width="30" height="30"/>
     </resources>
 </document>
