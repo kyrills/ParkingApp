@@ -10,3 +10,10 @@ pod 'Alamofire', '~> 4.5'
 pod 'RealmSwift', '~> 3.0'
 
 end
+
+target 'ParkingAmsterdamTests' do
+    use_frameworks!
+    pod 'Alamofire', '~> 4.5'
+    pod 'RealmSwift', '~> 3.0'
+
+end
