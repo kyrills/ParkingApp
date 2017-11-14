@@ -7,4 +7,6 @@ target 'ParkingAmsterdam' do
 
   # Pods for ParkingAmsterdam
 pod 'Alamofire', '~> 4.5'
+pod 'RealmSwift', '~> 3.0'
+
 end

@@ -1,28 +1,72 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Foundation
 
-class MapViewController: UIViewController {
+protocol HandleMapSearch: class {
+    func dropPinZoomIn(_ placemark:MKPlacemark)
+}
 
+class MapViewController: UIViewController, GarageDetailMapViewDelegate {
+    
     @IBOutlet weak var parkingMapView: MKMapView!
     
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
-    var parkingGarages: [ParkingObjects] = []
+    
     var destinationCoordinate = CLLocationCoordinate2D()
     var sourceCoordinate = CLLocationCoordinate2D()
     
-   
+    
+    
+    var searchAnnotationArray: [MKPointAnnotation] = []
+    
+    let request = MKDirectionsRequest()
+    
+    var parkingGarages: [ParkingObjects] = []
     
     var selectedGarage : ParkingObjects?
-    let request = MKDirectionsRequest()
-
+    
+    var resultSearchController: UISearchController!
+    
+    var droppedPin: MKPinAnnotationView?
+    var selectedPin: MKPlacemark?
+    
+    lazy var geocoder = CLGeocoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         ParkingAmsterdamService.sharedInstance.getParkingData()
+        
+        //  ToDo Fix timer stuff
+        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
+        
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
+        
+        let locationSearchTable = storyboard!.instantiateViewController(withIdentifier: "LocationSearchTable") as! LocationSearchTable
+        resultSearchController = UISearchController(searchResultsController: locationSearchTable)
+        resultSearchController.searchResultsUpdater = locationSearchTable
+        resultSearchController.hidesNavigationBarDuringPresentation = false
+        resultSearchController.dimsBackgroundDuringPresentation = true
+        resultSearchController.searchBar.barTintColor = UIColor.darkGray
+        
+        let searchBar = resultSearchController!.searchBar
+        searchBar.sizeToFit()
+        searchBar.placeholder = "Search for places"
+        
+        UINavigationBar.appearance().barTintColor = .lightGray
+        UINavigationBar.appearance().tintColor = .lightGray
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
+        UINavigationBar.appearance().isTranslucent = false
+        
+        navigationItem.titleView = resultSearchController?.searchBar
+        navigationItem.titleView?.backgroundColor = UIColor.darkGray
+        definesPresentationContext = true
+        
+        locationSearchTable.mapView = parkingMapView
+        locationSearchTable.handleMapSearchDelegate = self
         
         parkingMapView.showsUserLocation = true
         parkingMapView.delegate = self
@@ -32,12 +76,15 @@ class MapViewController: UIViewController {
                                                name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                                object: nil)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    @objc func getParkingData() {
+        ParkingAmsterdamService.sharedInstance.getParkingData()
+    }
+    
     func setZoomInitialLocation(location: CLLocationCoordinate2D){
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 0.2,
                                                                   regionRadius * 0.2)
@@ -45,26 +92,30 @@ class MapViewController: UIViewController {
     }
     
     @objc func setInitialData(notification: NSNotification){
+        //this ensures map is only loaded once, after that the data must be requested from REALM
+        guard self.parkingMapView.annotations.count == 1 else {
+            return
+        }
         
         var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
         parkingGarages = parkingDict["data"]!
+        
+        
         var annotationObject: [ParkingAnnotations] = []
         
         for garage in parkingGarages{
-            let coordinate = CLLocationCoordinate2D.init(latitude: garage.latitude, longitude: garage.longitude)
+            let coordinate = CLLocationCoordinate2D.init(latitude: Double(garage.latitude!)!,
+                                                         longitude: Double(garage.longitude!)!)
             let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
             
-            annotation.title = garage.Name.removeFirstCharacters()
             annotationObject.append(annotation)
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
-        setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
     }
@@ -73,15 +124,33 @@ class MapViewController: UIViewController {
         parkingMapView.setCenter((parkingMapView.userLocation.location?.coordinate)!, animated: true)
         setZoomInitialLocation(location: parkingMapView.userLocation.coordinate)
     }
-
-    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
-        // Hier schrijf je wat moet geproberen als er op "i" geklikt wordt
-        
-        if let mapAannotation = view.annotation as? ParkingAnnotations {
-            destinationCoordinate.latitude = mapAannotation.coordinate.latitude
-            destinationCoordinate.longitude = mapAannotation.coordinate.longitude
-            coordinatesToMapViewRepresentation()
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let gdvc = segue.destination as? GarageDetailViewController {
+            gdvc.selectedGarage = self.selectedGarage
         }
     }
+    
+    func detailsRequested(for parkingGarages: ParkingObjects) {
+        self.selectedGarage = parkingGarages
+        self.performSegue(withIdentifier: "goToDetailView", sender: nil)
+    }
+    
+    func routeToRequested(for parkingGarages: ParkingObjects) {
+        
+        if let lat = Double(parkingGarages.latitude!),
+            let lng = Double(parkingGarages.longitude!) {
+            destinationCoordinate.latitude = lat
+            destinationCoordinate.longitude = lng
+            
+            //move somewhere else when available
+            destinationCoordinate.convertToAddress(onCompletion: { (address) in
+                print(address)
+            })
+        }
+        
+        coordinatesToMapViewRepresentation()
+        parkingMapView.removeOverlays(parkingMapView.overlays)
+    }
+    
 }
-

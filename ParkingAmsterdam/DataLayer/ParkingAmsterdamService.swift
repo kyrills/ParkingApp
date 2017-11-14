@@ -1,6 +1,6 @@
 import Foundation
 import Alamofire
-
+import RealmSwift
 class ParkingAmsterdamService {
     
     public static let sharedInstance = ParkingAmsterdamService()  // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
@@ -8,8 +8,7 @@ class ParkingAmsterdamService {
     private init() { // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
     }
     
-    
-    func getParkingData()  {
+    @objc func getParkingData()  {
         
         let ParkingData =  "\(urls.baseURL)"
         Alamofire.request( ParkingData ,
@@ -26,7 +25,6 @@ class ParkingAmsterdamService {
                             case .failure(let error):
                                 print(error)
                             }
-                            
         }
     }
     
@@ -35,16 +33,17 @@ class ParkingAmsterdamService {
         if let features = result["features"] as? NSArray {
             for feature in features {
                 if let key = feature as? NSDictionary{
-                        let properties = getDictionary(with: "properties", from: key) ?? [:]
-                        let geometry = getDictionary(with: "geometry", from: key) ?? [:]
-                        let coords = parseCoord(geometry: geometry)
-                        if let parkAppObject = parseProperties(properties: properties,
-                                                               id: key["Id"] as? String ?? "",
-                                                               latitude: coords.lat,
-                                                               longitude: coords.lng) {
+                    let properties = getDictionary(with: "properties", from: key) ?? [:]
+                    let geometry = getDictionary(with: "geometry", from: key) ?? [:]
+                    let coords = parseCoord(geometry: geometry)
+                    if let parkAppObject = parseProperties(properties: properties,
+                                                           id: key["Id"] as? String ?? "",
+                                                           latitude: coords.lat,
+                                                           longitude: coords.lng) {
                         parkingObj.append(parkAppObject)
+                        
+                        parkAppObject.saveData()
                     }
-                    
                 }
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationID.setInitialData),
@@ -67,18 +66,14 @@ class ParkingAmsterdamService {
             let pubDate = properties["PubDate"] as? String,
             let state = properties["State"] as? String {
             
-            let freeSpaceShortString = properties["FreeSpaceShort"] as? String ?? ""
-            let freeSpaceShort = Int(freeSpaceShortString) ?? 0
-            let freeSpaceLongString = properties["FreeSpaceLong"] as? String ?? ""
-            let freeSpaceLong = Int(freeSpaceLongString) ?? 0
-            let shortCapacityString = properties["ShortCapacity"] as? String ?? ""
-            let shortCapacity = Int(shortCapacityString) ?? 0
-            let longCapacityString = properties["LongCapacity"] as? String ?? ""
-            let longCapacity = Int(longCapacityString) ?? 0
+            let freeSpaceShort = properties["FreeSpaceShort"] as? String ?? ""
+            let freeSpaceLong = properties["FreeSpaceLong"] as? String ?? ""
+            let shortCapacity = properties["ShortCapacity"] as? String ?? ""
+            let longCapacity = properties["LongCapacity"] as? String ?? ""
             
             let parkingAppObject = ParkingObjects.init(id: id,
-                                                       latitude: latitude,
-                                                       longitude: longitude,
+                                                       latitude: "\(latitude)",
+                                                       longitude: "\(longitude)",
                                                        Name: name,
                                                        PubDate: pubDate,
                                                        State: state,
@@ -88,21 +83,16 @@ class ParkingAmsterdamService {
                                                        LongCapacity: longCapacity)
             return parkingAppObject
         }
-        
         return nil
     }
-  
     
     func parseCoord(geometry: NSDictionary) -> (lat: Double, lng: Double){
         if let coordinates: NSArray = geometry["coordinates"] as? NSArray,
             let longitude = coordinates[0] as? Double,
             let latitude = coordinates[1] as? Double{
-            return(lat: latitude, lng: longitude) //reutnring a tuple, to combine values
+            return(lat: latitude, lng: longitude)
         }
-        
         return (0,0)
     }
-    
-    
 }
 
