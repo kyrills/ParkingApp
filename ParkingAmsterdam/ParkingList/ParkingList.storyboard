@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vbV-Fd-0bL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--list-->
+        <!--Parking List-->
         <scene sceneID="tnx-Hx-Gpc">
             <objects>
                 <tableViewController storyboardIdentifier="ParkingList" id="vbV-Fd-0bL" customClass="ParkingList" customModule="ParkingAmsterdam" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,15 +31,12 @@
                             <outlet property="delegate" destination="vbV-Fd-0bL" id="jrl-nA-rAP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="list" image="list-fat-7" id="5VV-G2-JpU"/>
+                    <navigationItem key="navigationItem" id="s0l-fb-vU7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xmp-bD-wZ7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-926" y="-446"/>
+            <point key="canvasLocation" x="-588" y="-446.62668665667172"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="list-fat-7" width="30" height="30"/>
-    </resources>
 </document>

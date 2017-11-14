@@ -92,12 +92,13 @@
             </objects>
             <point key="canvasLocation" x="97" y="829"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Wg2-UO-7SV">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QGg-pQ-7Af" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="QGg-pQ-7Af" customClass="TabBarViewController" customModule="ParkingAmsterdam" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xxg-Se-rYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

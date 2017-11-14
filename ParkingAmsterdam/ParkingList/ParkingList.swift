@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
 class ParkingList: UITableViewController {
 
     var parkingGarages: [ParkingObjects] = []
     var selectedGarage: ParkingObjects!
-    
+    var addressLocation = CLLocationCoordinate2D()
+    var sourceCoordinate = CLLocationCoordinate2D()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,8 +24,8 @@ class ParkingList: UITableViewController {
         let parkingListNib = UINib(nibName: "parkListCell", bundle: nil)
         self.tableView.register(parkingListNib, forCellReuseIdentifier: cellID.parkListCell)
     }
-    
 
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -45,14 +48,26 @@ class ParkingList: UITableViewController {
         
         let storeObject = parkingGarages[indexPath.row]
         
+        if let lat = Double(storeObject.latitude!),
+            let lng = Double(storeObject.longitude!) {
+            addressLocation.latitude = lat
+            addressLocation.longitude = lng
+            addressLocation.convertToAddress(onCompletion: { (address) in
+                cell.addressLabel.text = address
+            })
+            cell.distanceKMLabel.text = "\(sourceCoordinate.calculateDistance(destination: CLLocationCoordinate2D.init(latitude: lat,longitude: lng))) km"
+
+        }
+        
         cell.parkingGarageNameLabel.text = storeObject.Name
-//        cell.addressLabel.text =
-//        cell.distanceKMLabel.text =
-        cell.freeSpacesLabel.text = storeObject.FreeSpaceShort
+      
+        cell.freeSpacesLabel.text = "\(storeObject.FreeSpaceShort ?? "0") Free"
         
         
         return cell
     }
+
+    
 
     /*
     // Override to support conditional editing of the table view.

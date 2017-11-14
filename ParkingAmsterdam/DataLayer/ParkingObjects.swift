@@ -14,6 +14,7 @@ class ParkingObjects: Object {
     @objc dynamic var ShortCapacity : String?
     @objc dynamic var LongCapacity : String?
 //    @objc dynamic var favourite: Bool = false
+//    @objc dynamic var distanceInMeters: String? = ""
     
     convenience required init(id: String, latitude: String, longitude: String ,Name : String, PubDate: String,State: String, FreeSpaceShort: String,FreeSpaceLong: String,ShortCapacity : String,LongCapacity : String) {
         self.init()
@@ -29,6 +30,17 @@ class ParkingObjects: Object {
         self.LongCapacity = LongCapacity
     }
     
+//    func addDistance(distanceInMeters: String) {
+//        // Get the default Realm
+//        let realm = try! Realm()
+//        let parkingData = realm.objects(ParkingObjects.self)
+//        // Persist your data easily
+//        try! realm.write {
+////            var addData = parkingData.add(distanceInMeters)
+//            realm.
+//        }
+//    }
+ 
     
     func saveData() {
         // Get the default Realm

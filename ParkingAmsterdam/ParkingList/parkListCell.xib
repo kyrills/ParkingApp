@@ -19,9 +19,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ParkingGarageName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j4-Pi-ySL">
-                        <rect key="frame" x="9" y="6" width="250" height="21"/>
+                        <rect key="frame" x="9" y="6" width="201" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="250" id="Gy8-Cx-9LV"/>
+                            <constraint firstAttribute="width" constant="201" id="Gy8-Cx-9LV"/>
                             <constraint firstAttribute="height" constant="21" id="LWP-rx-6z2"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -29,9 +29,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAa-Zz-GkA">
-                        <rect key="frame" x="278" y="5" width="28" height="15"/>
+                        <rect key="frame" x="247" y="5" width="59" height="15"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="28" id="FaQ-PL-Omc"/>
+                            <constraint firstAttribute="width" constant="59" id="FaQ-PL-Omc"/>
                             <constraint firstAttribute="height" constant="15" id="Kut-Rv-xnn"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -63,7 +63,7 @@
                     <constraint firstItem="JLS-e9-jlC" firstAttribute="top" secondItem="DAa-Zz-GkA" secondAttribute="bottom" constant="4" id="Ps2-Ru-FFH"/>
                     <constraint firstAttribute="trailing" secondItem="DAa-Zz-GkA" secondAttribute="trailing" constant="14" id="TBH-dE-kFR"/>
                     <constraint firstItem="JLS-e9-jlC" firstAttribute="leading" secondItem="n0w-7p-mgV" secondAttribute="trailing" constant="8" id="eV6-5I-bz3"/>
-                    <constraint firstItem="DAa-Zz-GkA" firstAttribute="leading" secondItem="0j4-Pi-ySL" secondAttribute="trailing" constant="19" id="i3a-1d-2Ky"/>
+                    <constraint firstItem="DAa-Zz-GkA" firstAttribute="leading" secondItem="0j4-Pi-ySL" secondAttribute="trailing" constant="37" id="i3a-1d-2Ky"/>
                     <constraint firstItem="n0w-7p-mgV" firstAttribute="top" secondItem="0j4-Pi-ySL" secondAttribute="bottom" constant="2.5" id="ppH-IL-1zH"/>
                     <constraint firstAttribute="bottom" secondItem="n0w-7p-mgV" secondAttribute="bottom" constant="6.5" id="t6P-xs-wbh"/>
                     <constraint firstItem="DAa-Zz-GkA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vQ6-da-TBx"/>

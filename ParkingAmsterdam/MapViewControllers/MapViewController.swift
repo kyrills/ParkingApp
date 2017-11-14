@@ -3,6 +3,7 @@ import MapKit
 import CoreLocation
 import Foundation
 
+
 protocol HandleMapSearch: class {
     func dropPinZoomIn(_ placemark:MKPlacemark)
 }
@@ -14,8 +15,8 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     var locationmanager = CLLocationManager()
     let regionRadius: CLLocationDistance = 12000
     
-    var destinationCoordinate = CLLocationCoordinate2D()
-    var sourceCoordinate = CLLocationCoordinate2D()
+     var destinationCoordinate = CLLocationCoordinate2D()
+     var sourceCoordinate = CLLocationCoordinate2D()
     
     
     
@@ -130,8 +131,6 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
             gdvc.selectedGarage = self.selectedGarage
         }
     }
-    
-    
     func detailsRequested(for parkingGarages: ParkingObjects) {
         self.selectedGarage = parkingGarages
         self.performSegue(withIdentifier: "goToDetailView", sender: nil)
