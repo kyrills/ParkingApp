@@ -9,7 +9,7 @@ class DetailAnnotationView: MKAnnotationView {
     weak var delegate: GarageDetailMapViewDelegate?
     weak var customCalloutView: DetailParkingView?
     var parkingGarage: ParkingObjects!
-    
+        
     override var annotation: MKAnnotation? {
         willSet { customCalloutView?.removeFromSuperview() }
     }

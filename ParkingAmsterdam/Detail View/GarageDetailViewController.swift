@@ -2,6 +2,7 @@ import Foundation
 import UIKit
 
 class GarageDetailViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var label1: UILabel!
     @IBOutlet weak var label2: UILabel!
@@ -18,32 +19,11 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     var parkingGarages: [ParkingObjects]!
     var selectedGarage: ParkingObjects!
     
+    @IBOutlet weak var favouriteButton: UIButton!
+    var rightButtonItem: UIBarButtonItem?
+    
     let blur = UIVisualEffectView(effect: UIBlurEffect(style:
         UIBlurEffectStyle.light))
-    
-    
-    @IBAction func cameraButton(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .photoLibrary
-        }
-        
-        imagePicker.delegate = self
-        
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-        carImage.image = image
-        dismiss(animated: true, completion: nil)
-        
-
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -52,6 +32,9 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setFavourite()
+
+
         UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -81,5 +64,42 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
             label4.text = "\(FreeSpaceLong)"
         }
         carImage.image = #imageLiteral(resourceName: "carplacehlder1")
+        
     }
+    
+    @IBAction func cameraButton(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            imagePicker.sourceType = .camera
+        } else {
+            imagePicker.sourceType = .photoLibrary
+        }
+        
+        imagePicker.delegate = self
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        carImage.image = image
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func toggleFavourite(_ sender: UIButton) {
+        if let toggeldFavourite = selectedGarage.favouriteParkingSpot() {
+            favouriteButton.setImage(toggeldFavourite.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
+        }
+
+    }
+    
+    func setFavourite() {
+
+        favouriteButton.setImage(self.selectedGarage.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
+        let rightButtonItem = UIBarButtonItem.init(customView: favouriteButton)
+        self.navigationItem.rightBarButtonItem = rightButtonItem
+    }
+    
 }

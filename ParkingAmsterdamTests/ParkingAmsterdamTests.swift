@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import ParkingAmsterdam
-@testable import RealmSwift
+//@testable import RealmSwift
 
 class ParkingAmsterdamTests: XCTestCase {
     var parking: ParkingObjects?
@@ -26,11 +26,14 @@ class ParkingAmsterdamTests: XCTestCase {
     
     func testIsIntiallyNotFavourited() {
         let retrieved = parking!.retrieveData()
+    
         XCTAssert(retrieved.favourite == false, "passed is false")
     }
     
     func testIsIntiallyFavouriteStateChangedToTrue() {
+         let retrieved = parking!.retrieveData()
         parking!.favouriteParkingSpot()
+        XCTAssert(retrieved.favourite == true, "passed is true")
     }
     
 }

@@ -18,8 +18,6 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
      var destinationCoordinate = CLLocationCoordinate2D()
      var sourceCoordinate = CLLocationCoordinate2D()
     
-    
-    
     var searchAnnotationArray: [MKPointAnnotation] = []
     
     let request = MKDirectionsRequest()
@@ -39,7 +37,6 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         super.viewDidLoad()
         
         ParkingAmsterdamService.sharedInstance.getParkingData()
-        
         //  ToDo Fix timer stuff
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
         
@@ -76,6 +73,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                selector: #selector(MapViewController.setInitialData(notification:)),
                                                name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                                object: nil)
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +111,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
@@ -143,14 +141,12 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
             destinationCoordinate.latitude = lat
             destinationCoordinate.longitude = lng
             
-            //move somewhere else when available
-            destinationCoordinate.convertToAddress(onCompletion: { (address) in
-                print(address)
-            })
         }
         
         coordinatesToMapViewRepresentation()
         parkingMapView.removeOverlays(parkingMapView.overlays)
     }
+    
+    
     
 }

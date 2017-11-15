@@ -1,11 +1,3 @@
-//
-//  PlacemarkExtension.swift
-//  ParkingAmsterdam
-//
-//  Created by Kyrill van Seventer on 14/11/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import Foundation
 import MapKit
 extension MKPlacemark {

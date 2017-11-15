@@ -14,6 +14,7 @@ class DetailParkingView: UIView {
     @IBOutlet weak var TitleLabel: UILabel!
     @IBOutlet weak var parkingSpaceLabel: UILabel!
     @IBOutlet weak var backgroundContentButton: UIButton!
+    @IBOutlet weak var favouriteButton: UIButton!
     
     var parkingGarages: ParkingObjects!
     weak var delegate: GarageDetailMapViewDelegate?
@@ -29,6 +30,8 @@ class DetailParkingView: UIView {
     
     func configureWithGarage(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
+        favouriteButton.setImage(self.parkingGarages.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
+
         
         TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
         if let freeSpacesShort = parkingGarages.FreeSpaceShort {
@@ -44,6 +47,11 @@ class DetailParkingView: UIView {
         delegate?.routeToRequested(for: parkingGarages)
     }
     
+    @IBAction func toggleFavourite(_ sender: UIButton) {
+        if let toggeldFavourite = parkingGarages.favouriteParkingSpot() {
+            favouriteButton.setImage(toggeldFavourite.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
+        }
+    
     func configureWithParkingGarages(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
         
@@ -58,7 +66,7 @@ class DetailParkingView: UIView {
         TitleLabel.textColor = UIColor.black
     }
     
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
         if let result = goToDetailButton.hitTest(convert(point, to: goToDetailButton), with: event) {
             return result
@@ -69,5 +77,6 @@ class DetailParkingView: UIView {
         }
         return backgroundContentButton.hitTest(convert(point, to: backgroundContentButton), with: event)
     }
-    
+
+}
 }

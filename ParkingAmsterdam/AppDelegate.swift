@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  ParkingAmsterdam
-//
-//  Created by Kyrill van Seventer on 06/11/2017.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
