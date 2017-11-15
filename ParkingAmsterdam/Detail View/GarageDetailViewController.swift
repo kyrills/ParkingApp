@@ -68,10 +68,18 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         label2.layer.cornerRadius = 10
         label3.layer.cornerRadius = 10
         label4.layer.cornerRadius = 10
-        label1.text = "short time parking space capacity - \(selectedGarage.ShortCapacity)"
-        label2.text = "short time parking spaces left - \(selectedGarage.FreeSpaceShort)"
-        label3.text = "long time parking space capacity - \(selectedGarage.LongCapacity)"
-        label4.text = "long time parking spaces left - \(selectedGarage.FreeSpaceLong)"
+        if let shortCap = selectedGarage.ShortCapacity {
+            label1.text = "\(shortCap)"
+        }
+        if let FreeSpaceShort = selectedGarage.FreeSpaceShort {
+            label2.text = "\(FreeSpaceShort)"
+        }
+        if let LongCapacity = selectedGarage.LongCapacity {
+            label3.text = "\(LongCapacity)"
+        }
+        if let FreeSpaceLong = selectedGarage.FreeSpaceLong {
+            label4.text = "\(FreeSpaceLong)"
+        }
         carImage.image = #imageLiteral(resourceName: "carplacehlder1")
     }
 }
