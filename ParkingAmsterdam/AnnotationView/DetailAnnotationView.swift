@@ -41,7 +41,7 @@ class DetailAnnotationView: MKAnnotationView {
                 // set custom callout view
                 self.addSubview(newCustomCalloutView)
                 self.customCalloutView = newCustomCalloutView
-                
+
                 // animate presentation
                 if animated {
                     self.customCalloutView!.alpha = 0.0
@@ -69,8 +69,10 @@ class DetailAnnotationView: MKAnnotationView {
             garageDetailMapView.delegate = self.delegate
             if let detailAnnotation = annotation as? ParkingAnnotations {
                 
-                let loadedGarageObjectFromRealm = detailAnnotation.parkingGarage.retrieveData()
-                garageDetailMapView.configureWithGarage(parkingGarages:loadedGarageObjectFromRealm)
+                if let loadedGarageObjectFromRealm = detailAnnotation.parkingGarage.retrieveData() {
+                    ParkingRotterdamService.sharedInstance.getDynamicData(dynamicDataUrl: loadedGarageObjectFromRealm.dynamicDataUrl, garage: loadedGarageObjectFromRealm)
+                    garageDetailMapView.configureWithGarage(parkingGarages:loadedGarageObjectFromRealm)
+                }
                 
                 return garageDetailMapView
             }

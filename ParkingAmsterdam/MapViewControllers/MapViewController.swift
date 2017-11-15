@@ -23,13 +23,10 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     let request = MKDirectionsRequest()
     
-    var parkingGarages: [ParkingObjects] = []
-    
-    var parkingGarages2: [ParkingRotterdamobjects] = []
+    var parkingGaragesAdam: [ParkingObjects] = []
+    var parkingGaragesRdam: [ParkingObjects] = []
     
     var selectedGarage: ParkingObjects?
-  
-    var selectedGarage2: ParkingRotterdamobjects?
     
     var resultSearchController: UISearchController!
     
@@ -42,6 +39,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         super.viewDidLoad()
         
         ParkingAmsterdamService.sharedInstance.getParkingData()
+        ParkingRotterdamService.sharedInstance.getData()
         
         //  ToDo Fix timer stuff
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
@@ -80,10 +78,15 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                                object: nil)
         
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(MapViewController.setSecondData(notification:)),
-//                                               name: NSNotification.Name(rawValue: NotificationID.setSecondData),
-//                                               object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(MapViewController.setSecondData(notification:)),
+                                               name: NSNotification.Name(rawValue: NotificationID.setSecondData),
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(MapViewController.setDynamicData(notification:)),
+                                               name: NSNotification.Name(rawValue: NotificationID.setDynamicData),
+                                               object: nil)
         
     }
     
@@ -93,6 +96,9 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     @objc func getParkingData() {
         ParkingAmsterdamService.sharedInstance.getParkingData()
+//        for garage in parkingGaragesRdam{
+//            ParkingRotterdamService.sharedInstance.getDynamicData(dynamicUrl: garage.dynamicDataUrl, garage: garage)
+//        }
     }
     
     func setZoomInitialLocation(location: CLLocationCoordinate2D){
@@ -101,27 +107,46 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         parkingMapView.setRegion(coordinateRegion, animated: true)
     }
 
-    
-    // plz explain the notification func a bit again, cant find it on the internet
-    @objc func setSecondData(notification: NSNotification) {
-        var secondData = notification.userInfo as! Dictionary<String, ParkingRotterdamobjects>
-            parkingGarages2.append(secondData)
+// plz explain the notification func a bit again, cant find it on the internet
+@objc func setSecondData(notification: NSNotification) {
+    var secondData = notification.userInfo as! Dictionary<String, [ParkingObjects]>
+    if let parkingRotterdam = secondData["data2"]{
+        parkingGaragesRdam += parkingRotterdam
     }
+    var annotationObject: [ParkingAnnotations] = []
+    
+    for garage in parkingGaragesRdam{
+        let coordinate = CLLocationCoordinate2D.init(latitude: Double(garage.latitude!)!,
+                                                     longitude: Double(garage.longitude!)!)
+        let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
+        
+        annotationObject.append(annotation)
+    }
+    self.parkingMapView.showAnnotations(annotationObject, animated: true)
+}
+
+
+@objc func setDynamicData(notification: NSNotification) {
+    var secondData = notification.userInfo as! Dictionary<String, [ParkingObjects]>
+    if let parkingRotterdam = secondData["data3"]{
+        parkingGaragesRdam += parkingRotterdam
+    }
+}
     
     
     @objc func setInitialData(notification: NSNotification){
         //this ensures map is only loaded once, after that the data must be requested from REALM
-        guard self.parkingMapView.annotations.count == 1 else {
+        guard self.parkingGaragesAdam.count == 0 else {
             return
         }
         
         var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
-        parkingGarages = parkingDict["data"]!
+        parkingGaragesAdam = parkingDict["data"]!
         
         
         var annotationObject: [ParkingAnnotations] = []
         
-        for garage in parkingGarages{
+        for garage in parkingGaragesAdam{
             let coordinate = CLLocationCoordinate2D.init(latitude: Double(garage.latitude!)!,
                                                          longitude: Double(garage.longitude!)!)
             let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)

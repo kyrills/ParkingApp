@@ -3,6 +3,7 @@ import Foundation
 struct NotificationID {
     static let setInitialData = "setInitialData"
     static let setSecondData = "setSecondData"
+    static let setDynamicData = "setDynamicData"
 }
 struct urls {
     static let baseURL = "http://opd.it-t.nl/data/amsterdam/ParkingLocation.json"
