@@ -87,17 +87,12 @@ class ParkingObjects: Object {
         }
     }
     
-    func sortByDistance() -> [ParkingObjects]  {
-        // Get the default Realm
-        let realm = try! Realm()
-        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
-        
-    }
-    
-    func favouriteParkingSpot() -> Bool{
-        
-        return false
-    }
+//    func sortByDistance() -> [ParkingObjects]  {
+//        // Get the default Realm
+//        let realm = try! Realm()
+//        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+//        return nil
+//    }
     
     static func sortedByFavourite() -> [ParkingObjects]{
         var allSortedFavourites: [ParkingObjects] = []

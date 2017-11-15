@@ -32,6 +32,7 @@ class ParkingList: UITableViewController {
             getDistancesFromCurrentLocation(storeObject: garage)
         }
     }
+    
     func getDistancesFromCurrentLocation(storeObject: ParkingObjects) {
         if let lat = Double(storeObject.latitude!),
             let lng = Double(storeObject.longitude!) {
@@ -91,6 +92,7 @@ class ParkingList: UITableViewController {
             
         } else {
             // Kyrill's code (favourite)
+            selectedGarage.favouriteParkingSpot()
         }
     }
     

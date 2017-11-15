@@ -141,9 +141,6 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
             destinationCoordinate.latitude = lat
             destinationCoordinate.longitude = lng
             
-            print(parkingGarages)
-//            ParkingObjects.favouriteParkingSpot(parkingGarages)
-            parkingGarages.favouriteParkingSpot()
         }
         
         coordinatesToMapViewRepresentation()

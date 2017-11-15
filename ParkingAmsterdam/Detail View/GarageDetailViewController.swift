@@ -89,7 +89,8 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func favouriteButton(_ sender: Any) {
         
-        self.selectedGarage.favouriteParkingSpot()
+        selectedGarage.favouriteParkingSpot()
+        
         checkForFavourite(selectedGarage: selectedGarage)
     }
     

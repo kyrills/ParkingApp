@@ -19,6 +19,8 @@ extension MapViewController: CLLocationManagerDelegate {
             if let tabbar = self.tabBarController as? TabBarViewController {
                 tabbar.sourceCoordinate = sourceCoordinate
             }
+        }
+
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
