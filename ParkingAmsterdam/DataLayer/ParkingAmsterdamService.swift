@@ -1,6 +1,7 @@
 import Foundation
 import Alamofire
 import RealmSwift
+import MapKit
 class ParkingAmsterdamService {
     
     public static let sharedInstance = ParkingAmsterdamService()  // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
@@ -18,7 +19,6 @@ class ParkingAmsterdamService {
                             
                             switch response.result {
                             case .success:
-//                                print("Validation Successful")
                                 if let result = response.result.value as? NSDictionary {
                                     self.parseData(result: result)
                                 }
@@ -41,14 +41,16 @@ class ParkingAmsterdamService {
                                                            latitude: coords.lat,
                                                            longitude: coords.lng) {
                         parkingObj.append(parkAppObject)
-                        
                         parkAppObject.saveData()
+
+                        parkAppObject.saveAddressData()
                     }
                 }
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                             object: self,
-                                            userInfo: ["data" : parkingObj])
+                                            userInfo: [dictKey.parkingAmsterdamData : parkingObj])
+            
         }
     }
     

@@ -16,11 +16,14 @@ extension MapViewController: CLLocationManagerDelegate {
         if let coord = locations.first {
             sourceCoordinate.latitude = coord.coordinate.latitude
             sourceCoordinate.longitude = coord.coordinate.longitude
+            if let tabbar = self.tabBarController as? TabBarViewController {
+                tabbar.sourceCoordinate = sourceCoordinate
+            }
+        }
 
     }
-}
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error")
     }
-
 }

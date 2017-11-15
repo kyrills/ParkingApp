@@ -1,6 +1,7 @@
 import UIKit
 
 class detailTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var TableViewLabel: UILabel!
 
     var garage: String!
@@ -13,6 +14,5 @@ class detailTableViewCell: UITableViewCell {
         self.garage = garage
         self.TableViewLabel?.text = garage
     }
-
 }
 

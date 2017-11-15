@@ -12,6 +12,10 @@ struct urls {
 
 struct cellID {
     static let detailTableViewCell = "detailTableViewCell"
+    static let parkListCell = "parkListCell"
+}
+struct dictKey {
+    static let parkingAmsterdamData = "data"
 }
 
 struct tableCellID {

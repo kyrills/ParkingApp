@@ -10,7 +10,7 @@ class DetailAnnotationView: MKAnnotationView {
     weak var delegate: GarageDetailMapViewDelegate?
     weak var customCalloutView: DetailParkingView?
     var parkingGarage: ParkingObjects!
-    
+        
     override var annotation: MKAnnotation? {
         willSet { customCalloutView?.removeFromSuperview() }
     }
@@ -18,13 +18,17 @@ class DetailAnnotationView: MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         self.canShowCallout = false // 1
+        // put this in annotationView
         self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.canShowCallout = false // 1
+        // put this in annotationView
         self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
+
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -58,7 +62,10 @@ class DetailAnnotationView: MKAnnotationView {
                     }, completion: { (success) in
                         self.customCalloutView!.removeFromSuperview()
                     })
-                } else { self.customCalloutView!.removeFromSuperview() } // just remove it.
+                } else {
+                    self.customCalloutView!.removeFromSuperview()
+                    
+                } // just remove it.
             }
         }
     }
@@ -87,11 +94,15 @@ class DetailAnnotationView: MKAnnotationView {
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         // if super passed hit test, return the result
-        if let parentHitView = super.hitTest(point, with: event) { return parentHitView }
-        else { // test in our custom callout.
+        if let parentHitView = super.hitTest(point, with: event) {
+            return parentHitView
+        } else { // test in our custom callout.
             if customCalloutView != nil {
                 return customCalloutView!.hitTest(convert(point, to: customCalloutView!), with: event)
-            } else { return nil }
+            } else {
+                return nil
+                
+            }
         }
     }
 }
