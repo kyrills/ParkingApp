@@ -16,7 +16,9 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     var destinationCoordinate = CLLocationCoordinate2D()
     var sourceCoordinate = CLLocationCoordinate2D()
-
+    
+    
+    
     var searchAnnotationArray: [MKPointAnnotation] = []
     
     let request = MKDirectionsRequest()
@@ -33,7 +35,8 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     var droppedPin: MKPinAnnotationView?
     var selectedPin: MKPlacemark?
-
+    
+    lazy var geocoder = CLGeocoder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +117,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         
         var parkingDict = notification.userInfo as! Dictionary<String, [ParkingObjects]>
         parkingGarages = parkingDict["data"]!
-
+        
         
         var annotationObject: [ParkingAnnotations] = []
         
@@ -127,7 +130,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         }
         self.parkingMapView.showAnnotations(annotationObject, animated: true)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
@@ -157,11 +160,15 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
             let lng = Double(parkingGarages.longitude!) {
             destinationCoordinate.latitude = lat
             destinationCoordinate.longitude = lng
+            
+            //move somewhere else when available
+            destinationCoordinate.convertToAddress(onCompletion: { (address) in
+                print(address)
+            })
         }
         
         coordinatesToMapViewRepresentation()
         parkingMapView.removeOverlays(parkingMapView.overlays)
     }
+    
 }
-
-

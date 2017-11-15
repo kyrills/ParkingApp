@@ -13,7 +13,7 @@ class ParkingObjects: Object {
     @objc dynamic var FreeSpaceLong: String?
     @objc dynamic var ShortCapacity : String?
     @objc dynamic var LongCapacity : String?
-
+    @objc dynamic var favourite: Bool = false
     
     
     convenience required init(id: String, latitude: String, longitude: String ,Name : String, PubDate: String,State: String, FreeSpaceShort: String,FreeSpaceLong: String,ShortCapacity : String,LongCapacity : String) {
@@ -35,10 +35,26 @@ class ParkingObjects: Object {
     func saveData() {
         // Get the default Realm
         let realm = try! Realm()
-        // Persist your data easily
-        try! realm.write {
-            realm.add(self)
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        if let parkingSite = parkingData.first {
+            // Persist your data easily
+            try! realm.write {
+                parkingSite.FreeSpaceLong = self.FreeSpaceLong
+                ///
+            }
+        } else {
+            // Persist your data easily
+            try! realm.write {
+                realm.add(self)
+            }
         }
+
+
+    }
+    
+    func favouriteParkingSpot() -> Bool{
+        
+        return false
     }
 
     func retrieveData() -> ParkingObjects{
