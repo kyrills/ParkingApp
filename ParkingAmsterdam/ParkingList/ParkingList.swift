@@ -18,14 +18,18 @@ class ParkingList: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        updateDistancesForGarages()
-        
         let parkingListNib = UINib(nibName: "parkListCell", bundle: nil)
         self.tableView.register(parkingListNib, forCellReuseIdentifier: cellID.parkListCell)
    
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        updateDistancesForGarages()
+        parkingGarages = ParkingObjects.sortByDistance()
+        self.tableView.reloadData()
+
+        
+    }
     func updateDistancesForGarages() {
         parkingGarages = ParkingObjects.retrieveAllData()
         for garage in parkingGarages {
@@ -66,11 +70,7 @@ class ParkingList: UITableViewController {
         
         let storeObject = parkingGarages[indexPath.row]
         
-        addressLocation.latitude = Double(storeObject.latitude!)!
-        addressLocation.longitude = Double(storeObject.longitude!)!
-        addressLocation.convertToAddress(onCompletion: { (address) in
-            cell.addressLabel.text = address
-        })
+        cell.addressLabel.text = storeObject.address
 
         cell.distanceKMLabel.text = "\(storeObject.distanceInMeters) km"
 

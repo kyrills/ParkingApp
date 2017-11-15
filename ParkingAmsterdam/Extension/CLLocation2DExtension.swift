@@ -8,7 +8,7 @@ extension CLLocationCoordinate2D {
 
         CLGeocoder().reverseGeocodeLocation(locationToConvert) { (placemark, error) in
             if error != nil {
-                print ("THERE WAS AN ERROR")
+                print ("THERE WAS AN ERROR", error?.localizedDescription)
             } else {
                 if let address = placemark?[0] {
                     let mkplace = MKPlacemark.init(placemark: address)
@@ -22,7 +22,6 @@ extension CLLocationCoordinate2D {
     func calculateDistance(destination: CLLocationCoordinate2D) -> CLLocationDistance{
         let coordinateSource = CLLocation(latitude: self.latitude, longitude: self.longitude)
         let coordinateDestination = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
-        
         let distanceInMeters = coordinateSource.distance(from: coordinateDestination)
         return ((distanceInMeters)/100).rounded()
     }
