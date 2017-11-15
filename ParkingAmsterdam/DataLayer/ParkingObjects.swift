@@ -30,15 +30,18 @@ class ParkingObjects: Object {
         self.LongCapacity = LongCapacity
     }
     
-//    func saveDistance() {
-//        // Get the default Realm
-//        let realm = try! Realm()
-//        // Persist your data easily
-//        try! realm.write {
-//            realm.add(distanceInMeters)
-//        }
-//    }
-//
+    func saveDistance(distance: String) {
+        // Get the default Realm
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        if let parkingSite = parkingData.first {
+            // Persist your data easily
+            try! realm.write {
+                parkingSite.distanceInMeters = distance
+            }
+        }
+    }
+
     
     func saveData() {
         // Get the default Realm
@@ -58,6 +61,13 @@ class ParkingObjects: Object {
         }
 
 
+    }
+    
+    func sortByDistance() -> [ParkingObjects]  {
+        // Get the default Realm
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        
     }
     
     func favouriteParkingSpot() -> Bool{

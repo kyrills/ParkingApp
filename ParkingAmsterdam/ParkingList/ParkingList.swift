@@ -19,12 +19,28 @@ class ParkingList: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        parkingGarages = ParkingObjects.retrieveAllData()
-
+        updateDistancesForGarages()
+        
         let parkingListNib = UINib(nibName: "parkListCell", bundle: nil)
         self.tableView.register(parkingListNib, forCellReuseIdentifier: cellID.parkListCell)
    
+    }
+    
+    func updateDistancesForGarages() {
+        parkingGarages = ParkingObjects.retrieveAllData()
+        for garage in parkingGarages {
+            getDistancesFromCurrentLocation(storeObject: garage)
         }
+    }
+    func getDistancesFromCurrentLocation(storeObject: ParkingObjects) {
+        if let lat = Double(storeObject.latitude!),
+            let lng = Double(storeObject.longitude!) {
+            
+            let dist = sourceCoordinate.calculateDistance(destination: CLLocationCoordinate2D.init(latitude: lat,longitude: lng))
+            storeObject.saveDistance(distance: "\(dist)")
+            
+        }
+    }
 
     
     override func didReceiveMemoryWarning() {
@@ -49,17 +65,14 @@ class ParkingList: UITableViewController {
         
         let storeObject = parkingGarages[indexPath.row]
         
-        if let lat = Double(storeObject.latitude!),
-            let lng = Double(storeObject.longitude!) {
-            addressLocation.latitude = lat
-            addressLocation.longitude = lng
-            addressLocation.convertToAddress(onCompletion: { (address) in
-                cell.addressLabel.text = address
-            })
-            cell.distanceKMLabel.text = "\(sourceCoordinate.calculateDistance(destination: CLLocationCoordinate2D.init(latitude: lat,longitude: lng))) km"
+        addressLocation.latitude = Double(storeObject.latitude!)!
+        addressLocation.longitude = Double(storeObject.longitude!)!
+        addressLocation.convertToAddress(onCompletion: { (address) in
+            cell.addressLabel.text = address
+        })
 
-        }
-        
+        cell.distanceKMLabel.text = "\(storeObject.distanceInMeters) km"
+
         cell.parkingGarageNameLabel.text = storeObject.Name
       
         cell.freeSpacesLabel.text = "\(storeObject.FreeSpaceShort ?? "0") Free"
