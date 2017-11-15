@@ -14,6 +14,7 @@ class ParkingObjects: Object {
     @objc dynamic var ShortCapacity : String?
     @objc dynamic var LongCapacity : String?
     @objc dynamic var favourite: Bool = false
+    @objc dynamic var distanceInMeters: String = ""
     
     convenience required init(id: String, latitude: String, longitude: String ,Name : String, PubDate: String,State: String, FreeSpaceShort: String,FreeSpaceLong: String,ShortCapacity : String,LongCapacity : String) {
         self.init()
@@ -29,7 +30,19 @@ class ParkingObjects: Object {
         self.LongCapacity = LongCapacity
     }
     
-    //Changed the saveData so that it will only update dynamic values. Since all initial values are loaded at startup.
+    func saveDistance(distance: String) {
+        // Get the default Realm
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        if let parkingSite = parkingData.first {
+            // Persist your data easily
+            try! realm.write {
+                parkingSite.distanceInMeters = distance
+            }
+        }
+    }
+
+    
     func saveData() {
         // Get the default Realm
         let realm = try! Realm()
@@ -74,6 +87,18 @@ class ParkingObjects: Object {
         }
     }
     
+    func sortByDistance() -> [ParkingObjects]  {
+        // Get the default Realm
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        
+    }
+    
+    func favouriteParkingSpot() -> Bool{
+        
+        return false
+    }
+    
     static func sortedByFavourite() -> [ParkingObjects]{
         var allSortedFavourites: [ParkingObjects] = []
         let realm = try! Realm()
@@ -82,6 +107,15 @@ class ParkingObjects: Object {
             allSortedFavourites += [i]
         }
         return allSortedFavourites
+    }
+    static func retrieveAllData() -> [ParkingObjects] {
+        var allParkingData: [ParkingObjects] = []
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self)
+        for object in parkingData{
+            allParkingData += [object]
+        }
+        return allParkingData
     }
     
     func retrieveData() -> ParkingObjects{
@@ -92,4 +126,6 @@ class ParkingObjects: Object {
         let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
         return parkingData.first!
     }
+    
+    
 }
