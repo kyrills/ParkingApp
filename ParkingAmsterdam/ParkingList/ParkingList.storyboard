@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Parking List-->
+        <!--List-->
         <scene sceneID="tnx-Hx-Gpc">
             <objects>
                 <tableViewController storyboardIdentifier="ParkingList" id="vbV-Fd-0bL" customClass="ParkingList" customModule="ParkingAmsterdam" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,6 +16,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <segmentedControl key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="2Bh-Kx-qye">
+                            <rect key="frame" x="0.0" y="72" width="375" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Sort on distance"/>
+                                <segment title="Sort on favourite"/>
+                            </segments>
+                            <connections>
+                                <action selector="sortingList:" destination="vbV-Fd-0bL" eventType="valueChanged" id="gX1-Ob-on9"/>
+                            </connections>
+                        </segmentedControl>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="LfY-Mc-IR0">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -31,6 +42,7 @@
                             <outlet property="delegate" destination="vbV-Fd-0bL" id="jrl-nA-rAP"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="List" selectedImage="list-fat-7" id="oFl-UR-k9h"/>
                     <navigationItem key="navigationItem" id="s0l-fb-vU7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -39,4 +51,7 @@
             <point key="canvasLocation" x="-588" y="-446.62668665667172"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="list-fat-7" width="30" height="30"/>
+    </resources>
 </document>

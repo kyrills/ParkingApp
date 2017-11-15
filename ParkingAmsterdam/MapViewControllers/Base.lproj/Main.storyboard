@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Map View Controller-->
+        <!--Map-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="ParkingAmsterdam" customModuleProvider="target" sceneMemberID="viewController">
@@ -47,7 +47,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" selectedImage="paper-map-7" id="3uR-X0-OGb"/>
                     <navigationItem key="navigationItem" id="89e-Ez-LD7"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="parkingMapView" destination="JYu-1h-xxh" id="RVY-d6-DM8"/>
                         <segue destination="Tp1-ft-qya" kind="show" identifier="goToDetailView" id="13s-uU-Rc1"/>

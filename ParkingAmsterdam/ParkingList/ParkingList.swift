@@ -23,7 +23,8 @@ class ParkingList: UITableViewController {
 
         let parkingListNib = UINib(nibName: "parkListCell", bundle: nil)
         self.tableView.register(parkingListNib, forCellReuseIdentifier: cellID.parkListCell)
-    }
+   
+        }
 
     
     override func didReceiveMemoryWarning() {
@@ -63,10 +64,22 @@ class ParkingList: UITableViewController {
       
         cell.freeSpacesLabel.text = "\(storeObject.FreeSpaceShort ?? "0") Free"
         
-        
         return cell
+        
     }
 
+    
+    
+    @IBAction func sortingList(_ sender: Any) {
+        let selectedSegment = (sender as AnyObject).selectedIndex
+        
+        if selectedSegment == 0 {
+            // Trym's code : distance
+            
+        } else {
+            // Kyrill's code (favourite)
+        }
+    }
     
 
     /*
