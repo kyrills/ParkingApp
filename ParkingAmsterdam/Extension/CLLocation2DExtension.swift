@@ -18,4 +18,12 @@ extension CLLocationCoordinate2D {
             }
         }
     }
+    
+    func calculateDistance(destination: CLLocationCoordinate2D) -> CLLocationDistance{
+        let coordinateSource = CLLocation(latitude: self.latitude, longitude: self.longitude)
+        let coordinateDestination = CLLocation(latitude: destination.latitude, longitude: destination.longitude)
+        
+        let distanceInMeters = coordinateSource.distance(from: coordinateDestination)
+        return ((distanceInMeters)/100).rounded()
+    }
 }

@@ -18,7 +18,7 @@ class ParkingAmsterdamService {
                             
                             switch response.result {
                             case .success:
-//                                print("Validation Successful")
+                                print("Validation Successful")
                                 if let result = response.result.value as? NSDictionary {
                                     self.parseData(result: result)
                                 }
@@ -48,7 +48,8 @@ class ParkingAmsterdamService {
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                             object: self,
-                                            userInfo: ["data" : parkingObj])
+                                            userInfo: [dictKey.parkingAmsterdamData : parkingObj])
+            
         }
     }
     

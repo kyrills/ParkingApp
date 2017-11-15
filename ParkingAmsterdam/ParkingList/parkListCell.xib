@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="parkListCell" rowHeight="57" id="KGk-i7-Jjw" customClass="ParkListCell" customModule="ParkingAmsterdam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="57"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="56.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ParkingGarageName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0j4-Pi-ySL">
+                        <rect key="frame" x="9" y="6" width="201" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="201" id="Gy8-Cx-9LV"/>
+                            <constraint firstAttribute="height" constant="21" id="LWP-rx-6z2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DAa-Zz-GkA">
+                        <rect key="frame" x="247" y="5" width="59" height="15"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="59" id="FaQ-PL-Omc"/>
+                            <constraint firstAttribute="height" constant="15" id="Kut-Rv-xnn"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# free spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLS-e9-jlC">
+                        <rect key="frame" x="205" y="24" width="104" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="NsU-gw-b9S"/>
+                            <constraint firstAttribute="width" constant="104" id="q33-BF-67n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0w-7p-mgV">
+                        <rect key="frame" x="9" y="29" width="188" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="0j4-Pi-ySL" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="C5Z-aR-R1w"/>
+                    <constraint firstAttribute="bottom" secondItem="JLS-e9-jlC" secondAttribute="bottom" constant="11.5" id="Dyk-lN-YO5"/>
+                    <constraint firstAttribute="trailing" secondItem="JLS-e9-jlC" secondAttribute="trailing" constant="11" id="E7l-4e-y2C"/>
+                    <constraint firstItem="n0w-7p-mgV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="KpL-FQ-vMK"/>
+                    <constraint firstItem="JLS-e9-jlC" firstAttribute="top" secondItem="DAa-Zz-GkA" secondAttribute="bottom" constant="4" id="Ps2-Ru-FFH"/>
+                    <constraint firstAttribute="trailing" secondItem="DAa-Zz-GkA" secondAttribute="trailing" constant="14" id="TBH-dE-kFR"/>
+                    <constraint firstItem="JLS-e9-jlC" firstAttribute="leading" secondItem="n0w-7p-mgV" secondAttribute="trailing" constant="8" id="eV6-5I-bz3"/>
+                    <constraint firstItem="DAa-Zz-GkA" firstAttribute="leading" secondItem="0j4-Pi-ySL" secondAttribute="trailing" constant="37" id="i3a-1d-2Ky"/>
+                    <constraint firstItem="n0w-7p-mgV" firstAttribute="top" secondItem="0j4-Pi-ySL" secondAttribute="bottom" constant="2.5" id="ppH-IL-1zH"/>
+                    <constraint firstAttribute="bottom" secondItem="n0w-7p-mgV" secondAttribute="bottom" constant="6.5" id="t6P-xs-wbh"/>
+                    <constraint firstItem="DAa-Zz-GkA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="vQ6-da-TBx"/>
+                    <constraint firstItem="0j4-Pi-ySL" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="wmJ-OA-l5d"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="addressLabel" destination="n0w-7p-mgV" id="UpY-06-bSh"/>
+                <outlet property="distanceKMLabel" destination="DAa-Zz-GkA" id="HMh-zv-sF1"/>
+                <outlet property="freeSpacesLabel" destination="JLS-e9-jlC" id="asF-82-q7K"/>
+                <outlet property="parkingGarageNameLabel" destination="0j4-Pi-ySL" id="ltW-ar-65B"/>
+            </connections>
+            <point key="canvasLocation" x="40" y="127.5"/>
+        </tableViewCell>
+    </objects>
+</document>
