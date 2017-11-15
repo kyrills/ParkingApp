@@ -1,6 +1,7 @@
 import Foundation
 import Alamofire
 import RealmSwift
+import MapKit
 class ParkingAmsterdamService {
     
     public static let sharedInstance = ParkingAmsterdamService()  // Singleton: https://en.wikipedia.org/wiki/Singleton_pattern
@@ -41,8 +42,9 @@ class ParkingAmsterdamService {
                                                            latitude: coords.lat,
                                                            longitude: coords.lng) {
                         parkingObj.append(parkAppObject)
-                        
                         parkAppObject.saveData()
+
+                        parkAppObject.saveAddressData()
                     }
                 }
             }
