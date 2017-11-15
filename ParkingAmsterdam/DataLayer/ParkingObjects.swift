@@ -43,12 +43,27 @@ class ParkingObjects: Object {
     func saveData() {
         // Get the default Realm
         let realm = try! Realm()
-        // Persist your data easily
-        try! realm.write {
-            realm.add(self)
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        if let parkingSite = parkingData.first {
+            // Persist your data easily
+            try! realm.write {
+                parkingSite.FreeSpaceLong = self.FreeSpaceLong
+                ///
+            }
+        } else {
+            // Persist your data easily
+            try! realm.write {
+                realm.add(self)
+            }
         }
+
+
     }
     
+    func favouriteParkingSpot() -> Bool{
+        
+        return false
+    }
 
     static func retrieveAllData() -> [ParkingObjects] {
         var allParkingData: [ParkingObjects] = []
