@@ -28,7 +28,7 @@ class ParkingAmsterdamService {
         }
     }
     
-    func parseData (result: NSDictionary)    {
+    func parseData (result: NSDictionary) {
         var parkingObj: [ParkingObjects] = []
         if let features = result["features"] as? NSArray {
             for feature in features {
@@ -48,7 +48,7 @@ class ParkingAmsterdamService {
             }
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                             object: self,
-                                            userInfo: ["data" : parkingObj])
+                                            userInfo: [dictKey.parkingAmsterdamData : parkingObj])
             
         }
     }
