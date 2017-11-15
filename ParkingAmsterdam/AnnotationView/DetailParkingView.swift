@@ -23,17 +23,17 @@ class DetailParkingView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         setRadiusWithShadow(radius: 15)
-        self.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
-        
-        
+        backgroundContentButton.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
+
     }
     
     func configureWithGarage(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
         
         TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
-        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
-        
+        if let freeSpacesShort = parkingGarages.FreeSpaceShort {
+            parkingSpaceLabel.text = "\(freeSpacesShort)"
+        }
     }
     
     @IBAction func goToDetailButton(_ sender: Any) {
