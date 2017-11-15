@@ -18,7 +18,6 @@ class ParkingAmsterdamService {
                             
                             switch response.result {
                             case .success:
-//                                print("Validation Successful")
                                 if let result = response.result.value as? NSDictionary {
                                     self.parseData(result: result)
                                 }

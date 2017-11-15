@@ -36,9 +36,8 @@
 		D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */; };
 		D0FDF6D41FBAEBE50004D44C /* CLLocation2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF6D31FBAEBE50004D44C /* CLLocation2DExtension.swift */; };
 		D0FDF6D61FBAF2520004D44C /* PlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF6D51FBAF2520004D44C /* PlacemarkExtension.swift */; };
-        D0FDF71F1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF71E1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift */; };
+		D0FDF71F1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF71E1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift */; };
 		D0FDF72B1FBB12A80004D44C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FDF72D1FBB12A80004D44C /* RealmSwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +86,7 @@
 		D0F06EB71FB0C6400013659D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0FDF6D31FBAEBE50004D44C /* CLLocation2DExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation2DExtension.swift; sourceTree = "<group>"; };
 		D0FDF6D51FBAF2520004D44C /* PlacemarkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkExtension.swift; sourceTree = "<group>"; };
-        		D0FDF71C1FBB0B6E0004D44C /* ParkingAmsterdamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkingAmsterdamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FDF71C1FBB0B6E0004D44C /* ParkingAmsterdamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkingAmsterdamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FDF71E1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAmsterdamTests.swift; sourceTree = "<group>"; };
 		D0FDF7201FBB0B6E0004D44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0FDF7271FBB12010004D44C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +94,6 @@
 		D0FDF72C1FBB12A80004D44C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FDF72D1FBB12A80004D44C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0FDF72F1FBB14850004D44C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

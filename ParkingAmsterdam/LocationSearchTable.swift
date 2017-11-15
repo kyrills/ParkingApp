@@ -7,8 +7,6 @@ class LocationSearchTable: UITableViewController {
     var matchingItems: [MKMapItem] = []
     var mapView: MKMapView?
     
-
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
     }

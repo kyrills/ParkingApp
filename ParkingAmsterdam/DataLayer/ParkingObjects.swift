@@ -29,7 +29,7 @@ class ParkingObjects: Object {
         self.LongCapacity = LongCapacity
     }
     
-    
+    //Changed the saveData so that it will only update dynamic values. Since all initial values are loaded at startup.
     func saveData() {
         // Get the default Realm
         let realm = try! Realm()
@@ -38,7 +38,10 @@ class ParkingObjects: Object {
             // Persist your data easily
             try! realm.write {
                 parkingSite.FreeSpaceLong = self.FreeSpaceLong
-                ///
+                parkingSite.FreeSpaceShort = self.FreeSpaceShort
+                parkingSite.LongCapacity = self.LongCapacity
+                parkingSite.ShortCapacity = self.ShortCapacity
+                parkingSite.PubDate = self.PubDate
             }
         } else {
             // Persist your data easily
@@ -46,15 +49,41 @@ class ParkingObjects: Object {
                 realm.add(self)
             }
         }
-
-
     }
     
-    func favouriteParkingSpot() -> Bool{
-        
-        return false
+    func favouriteParkingSpot() {
+        //This handles the favourites button.
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        if let parkingSite = parkingData.first {
+            // Persist your data easily
+            try! realm.write {
+                
+                //Switches the state of the bool.
+                if parkingSite.favourite == false{
+                    parkingSite.favourite = true
+                } else{
+                    parkingSite.favourite = false
+                }
+            }
+        } else {
+            // Persist your data easily
+            try! realm.write {
+                realm.add(self)
+            }
+        }
     }
-
+    
+    static func sortedByFavourite() -> [ParkingObjects]{
+        var allSortedFavourites: [ParkingObjects] = []
+        let realm = try! Realm()
+        let sortedFavourites = realm.objects(ParkingObjects.self).filter("favourite = true")
+        for i in sortedFavourites{
+            allSortedFavourites += [i]
+        }
+        return allSortedFavourites
+    }
+    
     func retrieveData() -> ParkingObjects{
         // Get the default Realm
         let realm = try! Realm()

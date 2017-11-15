@@ -16,11 +16,10 @@ extension MapViewController: CLLocationManagerDelegate {
         if let coord = locations.first {
             sourceCoordinate.latitude = coord.coordinate.latitude
             sourceCoordinate.longitude = coord.coordinate.longitude
-
+        }
     }
-}
+    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("error")
     }
-
 }

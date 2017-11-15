@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -179,6 +179,13 @@
                                             </constraints>
                                             <blurEffect style="light"/>
                                         </visualEffectView>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-G8-3U3">
+                                            <rect key="frame" x="297" y="189" width="70" height="33"/>
+                                            <state key="normal" image="starWhite"/>
+                                            <connections>
+                                                <action selector="favouriteButton:" destination="hzD-co-qG4" eventType="touchUpInside" id="KqT-No-2Ll"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zJb-gZ-mKy" firstAttribute="centerX" secondItem="ktE-Sf-LTS" secondAttribute="centerX" id="4F1-U6-6HF"/>
@@ -187,12 +194,14 @@
                                         <constraint firstItem="6LV-cL-hdb" firstAttribute="top" secondItem="E8Y-IH-Rxu" secondAttribute="bottom" constant="22" id="WRU-pU-mHB"/>
                                         <constraint firstItem="MEA-kQ-H8e" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" id="bBa-M5-sTn"/>
                                         <constraint firstAttribute="trailing" secondItem="E8Y-IH-Rxu" secondAttribute="trailing" constant="40" id="dwE-lG-IOK"/>
+                                        <constraint firstItem="6LV-cL-hdb" firstAttribute="top" secondItem="CbF-G8-3U3" secondAttribute="bottom" constant="93" id="jBV-MF-8l2"/>
                                         <constraint firstAttribute="bottom" secondItem="MEA-kQ-H8e" secondAttribute="bottom" id="jV0-VY-zhv"/>
                                         <constraint firstItem="E8Y-IH-Rxu" firstAttribute="top" secondItem="zJb-gZ-mKy" secondAttribute="bottom" constant="21" id="ljp-mU-ttK"/>
                                         <constraint firstAttribute="trailing" secondItem="ktE-Sf-LTS" secondAttribute="trailing" id="mQJ-wG-QzB"/>
                                         <constraint firstItem="ktE-Sf-LTS" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" id="oH7-68-jVc"/>
                                         <constraint firstItem="E8Y-IH-Rxu" firstAttribute="trailing" secondItem="6LV-cL-hdb" secondAttribute="trailing" id="oL1-Sp-1gy"/>
                                         <constraint firstAttribute="trailing" secondItem="MEA-kQ-H8e" secondAttribute="trailing" id="qFm-Ng-Mfb"/>
+                                        <constraint firstItem="CbF-G8-3U3" firstAttribute="centerX" secondItem="E8Y-IH-Rxu" secondAttribute="centerX" constant="144.5" id="sul-2O-YYc"/>
                                         <constraint firstItem="ktE-Sf-LTS" firstAttribute="top" secondItem="2Ka-dw-mTT" secondAttribute="top" id="u2G-IV-qD0"/>
                                         <constraint firstItem="zJb-gZ-mKy" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" constant="67" id="vVq-6A-kzI"/>
                                         <constraint firstItem="E8Y-IH-Rxu" firstAttribute="leading" secondItem="6LV-cL-hdb" secondAttribute="leading" id="whZ-4X-CCM"/>
@@ -224,6 +233,7 @@
                         <outlet property="blur4" destination="kWz-F6-LYD" id="JyB-un-dd6"/>
                         <outlet property="blur5" destination="vNP-zp-2A2" id="R06-Ek-dYd"/>
                         <outlet property="carImage" destination="zJb-gZ-mKy" id="s3D-Mg-0JX"/>
+                        <outlet property="favouriteButton" destination="CbF-G8-3U3" id="9cQ-AB-tEc"/>
                         <outlet property="label1" destination="hbL-mi-TdA" id="PmR-ch-yOR"/>
                         <outlet property="label2" destination="hMR-Zk-ouw" id="ewD-DD-N6V"/>
                         <outlet property="label3" destination="QRg-bz-PJm" id="pMD-cq-XZu"/>
@@ -233,11 +243,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6v-hB-8U1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.5" y="115.5"/>
+            <point key="canvasLocation" x="1863.2" y="114.69265367316342"/>
         </scene>
     </scenes>
     <resources>
         <image name="carplacehlder1" width="274" height="184"/>
+        <image name="starWhite" width="16" height="16"/>
         <image name="whiteback" width="640" height="1136"/>
     </resources>
 </document>

@@ -24,7 +24,8 @@ class DetailParkingView: UIView {
         super.awakeFromNib()
         setRadiusWithShadow(radius: 15)
         self.applyArrowDialogAppearanceWithOrientation(arrowOrientation: .down)
-
+        
+        
     }
     
     func configureWithGarage(parkingGarages: ParkingObjects) {
@@ -32,6 +33,7 @@ class DetailParkingView: UIView {
         
         TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
         parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
+        
     }
     
     @IBAction func goToDetailButton(_ sender: Any) {
@@ -66,6 +68,16 @@ class DetailParkingView: UIView {
             return route
         }
         return backgroundContentButton.hitTest(convert(point, to: backgroundContentButton), with: event)
+    }
+    
+    
+    @IBAction func favouriteButton(_ sender: Any) {
+        
+//        ParkingObjects.favouriteParkingSpot(parkingGarages)
+//        print(parkingGarages)
+//        favouriteButton(parkingGarages)
+//        print(parkingGarages)
+        
     }
     
 }
