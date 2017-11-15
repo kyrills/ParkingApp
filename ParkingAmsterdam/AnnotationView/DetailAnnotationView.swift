@@ -6,6 +6,7 @@ private let kGarageMapAnimationTime = 0.300
 
 class DetailAnnotationView: MKAnnotationView {
     
+
     weak var delegate: GarageDetailMapViewDelegate?
     weak var customCalloutView: DetailParkingView?
     var parkingGarage: ParkingObjects!
@@ -17,13 +18,13 @@ class DetailAnnotationView: MKAnnotationView {
     override init(annotation: MKAnnotation?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         self.canShowCallout = false // 1
-        self.image = kGarageMapPinImage
+        self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.canShowCallout = false // 1
-        self.image = kGarageMapPinImage
+        self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

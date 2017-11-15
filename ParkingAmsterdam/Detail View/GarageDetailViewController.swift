@@ -53,8 +53,8 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         super.viewDidLoad()
         
         UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        UINavigationBar.appearance().tintColor = .black
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.black]
         UINavigationBar.appearance().isTranslucent = false
         
         navigationController?.navigationBar.barTintColor = UIColor.white
@@ -68,10 +68,10 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         label2.layer.cornerRadius = 10
         label3.layer.cornerRadius = 10
         label4.layer.cornerRadius = 10
-        label1.text = "short time parking space capacity - \(selectedGarage.ShortCapacity)"
-        label2.text = "short time parking spaces left - \(selectedGarage.FreeSpaceShort)"
-        label3.text = "long time parking space capacity - \(selectedGarage.LongCapacity)"
-        label4.text = "long time parking spaces left - \(selectedGarage.FreeSpaceLong)"
+        label1.text = "\(selectedGarage.ShortCapacity ?? "")"
+        label2.text = "\(selectedGarage.FreeSpaceShort ?? "")"
+        label3.text = " \(selectedGarage.LongCapacity ?? "")"
+        label4.text = "\(selectedGarage.FreeSpaceLong ?? "")"
         carImage.image = #imageLiteral(resourceName: "carplacehlder1")
     }
 }

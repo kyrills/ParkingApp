@@ -31,102 +31,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="6LV-cL-hdb">
-                                            <rect key="frame" x="0.0" y="315" width="311" height="308"/>
-                                            <subviews>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZxM-Zu-EHN">
-                                                    <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uPV-J6-0zw">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hbL-mi-TdA">
-                                                                <rect key="frame" x="8" y="8" width="340" height="34"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </view>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="fda-1W-Bd1"/>
-                                                    </constraints>
-                                                    <blurEffect style="light"/>
-                                                </visualEffectView>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K5x-Tu-zg4">
-                                                    <rect key="frame" x="0.0" y="86" width="311" height="50"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="KLT-qf-hRj">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hMR-Zk-ouw">
-                                                                <rect key="frame" x="8" y="4" width="339" height="38"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </view>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="3AS-du-g6A"/>
-                                                    </constraints>
-                                                    <blurEffect style="light"/>
-                                                </visualEffectView>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kWz-F6-LYD">
-                                                    <rect key="frame" x="0.0" y="172" width="311" height="50"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QM7-qy-H0s">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QRg-bz-PJm">
-                                                                <rect key="frame" x="8" y="4" width="337" height="38"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </view>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="tbq-hd-XwB"/>
-                                                    </constraints>
-                                                    <blurEffect style="light"/>
-                                                </visualEffectView>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vNP-zp-2A2">
-                                                    <rect key="frame" x="0.0" y="258" width="311" height="50"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n3Q-a7-Znl">
-                                                        <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ErI-Vx-6KU">
-                                                                <rect key="frame" x="8" y="4" width="337" height="38"/>
-                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                                <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                        </subviews>
-                                                    </view>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <blurEffect style="light"/>
-                                                </visualEffectView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ZxM-Zu-EHN" secondAttribute="trailing" id="C0G-l4-OKl"/>
-                                                <constraint firstItem="K5x-Tu-zg4" firstAttribute="top" secondItem="ZxM-Zu-EHN" secondAttribute="bottom" constant="36" id="Ulm-G7-X1g"/>
-                                                <constraint firstAttribute="width" constant="311" id="e3f-O7-tzq"/>
-                                                <constraint firstAttribute="height" constant="308" id="r8z-o3-gvy"/>
-                                            </constraints>
-                                        </stackView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carplacehlder1" translatesAutoresizingMaskIntoConstraints="NO" id="zJb-gZ-mKy">
                                             <rect key="frame" x="67" y="94" width="240" height="128"/>
                                             <constraints>
@@ -156,7 +60,7 @@
                                                 </navigationItem>
                                             </items>
                                         </navigationBar>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E8Y-IH-Rxu">
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E8Y-IH-Rxu">
                                             <rect key="frame" x="32" y="230" width="311" height="50"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xIv-uI-TRU">
                                                 <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
@@ -179,23 +83,220 @@
                                             </constraints>
                                             <blurEffect style="light"/>
                                         </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Yz-tr-Lmu">
+                                            <rect key="frame" x="0.0" y="396" width="180" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Koq-qb-dqC">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Short Cap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="rzm-5D-fqj">
+                                                        <rect key="frame" x="0.0" y="8" width="143" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="fH0-fy-1hC"/>
+                                                <constraint firstAttribute="width" constant="180" id="g2Q-5y-kAS"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjS-xr-5Tj">
+                                            <rect key="frame" x="202" y="472" width="83" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DQD-fO-OFJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Tf8-ij-Bxs">
+                                                        <rect key="frame" x="0.0" y="8" width="75" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="vEn-Yf-uif"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrW-SL-TGW">
+                                            <rect key="frame" x="201" y="396" width="83" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Sjn-zI-Jaq">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="4Lr-Y4-Foq">
+                                                        <rect key="frame" x="0.0" y="8" width="83" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="cE0-Be-FdW"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="omR-nV-TuS">
+                                            <rect key="frame" x="201" y="321" width="83" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="zwM-LN-ayB">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Free" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pPh-b6-QMI">
+                                                        <rect key="frame" x="0.0" y="8" width="64" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="Ql4-OX-sef"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="edX-HV-kSx">
+                                            <rect key="frame" x="293" y="321" width="83" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Olg-AJ-p7o">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="m8s-fN-hHZ">
+                                                        <rect key="frame" x="0.0" y="8" width="64" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="A6W-eU-Ih0"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IzS-XY-HkU">
+                                            <rect key="frame" x="293" y="396" width="83" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3ra-b8-Vvb">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x5f-bo-yLO">
+                                                        <rect key="frame" x="0.0" y="8" width="65" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="eia-No-lGw"/>
+                                                <constraint firstAttribute="width" constant="83" id="uki-O7-HFt"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XOA-dH-SxR">
+                                            <rect key="frame" x="0.0" y="472" width="180" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="cuD-rs-sMY">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="long cap" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pYa-pP-h80">
+                                                        <rect key="frame" x="0.0" y="8" width="143" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="P1G-ME-OQG"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z6m-Mv-gUu">
+                                            <rect key="frame" x="293" y="472" width="83" height="50"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="GZj-5N-Dbb">
+                                                <rect key="frame" x="0.0" y="0.0" width="83" height="50"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WaL-2x-zhV">
+                                                        <rect key="frame" x="0.0" y="8" width="64" height="34"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="20"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="rfA-wg-lgf"/>
+                                            </constraints>
+                                            <blurEffect style="light"/>
+                                        </visualEffectView>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="IzS-XY-HkU" secondAttribute="trailing" constant="-1" id="1rf-K6-zSZ"/>
                                         <constraint firstItem="zJb-gZ-mKy" firstAttribute="centerX" secondItem="ktE-Sf-LTS" secondAttribute="centerX" id="4F1-U6-6HF"/>
+                                        <constraint firstItem="2Yz-tr-Lmu" firstAttribute="top" secondItem="BrW-SL-TGW" secondAttribute="top" id="5Kg-sD-bhx"/>
+                                        <constraint firstItem="z6m-Mv-gUu" firstAttribute="top" secondItem="IzS-XY-HkU" secondAttribute="bottom" constant="26" id="B9c-vH-nSM"/>
                                         <constraint firstItem="zJb-gZ-mKy" firstAttribute="top" secondItem="ktE-Sf-LTS" secondAttribute="bottom" constant="50" id="Dnb-yc-Jyy"/>
-                                        <constraint firstItem="E8Y-IH-Rxu" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" constant="24" id="K1e-pe-2L2"/>
-                                        <constraint firstItem="6LV-cL-hdb" firstAttribute="top" secondItem="E8Y-IH-Rxu" secondAttribute="bottom" constant="22" id="WRU-pU-mHB"/>
+                                        <constraint firstItem="IzS-XY-HkU" firstAttribute="leading" secondItem="z6m-Mv-gUu" secondAttribute="leading" id="Ds6-oe-EFH"/>
+                                        <constraint firstItem="omR-nV-TuS" firstAttribute="top" secondItem="edX-HV-kSx" secondAttribute="top" id="E3G-Af-aoA"/>
+                                        <constraint firstItem="BrW-SL-TGW" firstAttribute="leading" secondItem="2Yz-tr-Lmu" secondAttribute="trailing" constant="21" id="GYm-6m-Pbp"/>
+                                        <constraint firstItem="2Yz-tr-Lmu" firstAttribute="top" secondItem="IzS-XY-HkU" secondAttribute="top" id="Iip-R8-FlH"/>
+                                        <constraint firstItem="E8Y-IH-Rxu" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" constant="32" id="K1e-pe-2L2"/>
+                                        <constraint firstItem="z6m-Mv-gUu" firstAttribute="leading" secondItem="pjS-xr-5Tj" secondAttribute="trailing" constant="8" symbolic="YES" id="SLE-T2-i9w"/>
+                                        <constraint firstItem="2Yz-tr-Lmu" firstAttribute="trailing" secondItem="XOA-dH-SxR" secondAttribute="trailing" id="THz-6W-U1a"/>
+                                        <constraint firstItem="omR-nV-TuS" firstAttribute="leading" secondItem="BrW-SL-TGW" secondAttribute="leading" id="TVN-js-Ren"/>
+                                        <constraint firstItem="IzS-XY-HkU" firstAttribute="top" secondItem="edX-HV-kSx" secondAttribute="bottom" constant="25" id="Ufu-nd-np5"/>
+                                        <constraint firstItem="IzS-XY-HkU" firstAttribute="leading" secondItem="BrW-SL-TGW" secondAttribute="trailing" constant="9" id="W5i-qp-eFO"/>
+                                        <constraint firstItem="pjS-xr-5Tj" firstAttribute="top" secondItem="z6m-Mv-gUu" secondAttribute="top" id="Xih-af-kbU"/>
                                         <constraint firstItem="MEA-kQ-H8e" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" id="bBa-M5-sTn"/>
-                                        <constraint firstAttribute="trailing" secondItem="E8Y-IH-Rxu" secondAttribute="trailing" constant="40" id="dwE-lG-IOK"/>
+                                        <constraint firstAttribute="trailing" secondItem="E8Y-IH-Rxu" secondAttribute="trailing" constant="32" id="dwE-lG-IOK"/>
+                                        <constraint firstItem="pjS-xr-5Tj" firstAttribute="leading" secondItem="XOA-dH-SxR" secondAttribute="trailing" constant="22" id="exs-gT-ipj"/>
+                                        <constraint firstItem="2Yz-tr-Lmu" firstAttribute="leading" secondItem="XOA-dH-SxR" secondAttribute="leading" id="h4v-pd-IOz"/>
+                                        <constraint firstItem="2Yz-tr-Lmu" firstAttribute="leading" secondItem="MEA-kQ-H8e" secondAttribute="leading" id="imV-C0-nq4"/>
+                                        <constraint firstItem="XOA-dH-SxR" firstAttribute="top" secondItem="2Yz-tr-Lmu" secondAttribute="bottom" constant="26" id="jJC-Sy-iEu"/>
                                         <constraint firstAttribute="bottom" secondItem="MEA-kQ-H8e" secondAttribute="bottom" id="jV0-VY-zhv"/>
-                                        <constraint firstItem="E8Y-IH-Rxu" firstAttribute="top" secondItem="zJb-gZ-mKy" secondAttribute="bottom" constant="21" id="ljp-mU-ttK"/>
+                                        <constraint firstItem="E8Y-IH-Rxu" firstAttribute="top" secondItem="zJb-gZ-mKy" secondAttribute="bottom" constant="8" id="ljp-mU-ttK"/>
                                         <constraint firstAttribute="trailing" secondItem="ktE-Sf-LTS" secondAttribute="trailing" id="mQJ-wG-QzB"/>
+                                        <constraint firstItem="IzS-XY-HkU" firstAttribute="leading" secondItem="edX-HV-kSx" secondAttribute="leading" id="nIc-Rl-N7L"/>
                                         <constraint firstItem="ktE-Sf-LTS" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" id="oH7-68-jVc"/>
-                                        <constraint firstItem="E8Y-IH-Rxu" firstAttribute="trailing" secondItem="6LV-cL-hdb" secondAttribute="trailing" id="oL1-Sp-1gy"/>
                                         <constraint firstAttribute="trailing" secondItem="MEA-kQ-H8e" secondAttribute="trailing" id="qFm-Ng-Mfb"/>
+                                        <constraint firstAttribute="bottom" secondItem="2Yz-tr-Lmu" secondAttribute="bottom" constant="221" id="qIq-uf-sCg"/>
                                         <constraint firstItem="ktE-Sf-LTS" firstAttribute="top" secondItem="2Ka-dw-mTT" secondAttribute="top" id="u2G-IV-qD0"/>
                                         <constraint firstItem="zJb-gZ-mKy" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" constant="67" id="vVq-6A-kzI"/>
-                                        <constraint firstItem="E8Y-IH-Rxu" firstAttribute="leading" secondItem="6LV-cL-hdb" secondAttribute="leading" id="whZ-4X-CCM"/>
+                                        <constraint firstItem="IzS-XY-HkU" firstAttribute="trailing" secondItem="edX-HV-kSx" secondAttribute="trailing" id="x7T-at-8bi"/>
+                                        <constraint firstItem="IzS-XY-HkU" firstAttribute="trailing" secondItem="z6m-Mv-gUu" secondAttribute="trailing" id="xlW-cS-t3v"/>
+                                        <constraint firstItem="omR-nV-TuS" firstAttribute="trailing" secondItem="BrW-SL-TGW" secondAttribute="trailing" id="zX0-RE-kPd"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -219,21 +320,17 @@
                     </view>
                     <connections>
                         <outlet property="blur1" destination="E8Y-IH-Rxu" id="2KS-nv-mTB"/>
-                        <outlet property="blur2" destination="ZxM-Zu-EHN" id="aZp-hg-U26"/>
-                        <outlet property="blur3" destination="K5x-Tu-zg4" id="htv-NT-4W8"/>
-                        <outlet property="blur4" destination="kWz-F6-LYD" id="JyB-un-dd6"/>
-                        <outlet property="blur5" destination="vNP-zp-2A2" id="R06-Ek-dYd"/>
                         <outlet property="carImage" destination="zJb-gZ-mKy" id="s3D-Mg-0JX"/>
-                        <outlet property="label1" destination="hbL-mi-TdA" id="PmR-ch-yOR"/>
-                        <outlet property="label2" destination="hMR-Zk-ouw" id="ewD-DD-N6V"/>
-                        <outlet property="label3" destination="QRg-bz-PJm" id="pMD-cq-XZu"/>
-                        <outlet property="label4" destination="ErI-Vx-6KU" id="RDc-8B-tsu"/>
+                        <outlet property="label1" destination="x5f-bo-yLO" id="FWl-Iv-PwS"/>
+                        <outlet property="label2" destination="4Lr-Y4-Foq" id="6ta-UH-Ihk"/>
+                        <outlet property="label3" destination="WaL-2x-zhV" id="KQm-8S-RJL"/>
+                        <outlet property="label4" destination="Tf8-ij-Bxs" id="2Lv-68-Xe8"/>
                         <outlet property="titleLabel" destination="nNI-U5-2Ag" id="Azs-fC-Jlx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y6v-hB-8U1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.5" y="115.5"/>
+            <point key="canvasLocation" x="1863.2" y="114.69265367316342"/>
         </scene>
     </scenes>
     <resources>

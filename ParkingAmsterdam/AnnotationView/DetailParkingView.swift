@@ -31,7 +31,7 @@ class DetailParkingView: UIView {
         self.parkingGarages = parkingGarages
         
         TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
-        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort)"
+        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort ?? "")"
     }
     
     @IBAction func goToDetailButton(_ sender: Any) {

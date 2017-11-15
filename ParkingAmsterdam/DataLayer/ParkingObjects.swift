@@ -13,6 +13,8 @@ class ParkingObjects: Object {
     @objc dynamic var FreeSpaceLong: String?
     @objc dynamic var ShortCapacity : String?
     @objc dynamic var LongCapacity : String?
+
+    
     
     convenience required init(id: String, latitude: String, longitude: String ,Name : String, PubDate: String,State: String, FreeSpaceShort: String,FreeSpaceLong: String,ShortCapacity : String,LongCapacity : String) {
         self.init()
@@ -26,6 +28,7 @@ class ParkingObjects: Object {
         self.FreeSpaceLong = FreeSpaceLong
         self.ShortCapacity = ShortCapacity
         self.LongCapacity = LongCapacity
+
     }
     
     

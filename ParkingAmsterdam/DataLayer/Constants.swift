@@ -2,9 +2,11 @@ import Foundation
 
 struct NotificationID {
     static let setInitialData = "setInitialData"
+    static let setSecondData = "setSecondData"
 }
 struct urls {
     static let baseURL = "http://opd.it-t.nl/data/amsterdam/ParkingLocation.json"
+    static let baseURL2 = "http://opendata.technolution.nl/opendata/parkingdata/v1" 
 }
 
 struct cellID {

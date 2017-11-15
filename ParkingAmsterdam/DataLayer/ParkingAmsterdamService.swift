@@ -64,7 +64,7 @@ class ParkingAmsterdamService {
     func parseProperties(properties: NSDictionary, id: String, latitude: Double, longitude: Double) -> ParkingObjects?{
         if let name = properties["Name"] as? String,
             let pubDate = properties["PubDate"] as? String,
-            let state = properties["State"] as? String {
+            let state = properties["State"] as? String{
             
             let freeSpaceShort = properties["FreeSpaceShort"] as? String ?? ""
             let freeSpaceLong = properties["FreeSpaceLong"] as? String ?? ""

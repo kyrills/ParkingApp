@@ -22,8 +22,12 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     let request = MKDirectionsRequest()
     
     var parkingGarages: [ParkingObjects] = []
+    
+    var parkingGarages2: [ParkingRotterdamobjects] = []
+    
+    var selectedGarage: ParkingObjects?
   
-    var selectedGarage : ParkingObjects?
+    var selectedGarage2: ParkingRotterdamobjects?
     
     var resultSearchController: UISearchController!
     
@@ -72,6 +76,12 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                selector: #selector(MapViewController.setInitialData(notification:)),
                                                name: NSNotification.Name(rawValue: NotificationID.setInitialData),
                                                object: nil)
+        
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(MapViewController.setSecondData(notification:)),
+//                                               name: NSNotification.Name(rawValue: NotificationID.setSecondData),
+//                                               object: nil)
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -87,6 +97,14 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                                   regionRadius * 0.2)
         parkingMapView.setRegion(coordinateRegion, animated: true)
     }
+
+    
+    // plz explain the notification func a bit again, cant find it on the internet
+    @objc func setSecondData(notification: NSNotification) {
+        var secondData = notification.userInfo as! Dictionary<String, ParkingRotterdamobjects>
+            parkingGarages2.append(secondData)
+    }
+    
     
     @objc func setInitialData(notification: NSNotification){
         //this ensures map is only loaded once, after that the data must be requested from REALM
