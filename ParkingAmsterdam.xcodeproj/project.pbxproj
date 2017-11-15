@@ -7,9 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A050A120B49C2573CDCC5DD /* Pods_ParkingAmsterdamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A7BA46A1514C2E15A266DA /* Pods_ParkingAmsterdamTests.framework */; };
 		6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */; };
+		813A20851FB471F0005D52AB /* detailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813A20831FB471F0005D52AB /* detailView.storyboard */; };
+		813A20881FB9FC04005D52AB /* ParkingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A20871FB9FC04005D52AB /* ParkingList.swift */; };
+		813A208A1FB9FD98005D52AB /* ParkingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813A20891FB9FD98005D52AB /* ParkingList.storyboard */; };
+		813A208D1FBAE740005D52AB /* ParkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A208B1FBAE740005D52AB /* ParkListCell.swift */; };
+		813A208E1FBAE740005D52AB /* parkListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 813A208C1FBAE740005D52AB /* parkListCell.xib */; };
 		817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572A61FB1A77C00BF3D24 /* ParkingAmsterdamService.swift */; };
 		817572A91FB1A7AE00BF3D24 /* ParkingObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */; };
+		81B4B87C1FBB468F00326FC0 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81B4B87B1FBB468F00326FC0 /* TabBarViewController.swift */; };
 		81C6A2D71FB30B59007E71F1 /* DirectionPolyline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C6A2D61FB30B59007E71F1 /* DirectionPolyline.swift */; };
 		908AFDFF1FBC53A400A134F5 /* detailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 908AFDFE1FBC53A400A134F5 /* detailView.storyboard */; };
 		90C90FC41FBAF63900C3FDA7 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C90FC31FBAF63900C3FDA7 /* UIImageExtension.swift */; };
@@ -34,14 +41,38 @@
 		D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F06EAD1FB0C6400013659D /* MapViewController.swift */; };
 		D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EAF1FB0C6400013659D /* Main.storyboard */; };
 		D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0F06EB41FB0C6400013659D /* LaunchScreen.storyboard */; };
+		D0FDF6D41FBAEBE50004D44C /* CLLocation2DExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF6D31FBAEBE50004D44C /* CLLocation2DExtension.swift */; };
+		D0FDF6D61FBAF2520004D44C /* PlacemarkExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF6D51FBAF2520004D44C /* PlacemarkExtension.swift */; };
+        D0FDF71F1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FDF71E1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift */; };
+		D0FDF72B1FBB12A80004D44C /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0FDF72D1FBB12A80004D44C /* RealmSwift.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		D0FDF7211FBB0B6E0004D44C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D0F06EA01FB0C6400013659D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D0F06EA71FB0C6400013659D;
+			remoteInfo = ParkingAmsterdam;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		01969F23DE7F5F52476AE62A /* Pods-ParkingAmsterdamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests.release.xcconfig"; sourceTree = "<group>"; };
+		031D0527176DF9E9B7B76A38 /* Pods-ParkingAmsterdamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.release.xcconfig"; sourceTree = "<group>"; };
+		813A20841FB471F0005D52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ParkingAmsterdam/Base.lproj/detailView.storyboard; sourceTree = "<group>"; };
+		813A20871FB9FC04005D52AB /* ParkingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingList.swift; sourceTree = "<group>"; };
+		813A20891FB9FD98005D52AB /* ParkingList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingList.storyboard; sourceTree = "<group>"; };
+		813A208B1FBAE740005D52AB /* ParkListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkListCell.swift; sourceTree = "<group>"; };
+		813A208C1FBAE740005D52AB /* parkListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = parkListCell.xib; sourceTree = "<group>"; };
 		817572A61FB1A77C00BF3D24 /* ParkingAmsterdamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAmsterdamService.swift; sourceTree = "<group>"; };
 		817572A81FB1A7AE00BF3D24 /* ParkingObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingObjects.swift; sourceTree = "<group>"; };
+		81B4B87B1FBB468F00326FC0 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		81C6A2D61FB30B59007E71F1 /* DirectionPolyline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPolyline.swift; sourceTree = "<group>"; };
 		89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.debug.xcconfig"; sourceTree = "<group>"; };
+		89A7BA46A1514C2E15A266DA /* Pods_ParkingAmsterdamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingAmsterdamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingAmsterdam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		908AFDFE1FBC53A400A134F5 /* detailView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = detailView.storyboard; sourceTree = "<group>"; };
 		90C90FC31FBAF63900C3FDA7 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
@@ -68,6 +99,17 @@
 		D0F06EB01FB0C6400013659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D0F06EB51FB0C6400013659D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0F06EB71FB0C6400013659D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FDF6D31FBAEBE50004D44C /* CLLocation2DExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CLLocation2DExtension.swift; sourceTree = "<group>"; };
+		D0FDF6D51FBAF2520004D44C /* PlacemarkExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacemarkExtension.swift; sourceTree = "<group>"; };
+        		D0FDF71C1FBB0B6E0004D44C /* ParkingAmsterdamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkingAmsterdamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FDF71E1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingAmsterdamTests.swift; sourceTree = "<group>"; };
+		D0FDF7201FBB0B6E0004D44C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D0FDF7271FBB12010004D44C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FDF7291FBB120F0004D44C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FDF72C1FBB12A80004D44C /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FDF72D1FBB12A80004D44C /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0FDF72F1FBB14850004D44C /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +118,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FDF7191FBB0B6E0004D44C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FDF72B1FBB12A80004D44C /* RealmSwift.framework in Frameworks */,
+				4A050A120B49C2573CDCC5DD /* Pods_ParkingAmsterdamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +142,17 @@
 				908AFDFE1FBC53A400A134F5 /* detailView.storyboard */,
 			);
 			path = "Detail View";
+			sourceTree = "<group>";
+		};
+		813A20861FB9FB6E005D52AB /* ParkingList */ = {
+			isa = PBXGroup;
+			children = (
+				813A20871FB9FC04005D52AB /* ParkingList.swift */,
+				813A20891FB9FD98005D52AB /* ParkingList.storyboard */,
+				813A208B1FBAE740005D52AB /* ParkListCell.swift */,
+				813A208C1FBAE740005D52AB /* parkListCell.xib */,
+			);
+			path = ParkingList;
 			sourceTree = "<group>";
 		};
 		95DA85921FB2EBD1001F7B09 /* AnnotationView */ = {
@@ -117,6 +179,8 @@
 			children = (
 				89745D0BF5B07E1484BA276A /* Pods-ParkingAmsterdam.debug.xcconfig */,
 				2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */,
+				031D0527176DF9E9B7B76A38 /* Pods-ParkingAmsterdamTests.debug.xcconfig */,
+				01969F23DE7F5F52476AE62A /* Pods-ParkingAmsterdamTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -125,6 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F06EAF1FB0C6400013659D /* Main.storyboard */,
+				81B4B87B1FBB468F00326FC0 /* TabBarViewController.swift */,
 				D0F06EAD1FB0C6400013659D /* MapViewController.swift */,
 				D022AC391FB18E0300B00003 /* LocationViewControllerExtension.swift */,
 				D06ECC7D1FB3459E00C1B3E1 /* HandleMapSearch.swift */,
@@ -157,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				D0B7970F1FB206780092AD6D /* StringExtension.swift */,
+				D0FDF6D31FBAEBE50004D44C /* CLLocation2DExtension.swift */,
+				D0FDF6D51FBAF2520004D44C /* PlacemarkExtension.swift */,
 				95DA85991FB3210A001F7B09 /* UIViewExtension.swift */,
 				90C90FC31FBAF63900C3FDA7 /* UIImageExtension.swift */,
 			);
@@ -167,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F06EAA1FB0C6400013659D /* ParkingAmsterdam */,
+				D0FDF71D1FBB0B6E0004D44C /* ParkingAmsterdamTests */,
 				D0F06EA91FB0C6400013659D /* Products */,
 				B26B357B0AEEB30226A6263E /* Pods */,
 				EE3D0F2FA855F0D929AE0583 /* Frameworks */,
@@ -178,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */,
+				D0FDF71C1FBB0B6E0004D44C /* ParkingAmsterdamTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +259,7 @@
 				D0B7970E1FB206590092AD6D /* Extension */,
 				D022AC3F1FB1982B00B00003 /* DataLayer */,
 				D022AC381FB18DC000B00003 /* MapViewControllers */,
+				813A20861FB9FB6E005D52AB /* ParkingList */,
 				D06ECC7F1FB354BC00C1B3E1 /* TableSearchController */,
 				95DD74691FB45C5000EDAF16 /* Assets.xcassets */,
 				95DA85921FB2EBD1001F7B09 /* AnnotationView */,
@@ -199,10 +269,25 @@
 			path = ParkingAmsterdam;
 			sourceTree = "<group>";
 		};
+		D0FDF71D1FBB0B6E0004D44C /* ParkingAmsterdamTests */ = {
+			isa = PBXGroup;
+			children = (
+				D0FDF71E1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift */,
+				D0FDF7201FBB0B6E0004D44C /* Info.plist */,
+			);
+			path = ParkingAmsterdamTests;
+			sourceTree = "<group>";
+		};
 		EE3D0F2FA855F0D929AE0583 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D0FDF72F1FBB14850004D44C /* Alamofire.framework */,
+				D0FDF72C1FBB12A80004D44C /* Realm.framework */,
+				D0FDF72D1FBB12A80004D44C /* RealmSwift.framework */,
+				D0FDF7291FBB120F0004D44C /* Realm.framework */,
+				D0FDF7271FBB12010004D44C /* RealmSwift.framework */,
 				8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */,
+				89A7BA46A1514C2E15A266DA /* Pods_ParkingAmsterdamTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -230,6 +315,27 @@
 			productReference = D0F06EA81FB0C6400013659D /* ParkingAmsterdam.app */;
 			productType = "com.apple.product-type.application";
 		};
+		D0FDF71B1FBB0B6E0004D44C /* ParkingAmsterdamTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D0FDF7231FBB0B6E0004D44C /* Build configuration list for PBXNativeTarget "ParkingAmsterdamTests" */;
+			buildPhases = (
+				9ADEF0BBBDB9E2B7858E7D0F /* [CP] Check Pods Manifest.lock */,
+				D0FDF7181FBB0B6E0004D44C /* Sources */,
+				D0FDF7191FBB0B6E0004D44C /* Frameworks */,
+				D0FDF71A1FBB0B6E0004D44C /* Resources */,
+				EECF54760F131294DC5E3F7A /* [CP] Embed Pods Frameworks */,
+				7E9B3DE993074D782CA7D851 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D0FDF7221FBB0B6E0004D44C /* PBXTargetDependency */,
+			);
+			name = ParkingAmsterdamTests;
+			productName = ParkingAmsterdamTests;
+			productReference = D0FDF71C1FBB0B6E0004D44C /* ParkingAmsterdamTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -243,6 +349,11 @@
 					D0F06EA71FB0C6400013659D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+					};
+					D0FDF71B1FBB0B6E0004D44C = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D0F06EA71FB0C6400013659D;
 					};
 				};
 			};
@@ -260,6 +371,7 @@
 			projectRoot = "";
 			targets = (
 				D0F06EA71FB0C6400013659D /* ParkingAmsterdam */,
+				D0FDF71B1FBB0B6E0004D44C /* ParkingAmsterdamTests */,
 			);
 		};
 /* End PBXProject section */
@@ -272,11 +384,20 @@
 				D0F06EB61FB0C6400013659D /* LaunchScreen.storyboard in Resources */,
 				95C0C5BB1FB1DC80008A3BED /* Assets.xcassets in Resources */,
 				908AFDFF1FBC53A400A134F5 /* detailView.storyboard in Resources */,
+				813A208E1FBAE740005D52AB /* parkListCell.xib in Resources */,
 				95DD746F1FB4600200EDAF16 /* searchTable.storyboard in Resources */,
 				95DA85941FB2EC0C001F7B09 /* DetailParkingView.xib in Resources */,
 				D0F06EB11FB0C6400013659D /* Main.storyboard in Resources */,
+				813A208A1FB9FD98005D52AB /* ParkingList.storyboard in Resources */,
 				95DD746A1FB45C5200EDAF16 /* Assets.xcassets in Resources */,
 				95DA85A31FB34C8F001F7B09 /* detailTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D0FDF71A1FBB0B6E0004D44C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,6 +437,39 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7E9B3DE993074D782CA7D851 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ADEF0BBBDB9E2B7858E7D0F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ParkingAmsterdamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E046098C86152F586D1D80D7 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,9 +477,9 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.0/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS11.0/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.0/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -338,6 +492,28 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		EECF54760F131294DC5E3F7A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.2/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm-iOS11.2/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.2/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -345,18 +521,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				813A208D1FBAE740005D52AB /* ParkListCell.swift in Sources */,
 				95DA85961FB2FB2F001F7B09 /* GarageDetailViewController.swift in Sources */,
+				81B4B87C1FBB468F00326FC0 /* TabBarViewController.swift in Sources */,
 				817572A91FB1A7AE00BF3D24 /* ParkingObjects.swift in Sources */,
 				95DA85A21FB34C8F001F7B09 /* detailTableViewCell.swift in Sources */,
 				D022AC411FB1983500B00003 /* Constants.swift in Sources */,
+				D0FDF6D61FBAF2520004D44C /* PlacemarkExtension.swift in Sources */,
 				D0F06EAE1FB0C6400013659D /* MapViewController.swift in Sources */,
 				90C90FC41FBAF63900C3FDA7 /* UIImageExtension.swift in Sources */,
 				D06ECC7E1FB3459E00C1B3E1 /* HandleMapSearch.swift in Sources */,
 				81C6A2D71FB30B59007E71F1 /* DirectionPolyline.swift in Sources */,
+				813A20881FB9FC04005D52AB /* ParkingList.swift in Sources */,
 				D0F06EAC1FB0C6400013659D /* AppDelegate.swift in Sources */,
 				95DA85981FB31FBD001F7B09 /* DetailAnnotationView.swift in Sources */,
 				817572A71FB1A77C00BF3D24 /* ParkingAmsterdamService.swift in Sources */,
 				D0B797101FB206780092AD6D /* StringExtension.swift in Sources */,
+				D0FDF6D41FBAEBE50004D44C /* CLLocation2DExtension.swift in Sources */,
 				95DA859A1FB3210A001F7B09 /* UIViewExtension.swift in Sources */,
 				D022AC3A1FB18E0300B00003 /* LocationViewControllerExtension.swift in Sources */,
 				D06ECC7A1FB33D9900C1B3E1 /* LocationSearchTable.swift in Sources */,
@@ -366,7 +547,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D0FDF7181FBB0B6E0004D44C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D0FDF71F1FBB0B6E0004D44C /* ParkingAmsterdamTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D0FDF7221FBB0B6E0004D44C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D0F06EA71FB0C6400013659D /* ParkingAmsterdam */;
+			targetProxy = D0FDF7211FBB0B6E0004D44C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D0F06EAF1FB0C6400013659D /* Main.storyboard */ = {
@@ -529,6 +726,40 @@
 			};
 			name = Release;
 		};
+		D0FDF7241FBB0B6E0004D44C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 031D0527176DF9E9B7B76A38 /* Pods-ParkingAmsterdamTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = ParkingAmsterdamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheAppAcademy.ParkingAmsterdamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkingAmsterdam.app/ParkingAmsterdam";
+			};
+			name = Debug;
+		};
+		D0FDF7251FBB0B6E0004D44C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 01969F23DE7F5F52476AE62A /* Pods-ParkingAmsterdamTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				INFOPLIST_FILE = ParkingAmsterdamTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = TheAppAcademy.ParkingAmsterdamTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParkingAmsterdam.app/ParkingAmsterdam";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -546,6 +777,15 @@
 			buildConfigurations = (
 				D0F06EBB1FB0C6400013659D /* Debug */,
 				D0F06EBC1FB0C6400013659D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D0FDF7231FBB0B6E0004D44C /* Build configuration list for PBXNativeTarget "ParkingAmsterdamTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0FDF7241FBB0B6E0004D44C /* Debug */,
+				D0FDF7251FBB0B6E0004D44C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

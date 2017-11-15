@@ -7,34 +7,7 @@ class LocationSearchTable: UITableViewController {
     var matchingItems: [MKMapItem] = []
     var mapView: MKMapView?
     
-    func parseAddress(_ selectedItem:MKPlacemark) -> String {
-        
-        let firstSpace = (selectedItem.subThoroughfare != nil &&
-            selectedItem.thoroughfare != nil) ? " " : ""
-        
-        let comma = (selectedItem.subThoroughfare != nil || selectedItem.thoroughfare != nil) &&
-            (selectedItem.subAdministrativeArea != nil || selectedItem.administrativeArea != nil) ? ", " : ""
-        
-        let secondSpace = (selectedItem.subAdministrativeArea != nil &&
-            selectedItem.administrativeArea != nil) ? " " : ""
-        
-        let addressLine = String(
-            format:"%@%@%@%@%@%@%@",
-            // street number
-            selectedItem.subThoroughfare ?? "",
-            firstSpace,
-            // street name
-            selectedItem.thoroughfare ?? "",
-            comma,
-            // city®
-            selectedItem.locality ?? "",
-            secondSpace,
-            // state
-            selectedItem.administrativeArea ?? ""
-        )
-        
-        return addressLine
-    }
+
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return matchingItems.count
@@ -44,7 +17,7 @@ class LocationSearchTable: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         let selectedItem = matchingItems[(indexPath as NSIndexPath).row].placemark
         cell.textLabel?.text = selectedItem.name
-        cell.detailTextLabel?.text = parseAddress(selectedItem)
+        cell.detailTextLabel?.text = selectedItem.parseAddress()
         return cell
     }
     

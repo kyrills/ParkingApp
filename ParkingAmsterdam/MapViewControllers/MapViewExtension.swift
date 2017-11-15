@@ -3,8 +3,6 @@ import MapKit
 
 extension MapViewController: MKMapViewDelegate {
     
-    
-    
     func mapViewWillStartLoadingMap(_ mapView: MKMapView) {
         
         parkingMapView.showsCompass =  true
