@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -32,19 +32,11 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carplacehlder1" translatesAutoresizingMaskIntoConstraints="NO" id="zJb-gZ-mKy">
-                                            <rect key="frame" x="67" y="94" width="240" height="128"/>
+                                            <rect key="frame" x="67" y="94" width="274" height="128"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="128" id="eKu-3L-E7h"/>
                                             </constraints>
                                         </imageView>
-                                        <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ktE-Sf-LTS">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <color key="barTintColor" red="0.25574759293098159" green="0.63234017889937832" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <items>
-                                                <navigationItem title="Title" id="uMp-pF-bX1"/>
-                                            </items>
-                                        </navigationBar>
                                         <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MEA-kQ-H8e">
                                             <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                             <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -261,18 +253,28 @@
                                             </constraints>
                                             <blurEffect style="light"/>
                                         </visualEffectView>
+                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rlP-pW-u03">
+                                            <rect key="frame" x="293" y="17" width="62" height="57"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="PaO-38-EbJ"/>
+                                                <constraint firstAttribute="width" constant="60" id="Qdv-4e-GDJ"/>
+                                            </constraints>
+                                            <state key="normal" image="starWhiteBig"/>
+                                            <connections>
+                                                <action selector="toggleFavourite:" destination="hzD-co-qG4" eventType="touchUpInside" id="lOE-og-OBT"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="IzS-XY-HkU" secondAttribute="trailing" constant="-1" id="1rf-K6-zSZ"/>
-                                        <constraint firstItem="zJb-gZ-mKy" firstAttribute="centerX" secondItem="ktE-Sf-LTS" secondAttribute="centerX" id="4F1-U6-6HF"/>
                                         <constraint firstItem="2Yz-tr-Lmu" firstAttribute="top" secondItem="BrW-SL-TGW" secondAttribute="top" id="5Kg-sD-bhx"/>
                                         <constraint firstItem="z6m-Mv-gUu" firstAttribute="top" secondItem="IzS-XY-HkU" secondAttribute="bottom" constant="26" id="B9c-vH-nSM"/>
-                                        <constraint firstItem="zJb-gZ-mKy" firstAttribute="top" secondItem="ktE-Sf-LTS" secondAttribute="bottom" constant="50" id="Dnb-yc-Jyy"/>
                                         <constraint firstItem="IzS-XY-HkU" firstAttribute="leading" secondItem="z6m-Mv-gUu" secondAttribute="leading" id="Ds6-oe-EFH"/>
                                         <constraint firstItem="omR-nV-TuS" firstAttribute="top" secondItem="edX-HV-kSx" secondAttribute="top" id="E3G-Af-aoA"/>
                                         <constraint firstItem="BrW-SL-TGW" firstAttribute="leading" secondItem="2Yz-tr-Lmu" secondAttribute="trailing" constant="21" id="GYm-6m-Pbp"/>
                                         <constraint firstItem="2Yz-tr-Lmu" firstAttribute="top" secondItem="IzS-XY-HkU" secondAttribute="top" id="Iip-R8-FlH"/>
                                         <constraint firstItem="E8Y-IH-Rxu" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" constant="32" id="K1e-pe-2L2"/>
+                                        <constraint firstItem="omR-nV-TuS" firstAttribute="top" secondItem="E8Y-IH-Rxu" secondAttribute="bottom" constant="41" id="PJy-0N-wPE"/>
                                         <constraint firstItem="z6m-Mv-gUu" firstAttribute="leading" secondItem="pjS-xr-5Tj" secondAttribute="trailing" constant="8" symbolic="YES" id="SLE-T2-i9w"/>
                                         <constraint firstItem="2Yz-tr-Lmu" firstAttribute="trailing" secondItem="XOA-dH-SxR" secondAttribute="trailing" id="THz-6W-U1a"/>
                                         <constraint firstItem="omR-nV-TuS" firstAttribute="leading" secondItem="BrW-SL-TGW" secondAttribute="leading" id="TVN-js-Ren"/>
@@ -287,12 +289,9 @@
                                         <constraint firstItem="XOA-dH-SxR" firstAttribute="top" secondItem="2Yz-tr-Lmu" secondAttribute="bottom" constant="26" id="jJC-Sy-iEu"/>
                                         <constraint firstAttribute="bottom" secondItem="MEA-kQ-H8e" secondAttribute="bottom" id="jV0-VY-zhv"/>
                                         <constraint firstItem="E8Y-IH-Rxu" firstAttribute="top" secondItem="zJb-gZ-mKy" secondAttribute="bottom" constant="8" id="ljp-mU-ttK"/>
-                                        <constraint firstAttribute="trailing" secondItem="ktE-Sf-LTS" secondAttribute="trailing" id="mQJ-wG-QzB"/>
                                         <constraint firstItem="IzS-XY-HkU" firstAttribute="leading" secondItem="edX-HV-kSx" secondAttribute="leading" id="nIc-Rl-N7L"/>
-                                        <constraint firstItem="ktE-Sf-LTS" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" id="oH7-68-jVc"/>
                                         <constraint firstAttribute="trailing" secondItem="MEA-kQ-H8e" secondAttribute="trailing" id="qFm-Ng-Mfb"/>
                                         <constraint firstAttribute="bottom" secondItem="2Yz-tr-Lmu" secondAttribute="bottom" constant="221" id="qIq-uf-sCg"/>
-                                        <constraint firstItem="ktE-Sf-LTS" firstAttribute="top" secondItem="2Ka-dw-mTT" secondAttribute="top" id="u2G-IV-qD0"/>
                                         <constraint firstItem="zJb-gZ-mKy" firstAttribute="leading" secondItem="2Ka-dw-mTT" secondAttribute="leading" constant="67" id="vVq-6A-kzI"/>
                                         <constraint firstItem="IzS-XY-HkU" firstAttribute="trailing" secondItem="edX-HV-kSx" secondAttribute="trailing" id="x7T-at-8bi"/>
                                         <constraint firstItem="IzS-XY-HkU" firstAttribute="trailing" secondItem="z6m-Mv-gUu" secondAttribute="trailing" id="xlW-cS-t3v"/>
@@ -321,6 +320,7 @@
                     <connections>
                         <outlet property="blur1" destination="E8Y-IH-Rxu" id="2KS-nv-mTB"/>
                         <outlet property="carImage" destination="zJb-gZ-mKy" id="s3D-Mg-0JX"/>
+                        <outlet property="favouriteButton" destination="rlP-pW-u03" id="mba-kp-T8Z"/>
                         <outlet property="label1" destination="x5f-bo-yLO" id="FWl-Iv-PwS"/>
                         <outlet property="label2" destination="4Lr-Y4-Foq" id="6ta-UH-Ihk"/>
                         <outlet property="label3" destination="WaL-2x-zhV" id="KQm-8S-RJL"/>
@@ -335,6 +335,7 @@
     </scenes>
     <resources>
         <image name="carplacehlder1" width="274" height="184"/>
+        <image name="starWhiteBig" width="32" height="32"/>
         <image name="whiteback" width="640" height="1136"/>
     </resources>
 </document>

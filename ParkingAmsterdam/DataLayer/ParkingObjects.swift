@@ -64,7 +64,7 @@ class ParkingObjects: Object {
         }
     }
     
-    func favouriteParkingSpot() {
+    func favouriteParkingSpot() -> ParkingObjects? {
         //This handles the favourites button.
         let realm = try! Realm()
         let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
@@ -79,20 +79,11 @@ class ParkingObjects: Object {
                     parkingSite.favourite = false
                 }
             }
-        } else {
-            // Persist your data easily
-            try! realm.write {
-                realm.add(self)
-            }
+            return parkingSite
+
         }
+        return nil
     }
-    
-//    func sortByDistance() -> [ParkingObjects]  {
-//        // Get the default Realm
-//        let realm = try! Realm()
-//        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
-//        return nil
-//    }
     
     static func sortedByFavourite() -> [ParkingObjects]{
         var allSortedFavourites: [ParkingObjects] = []
@@ -103,6 +94,7 @@ class ParkingObjects: Object {
         }
         return allSortedFavourites
     }
+    
     static func retrieveAllData() -> [ParkingObjects] {
         var allParkingData: [ParkingObjects] = []
         let realm = try! Realm()

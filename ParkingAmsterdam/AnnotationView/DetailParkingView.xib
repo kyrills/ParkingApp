@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ET6-l8-Gcr" customClass="DetailParkingView" customModule="ParkingAmsterdam" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="228" height="215"/>
+            <rect key="frame" x="0.0" y="0.0" width="228" height="241"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmY-1h-EOs">
@@ -32,10 +32,17 @@
                     </state>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rAC-Hg-sfh">
-                    <rect key="frame" x="7" y="10" width="215" height="195"/>
+                    <rect key="frame" x="7" y="10" width="215" height="227"/>
                     <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-nl-UC7">
+                            <rect key="frame" x="0.0" y="0.0" width="215" height="32"/>
+                            <state key="normal" image="starWhiteBig"/>
+                            <connections>
+                                <action selector="toggleFavourite:" destination="ET6-l8-Gcr" eventType="touchUpInside" id="BvU-KN-v80"/>
+                            </connections>
+                        </button>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pC4-WT-N3p">
-                            <rect key="frame" x="0.0" y="0.0" width="215" height="100"/>
+                            <rect key="frame" x="0.0" y="32" width="215" height="100"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parkingdesign" translatesAutoresizingMaskIntoConstraints="NO" id="qyW-GD-OWP">
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -76,7 +83,7 @@
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bkC-e9-9Ci">
-                            <rect key="frame" x="0.0" y="100" width="215" height="95"/>
+                            <rect key="frame" x="0.0" y="132" width="215" height="95"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4t7-nf-uvp">
                                     <rect key="frame" x="0.0" y="0.0" width="215" height="25"/>
@@ -126,6 +133,9 @@
                             </subviews>
                         </stackView>
                     </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="zUP-nl-UC7" secondAttribute="trailing" id="LAC-tx-XNL"/>
+                    </constraints>
                 </stackView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -139,14 +149,16 @@
                 <outlet property="ImageView" destination="qyW-GD-OWP" id="ww1-1X-4kg"/>
                 <outlet property="TitleLabel" destination="4t7-nf-uvp" id="NxF-CM-JSg"/>
                 <outlet property="backgroundContentButton" destination="bmY-1h-EOs" id="bgh-9o-5kh"/>
+                <outlet property="favouriteButton" destination="zUP-nl-UC7" id="tip-4e-Hdl"/>
                 <outlet property="goToDetailButton" destination="rno-My-TV0" id="ujq-fB-oIq"/>
                 <outlet property="parkingSpaceLabel" destination="YAN-PG-iU4" id="1YJ-Gw-M8A"/>
                 <outlet property="routeToGarageButton" destination="WWq-8u-NTT" id="5D4-bV-Liw"/>
             </connections>
-            <point key="canvasLocation" x="-126" y="217.5"/>
+            <point key="canvasLocation" x="-126" y="230.5"/>
         </view>
     </objects>
     <resources>
         <image name="parkingdesign" width="100" height="100"/>
+        <image name="starWhiteBig" width="32" height="32"/>
     </resources>
 </document>

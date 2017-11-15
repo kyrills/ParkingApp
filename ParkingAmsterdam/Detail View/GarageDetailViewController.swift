@@ -16,11 +16,11 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var blur4: UIVisualEffectView!
     @IBOutlet weak var blur5: UIVisualEffectView!
     
-    @IBOutlet weak var favouriteButton: UIButton!
-    
-    
     var parkingGarages: [ParkingObjects]!
     var selectedGarage: ParkingObjects!
+    
+    @IBOutlet weak var favouriteButton: UIButton!
+    var rightButtonItem: UIBarButtonItem?
     
     let blur = UIVisualEffectView(effect: UIBlurEffect(style:
         UIBlurEffectStyle.light))
@@ -32,6 +32,9 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setFavourite()
+
+
         UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
@@ -62,8 +65,6 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         }
         carImage.image = #imageLiteral(resourceName: "carplacehlder1")
         
-        
-        checkForFavourite(selectedGarage: selectedGarage)
     }
     
     @IBAction func cameraButton(_ sender: Any) {
@@ -87,19 +88,18 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
         dismiss(animated: true, completion: nil)
     }
     
-    func checkForFavourite(selectedGarage: ParkingObjects) {
-        if selectedGarage.favourite == true {
-            favouriteButton.setImage(UIImage(named: "starYellow"), for: .normal)
-        } else {
-            favouriteButton.setImage(UIImage(named: "starWhite"), for: .normal)
+    @IBAction func toggleFavourite(_ sender: UIButton) {
+        if let toggeldFavourite = selectedGarage.favouriteParkingSpot() {
+            favouriteButton.setImage(toggeldFavourite.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
         }
+
     }
     
-    @IBAction func favouriteButton(_ sender: Any) {
-        
-        selectedGarage.favouriteParkingSpot()
-        
-        checkForFavourite(selectedGarage: selectedGarage)
+    func setFavourite() {
+
+        favouriteButton.setImage(self.selectedGarage.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
+        let rightButtonItem = UIBarButtonItem.init(customView: favouriteButton)
+        self.navigationItem.rightBarButtonItem = rightButtonItem
     }
     
 }
