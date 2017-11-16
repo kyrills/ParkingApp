@@ -19,7 +19,7 @@ class DetailAnnotationView: MKAnnotationView {
         self.canShowCallout = false // 1
         // put this in annotationView
         self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
-
+        
     }
     
     required init?(coder aDecoder: NSCoder) {

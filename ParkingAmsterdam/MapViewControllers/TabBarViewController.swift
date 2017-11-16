@@ -1,11 +1,3 @@
-//
-//  TabBarViewController.swift
-//  ParkingAmsterdam
-//
-//  Created by Trym Lintzen on 14-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 import MapKit
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {

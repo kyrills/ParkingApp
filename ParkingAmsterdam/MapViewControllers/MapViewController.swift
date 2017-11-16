@@ -40,6 +40,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         //  ToDo Fix timer stuff
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
         
+        
         self.locationmanager.delegate = self
         self.locationmanager.requestWhenInUseAuthorization()
         
@@ -48,19 +49,19 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         resultSearchController.searchResultsUpdater = locationSearchTable
         resultSearchController.hidesNavigationBarDuringPresentation = false
         resultSearchController.dimsBackgroundDuringPresentation = true
-        resultSearchController.searchBar.barTintColor = UIColor.darkGray
+        resultSearchController.searchBar.barTintColor = UIColor.white
         
         let searchBar = resultSearchController!.searchBar
         searchBar.sizeToFit()
         searchBar.placeholder = "Search for places"
         
-        UINavigationBar.appearance().barTintColor = .lightGray
+        UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().tintColor = .lightGray
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.lightGray]
         UINavigationBar.appearance().isTranslucent = false
         
         navigationItem.titleView = resultSearchController?.searchBar
-        navigationItem.titleView?.backgroundColor = UIColor.darkGray
+        navigationItem.titleView?.backgroundColor = UIColor.clear
         definesPresentationContext = true
         
         locationSearchTable.mapView = parkingMapView
@@ -146,7 +147,5 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         coordinatesToMapViewRepresentation()
         parkingMapView.removeOverlays(parkingMapView.overlays)
     }
-    
-    
     
 }
