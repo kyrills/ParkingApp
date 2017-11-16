@@ -26,6 +26,7 @@ class ParkingRotterdamService {
                             self.garageArray.append(garageSite)
                             
                             garageSite.saveData()
+                            garageSite.saveAddressData()
 
                         }
 
