@@ -41,7 +41,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         ParkingRotterdamService.sharedInstance.getData()
         
         //  ToDo Fix timer stuff
-        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
+//        Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
         
         
         self.locationmanager.delegate = self
@@ -102,23 +102,23 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         
     }
 
-// plz explain the notification func a bit again, cant find it on the internet
-@objc func setSecondData(notification: NSNotification) {
-    var secondData = notification.userInfo as! Dictionary<String, [ParkingObjects]>
-    if let parkingRotterdam = secondData["data2"]{
-        parkingGaragesRdam += parkingRotterdam
-    }
-    var annotationObject: [ParkingAnnotations] = []
-    
-    for garage in parkingGaragesRdam{
-        let coordinate = CLLocationCoordinate2D.init(latitude: Double(garage.latitude!)!,
-                                                     longitude: Double(garage.longitude!)!)
-        let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
+    // plz explain the notification func a bit again, cant find it on the internet
+    @objc func setSecondData(notification: NSNotification) {
+        var secondData = notification.userInfo as! Dictionary<String, [ParkingObjects]>
+        if let parkingRotterdam = secondData["data2"]{
+            parkingGaragesRdam += parkingRotterdam
+        }
+        var annotationObject: [ParkingAnnotations] = []
         
-        annotationObject.append(annotation)
+        for garage in parkingGaragesRdam{
+            let coordinate = CLLocationCoordinate2D.init(latitude: Double(garage.latitude!)!,
+                                                         longitude: Double(garage.longitude!)!)
+            let annotation = ParkingAnnotations.init(parkingGarage: garage, coordinate: coordinate)
+            
+            annotationObject.append(annotation)
+        }
+        self.parkingMapView.showAnnotations(annotationObject, animated: true)
     }
-    self.parkingMapView.showAnnotations(annotationObject, animated: true)
-}
     
     
     @objc func setInitialData(notification: NSNotification){
