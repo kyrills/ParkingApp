@@ -34,9 +34,7 @@ class DetailParkingView: UIView {
 
         
         TitleLabel.text = parkingGarages.Name!.removeFirstCharacters()
-        if let freeSpacesShort = parkingGarages.FreeSpaceShort {
-            parkingSpaceLabel.text = "\(freeSpacesShort)"
-        }
+        parkingSpaceLabel.text = "\(parkingGarages.FreeSpaceShort ?? "")"        
     }
     
     @IBAction func goToDetailButton(_ sender: Any) {
@@ -51,6 +49,7 @@ class DetailParkingView: UIView {
         if let toggeldFavourite = parkingGarages.favouriteParkingSpot() {
             favouriteButton.setImage(toggeldFavourite.favourite == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
         }
+    }
     
     func configureWithParkingGarages(parkingGarages: ParkingObjects) {
         self.parkingGarages = parkingGarages
@@ -66,7 +65,7 @@ class DetailParkingView: UIView {
         TitleLabel.textColor = UIColor.black
     }
     
-        func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         
         if let result = goToDetailButton.hitTest(convert(point, to: goToDetailButton), with: event) {
             return result
@@ -78,5 +77,4 @@ class DetailParkingView: UIView {
         return backgroundContentButton.hitTest(convert(point, to: backgroundContentButton), with: event)
     }
 
-}
 }

@@ -11,10 +11,6 @@ class GarageDetailViewController: UIViewController, UIImagePickerControllerDeleg
     @IBOutlet weak var carImage: UIImageView!
     
     @IBOutlet weak var blur1: UIVisualEffectView!
-    @IBOutlet weak var blur2: UIVisualEffectView!
-    @IBOutlet weak var blur3: UIVisualEffectView!
-    @IBOutlet weak var blur4: UIVisualEffectView!
-    @IBOutlet weak var blur5: UIVisualEffectView!
     
     var parkingGarages: [ParkingObjects]!
     var selectedGarage: ParkingObjects!

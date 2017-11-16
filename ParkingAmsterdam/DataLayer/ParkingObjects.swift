@@ -13,6 +13,7 @@ class ParkingObjects: Object {
     @objc dynamic var FreeSpaceLong: String?
     @objc dynamic var ShortCapacity : String?
     @objc dynamic var LongCapacity : String?
+    @objc dynamic var dynamicDataUrl : String = ""
     @objc dynamic var favourite: Bool = false
     @objc dynamic var distanceInMeters: String = ""
     @objc dynamic var address: String = ""
@@ -29,7 +30,24 @@ class ParkingObjects: Object {
         self.FreeSpaceLong = FreeSpaceLong
         self.ShortCapacity = ShortCapacity
         self.LongCapacity = LongCapacity
+
     }
+    func UpdateData() {
+        // Get the default Realm
+        let realm = try! Realm()
+        let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
+        if let parkingSite = parkingData.first {
+            // Persist your data easily
+            try! realm.write {
+                parkingSite.FreeSpaceLong = self.FreeSpaceLong
+                parkingSite.FreeSpaceShort = self.FreeSpaceShort
+                parkingSite.LongCapacity = self.LongCapacity
+                parkingSite.PubDate = self.PubDate
+                parkingSite.ShortCapacity = self.ShortCapacity
+            
+        }
+    }
+}
     
     func saveDistance(distance: String) {
         // Get the default Realm
@@ -74,9 +92,9 @@ class ParkingObjects: Object {
                 parkingSite.FreeSpaceLong = self.FreeSpaceLong
                 parkingSite.FreeSpaceShort = self.FreeSpaceShort
                 parkingSite.LongCapacity = self.LongCapacity
-                parkingSite.ShortCapacity = self.ShortCapacity
                 parkingSite.PubDate = self.PubDate
-            }
+                parkingSite.ShortCapacity = self.ShortCapacity
+        }
         } else {
             // Persist your data easily
             try! realm.write {
@@ -136,13 +154,17 @@ class ParkingObjects: Object {
         return allParkingData
     }
     
-    func retrieveData() -> ParkingObjects{
+    func retrieveData() -> ParkingObjects?{
         // Get the default Realm
         let realm = try! Realm()
         
         // Query Realm for parking data object
         let parkingData = realm.objects(ParkingObjects.self).filter("id = %@",self.id!)
-        return parkingData.first!
+        if let result = parkingData.first {
+            return result
+        } else {
+            return nil
+        }
     }
     
     
