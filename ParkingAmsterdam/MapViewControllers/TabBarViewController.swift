@@ -19,8 +19,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if let destinationVC = viewController as? ParkingList  {
-            destinationVC.sourceCoordinate = sourceCoordinate
+        if let destinationNav = viewController as? UINavigationController,
+            let parkingList = destinationNav.viewControllers[0] as? ParkingList{
+            
+            parkingList.sourceCoordinate = sourceCoordinate
         }
         print(viewController)
     }

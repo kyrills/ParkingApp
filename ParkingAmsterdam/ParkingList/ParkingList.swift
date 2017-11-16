@@ -1,11 +1,3 @@
-//
-//  TableViewController.swift
-//  ParkingAmsterdam
-//
-//  Created by Trym Lintzen on 13-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 import MapKit
 
@@ -52,8 +44,6 @@ class ParkingList: UITableViewController {
     
     func setFavourite() {
         
-//        favouriteButton = UIButton.init(frame: CGRect.init(x: 0, y: 0, width: 30, height: 30))
-//        favouriteButton.setImage(self.favouriteState == true ? #imageLiteral(resourceName: "starYellowBig") : #imageLiteral(resourceName: "starWhiteBig"), for: UIControlState.normal)
         let rightButtonItem = UIBarButtonItem.init(customView: favouriteButton)
         self.navigationItem.rightBarButtonItem = rightButtonItem
     }
@@ -112,65 +102,4 @@ class ParkingList: UITableViewController {
         return cell
         
     }
-    
-    
-    
-    @IBAction func sortingList(_ sender: Any) {
-        let selectedSegment = (sender as AnyObject).selectedIndex
-        
-        if selectedSegment == 0 {
-            // Trym's code : distance
-            
-        } else {
-            // Kyrill's code (favourite)
-            selectedGarage.favouriteParkingSpot()
-        }
-    }
-    
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
