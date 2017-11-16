@@ -11,6 +11,14 @@ class DetailAnnotationView: MKAnnotationView {
     weak var customCalloutView: DetailParkingView?
     var parkingGarage: ParkingObjects!
     
+    var garageDetailMapView: DetailParkingView?
+    @objc func setDynamicData(notification: NSNotification) {
+        var secondData = notification.userInfo as! Dictionary<String, ParkingObjects>
+        let parkingGarage = secondData["data3"] as! ParkingObjects
+        garageDetailMapView?.configureWithGarage(parkingGarages: parkingGarage)
+        
+    }
+    
     override var annotation: MKAnnotation? {
         willSet { customCalloutView?.removeFromSuperview() }
     }
@@ -93,14 +101,6 @@ class DetailAnnotationView: MKAnnotationView {
         }
         return nil
     }
-    var garageDetailMapView: DetailParkingView?
-    @objc func setDynamicData(notification: NSNotification) {
-        var secondData = notification.userInfo as! Dictionary<String, ParkingObjects>
-        let parkingGarage = secondData["data3"] as! ParkingObjects
-        garageDetailMapView?.configureWithGarage(parkingGarages: parkingGarage)
-
-    }
-    
     override func prepareForReuse() {
         super.prepareForReuse()
         self.customCalloutView?.removeFromSuperview()
