@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QGg-pQ-7Af">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13770" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QGg-pQ-7Af">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13770"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,7 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" selectedImage="paper-map-7" id="3uR-X0-OGb"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="paper-map-7" selectedImage="paper-map-7" id="3uR-X0-OGb"/>
                     <navigationItem key="navigationItem" id="89e-Ez-LD7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -59,11 +59,11 @@
             </objects>
             <point key="canvasLocation" x="436" y="115.59220389805098"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="DrW-ny-j4j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Th5-nv-3F4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="paper-map-7" id="Tsa-j5-2O8"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="paper-map-7" selectedImage="paper-map-7" id="Tsa-j5-2O8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c6M-ZV-Wtj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -106,7 +106,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Th5-nv-3F4" kind="relationship" relationship="viewControllers" id="7jR-eB-Uct"/>
-                        <segue destination="02X-tb-XX5" kind="relationship" relationship="viewControllers" id="BcI-9f-3ig"/>
+                        <segue destination="CgR-HO-YUm" kind="relationship" relationship="viewControllers" id="Spv-9D-yOi"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vZf-2y-wCY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,20 +114,19 @@
             <point key="canvasLocation" x="-1290" y="116"/>
         </scene>
         <!--ParkingList-->
-        <scene sceneID="Cx8-O4-6XJ">
+        <scene sceneID="T50-yt-mzB">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="parkingList" storyboardName="ParkingList" referencedIdentifier="ParkingList" id="02X-tb-XX5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List parking garages" image="list-fat-7" selectedImage="listIcon" id="cik-dy-5Vd"/>
+                <viewControllerPlaceholder storyboardName="ParkingList" id="CgR-HO-YUm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="List" image="list-fat-7" id="mgM-7r-d2H"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bDw-EH-vad" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qx4-r7-7xm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1290" y="595"/>
+            <point key="canvasLocation" x="-1290" y="577"/>
         </scene>
     </scenes>
     <resources>
         <image name="blue_button_circle" width="186" height="186"/>
         <image name="list-fat-7" width="30" height="30"/>
-        <image name="listIcon" width="512" height="512"/>
         <image name="paper-map-7" width="30" height="30"/>
     </resources>
 </document>

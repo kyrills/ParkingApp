@@ -137,7 +137,7 @@ class ParkingObjects: Object {
     static func sortedByFavourite() -> [ParkingObjects]{
         var allSortedFavourites: [ParkingObjects] = []
         let realm = try! Realm()
-        let sortedFavourites = realm.objects(ParkingObjects.self).filter("favourite = true")
+        let sortedFavourites = realm.objects(ParkingObjects.self).filter("favourite = true").sorted(byKeyPath: "distanceInMeters", ascending: true)
         for i in sortedFavourites{
             allSortedFavourites += [i]
         }
