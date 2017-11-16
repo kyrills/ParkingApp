@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4A050A120B49C2573CDCC5DD /* Pods_ParkingAmsterdamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A7BA46A1514C2E15A266DA /* Pods_ParkingAmsterdamTests.framework */; };
 		6537E3CDE1B6424D4289DCDC /* Pods_ParkingAmsterdam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CEA971A048DCFBE4CF113F8 /* Pods_ParkingAmsterdam.framework */; };
-		813A20851FB471F0005D52AB /* detailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813A20831FB471F0005D52AB /* detailView.storyboard */; };
 		813A20881FB9FC04005D52AB /* ParkingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A20871FB9FC04005D52AB /* ParkingList.swift */; };
 		813A208A1FB9FD98005D52AB /* ParkingList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 813A20891FB9FD98005D52AB /* ParkingList.storyboard */; };
 		813A208D1FBAE740005D52AB /* ParkListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813A208B1FBAE740005D52AB /* ParkListCell.swift */; };
@@ -61,7 +60,6 @@
 		01969F23DE7F5F52476AE62A /* Pods-ParkingAmsterdamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests.release.xcconfig"; sourceTree = "<group>"; };
 		031D0527176DF9E9B7B76A38 /* Pods-ParkingAmsterdamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdamTests/Pods-ParkingAmsterdamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DBD52F4554E286EDF1661EA /* Pods-ParkingAmsterdam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingAmsterdam.release.xcconfig"; path = "Pods/Target Support Files/Pods-ParkingAmsterdam/Pods-ParkingAmsterdam.release.xcconfig"; sourceTree = "<group>"; };
-		813A20841FB471F0005D52AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ParkingAmsterdam/Base.lproj/detailView.storyboard; sourceTree = "<group>"; };
 		813A20871FB9FC04005D52AB /* ParkingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkingList.swift; sourceTree = "<group>"; };
 		813A20891FB9FD98005D52AB /* ParkingList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ParkingList.storyboard; sourceTree = "<group>"; };
 		813A208B1FBAE740005D52AB /* ParkListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkListCell.swift; sourceTree = "<group>"; };
@@ -478,12 +476,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.0/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm-iOS11.0/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.0/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -696,7 +696,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				DEVELOPMENT_TEAM = R27PQ6L3EN;
 				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -713,7 +713,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 35Y72ML6XR;
+				DEVELOPMENT_TEAM = R27PQ6L3EN;
 				INFOPLIST_FILE = ParkingAmsterdam/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
