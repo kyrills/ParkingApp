@@ -81,11 +81,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
                                                selector: #selector(MapViewController.setSecondData(notification:)),
                                                name: NSNotification.Name(rawValue: NotificationID.setSecondData),
                                                object: nil)
-        
-        NotificationCenter.default.addObserver(self,
-                                               selector: #selector(MapViewController.setDynamicData(notification:)),
-                                               name: NSNotification.Name(rawValue: NotificationID.setDynamicData),
-                                               object: nil)
+
         
     }
     
@@ -95,15 +91,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     @objc func getParkingData() {
         ParkingAmsterdamService.sharedInstance.getParkingData()
-//        for garage in parkingGaragesRdam{
-//            ParkingRotterdamService.sharedInstance.getDynamicData(dynamicUrl: garage.dynamicDataUrl, garage: garage)
-//        }
     }
     
     func setZoomInitialLocation(location: CLLocationCoordinate2D){
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius * 0.2,
                                                                   regionRadius * 0.2)
         parkingMapView.setRegion(coordinateRegion, animated: true)
+        
     }
 
 // plz explain the notification func a bit again, cant find it on the internet
@@ -122,14 +116,6 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
         annotationObject.append(annotation)
     }
     self.parkingMapView.showAnnotations(annotationObject, animated: true)
-}
-
-
-@objc func setDynamicData(notification: NSNotification) {
-    var secondData = notification.userInfo as! Dictionary<String, [ParkingObjects]>
-    if let parkingRotterdam = secondData["data3"]{
-        parkingGaragesRdam += parkingRotterdam
-    }
 }
     
     

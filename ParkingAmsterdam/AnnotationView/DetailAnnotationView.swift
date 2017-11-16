@@ -6,11 +6,11 @@ private let kGarageMapAnimationTime = 0.300
 
 class DetailAnnotationView: MKAnnotationView {
     
-
+    
     weak var delegate: GarageDetailMapViewDelegate?
     weak var customCalloutView: DetailParkingView?
     var parkingGarage: ParkingObjects!
-        
+    
     override var annotation: MKAnnotation? {
         willSet { customCalloutView?.removeFromSuperview() }
     }
@@ -20,7 +20,7 @@ class DetailAnnotationView: MKAnnotationView {
         self.canShowCallout = false // 1
         // put this in annotationView
         self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
-
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,11 +28,12 @@ class DetailAnnotationView: MKAnnotationView {
         self.canShowCallout = false // 1
         // put this in annotationView
         self.image = kGarageMapPinImage.resizeImage(image: #imageLiteral(resourceName: "location_pin"), targetSize: CGSize(width: 30.0, height: 30.0))
-
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+        
         
         if selected {
             self.customCalloutView?.removeFromSuperview() // remove old custom callout (if any)
@@ -72,19 +73,32 @@ class DetailAnnotationView: MKAnnotationView {
     
     func loadDetailParkingView() -> DetailParkingView? {
         if let views = Bundle.main.loadNibNamed("DetailParkingView", owner: self, options: nil) as? [DetailParkingView], views.count > 0 {
-            let garageDetailMapView = views.first!
-            garageDetailMapView.delegate = self.delegate
+            
+            NotificationCenter.default.addObserver(self,
+                                                   selector: #selector(DetailAnnotationView.setDynamicData(notification:)),
+                                                   name: NSNotification.Name(rawValue: NotificationID.setDynamicData),
+                                                   object: nil)
+            
+            garageDetailMapView = views.first!
+            garageDetailMapView?.delegate = self.delegate
             if let detailAnnotation = annotation as? ParkingAnnotations {
                 
                 if let loadedGarageObjectFromRealm = detailAnnotation.parkingGarage.retrieveData() {
                     ParkingRotterdamService.sharedInstance.getDynamicData(dynamicDataUrl: loadedGarageObjectFromRealm.dynamicDataUrl, garage: loadedGarageObjectFromRealm)
-                    garageDetailMapView.configureWithGarage(parkingGarages:loadedGarageObjectFromRealm)
+                    garageDetailMapView?.configureWithGarage(parkingGarages:loadedGarageObjectFromRealm)
+
                 }
-                
                 return garageDetailMapView
             }
         }
         return nil
+    }
+    var garageDetailMapView: DetailParkingView?
+    @objc func setDynamicData(notification: NSNotification) {
+        var secondData = notification.userInfo as! Dictionary<String, ParkingObjects>
+        let parkingGarage = secondData["data3"] as! ParkingObjects
+        garageDetailMapView?.configureWithGarage(parkingGarages: parkingGarage)
+
     }
     
     override func prepareForReuse() {

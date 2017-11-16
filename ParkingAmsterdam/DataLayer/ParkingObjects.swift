@@ -44,8 +44,6 @@ class ParkingObjects: Object {
                 parkingSite.LongCapacity = self.LongCapacity
                 parkingSite.PubDate = self.PubDate
                 parkingSite.ShortCapacity = self.ShortCapacity
-                parkingSite.State = self.State
-                ///
             
         }
     }
@@ -96,9 +94,7 @@ class ParkingObjects: Object {
                 parkingSite.LongCapacity = self.LongCapacity
                 parkingSite.PubDate = self.PubDate
                 parkingSite.ShortCapacity = self.ShortCapacity
-                parkingSite.State = self.State
-                ///
-            }
+        }
         } else {
             // Persist your data easily
             try! realm.write {
