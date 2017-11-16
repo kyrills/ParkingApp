@@ -42,7 +42,7 @@
                             <outlet property="delegate" destination="vbV-Fd-0bL" id="jrl-nA-rAP"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="List" selectedImage="list-fat-7" id="oFl-UR-k9h"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list-fat-7" selectedImage="list-fat-7" id="oFl-UR-k9h"/>
                     <navigationItem key="navigationItem" id="s0l-fb-vU7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>

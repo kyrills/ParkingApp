@@ -47,7 +47,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" selectedImage="paper-map-7" id="3uR-X0-OGb"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="paper-map-7" selectedImage="paper-map-7" id="3uR-X0-OGb"/>
                     <navigationItem key="navigationItem" id="89e-Ez-LD7"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -59,11 +59,11 @@
             </objects>
             <point key="canvasLocation" x="436" y="115.59220389805098"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="DrW-ny-j4j">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Th5-nv-3F4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" selectedImage="paper-map-7" id="Tsa-j5-2O8"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="paper-map-7" selectedImage="paper-map-7" id="Tsa-j5-2O8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="c6M-ZV-Wtj">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -117,11 +117,11 @@
         <scene sceneID="Cx8-O4-6XJ">
             <objects>
                 <viewControllerPlaceholder storyboardIdentifier="parkingList" storyboardName="ParkingList" referencedIdentifier="ParkingList" id="02X-tb-XX5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="List parking garages" image="list-fat-7" selectedImage="listIcon" id="cik-dy-5Vd"/>
+                    <tabBarItem key="tabBarItem" title="List" image="list-fat-7" selectedImage="listIcon" id="cik-dy-5Vd"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDw-EH-vad" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1290" y="595"/>
+            <point key="canvasLocation" x="-1290" y="591"/>
         </scene>
     </scenes>
     <resources>
