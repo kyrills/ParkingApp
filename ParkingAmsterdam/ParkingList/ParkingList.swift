@@ -61,7 +61,6 @@ class ParkingList: UITableViewController {
             
             let dist = sourceCoordinate.calculateDistance(destination: CLLocationCoordinate2D.init(latitude: lat,longitude: lng))
             storeObject.saveDistance(distance: "\(dist)")
-            
         }
     }
     
