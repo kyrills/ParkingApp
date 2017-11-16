@@ -1,11 +1,3 @@
-//
-//  TabBarViewController.swift
-//  ParkingAmsterdam
-//
-//  Created by Trym Lintzen on 14-11-17.
-//  Copyright © 2017 Kyrill van Seventer. All rights reserved.
-//
-
 import UIKit
 import MapKit
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
@@ -27,8 +19,10 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     }
 
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        if let destinationVC = viewController as? ParkingList  {
-            destinationVC.sourceCoordinate = sourceCoordinate
+        if let destinationNav = viewController as? UINavigationController,
+            let parkingList = destinationNav.viewControllers[0] as? ParkingList{
+            
+            parkingList.sourceCoordinate = sourceCoordinate
         }
         print(viewController)
     }

@@ -11,10 +11,10 @@ extension MapViewController: MKMapViewDelegate {
         parkingMapView.showsPointsOfInterest = true
         
     }
-  
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation { return nil }
-
+        
         if let annotation = annotation as? ParkingAnnotations {
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: "mapPin")
             if annotationView == nil {
@@ -22,7 +22,7 @@ extension MapViewController: MKMapViewDelegate {
                 (annotationView as! DetailAnnotationView).delegate = self
             }
             return annotationView
-
+            
         } else if let annotation = annotation as? MKPointAnnotation{
             var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: "droppedPin")
             if pinView == nil {
@@ -32,6 +32,15 @@ extension MapViewController: MKMapViewDelegate {
             return pinView
         }
         return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let pinToZoomOn = view.annotation
+        
+        let span = mapView.region.span
+        
+        let region = MKCoordinateRegion(center: pinToZoomOn!.coordinate, span: span)
+        parkingMapView.setRegion(region, animated: true)
     }
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
@@ -60,7 +69,7 @@ extension MapViewController: MKMapViewDelegate {
         
         directions.calculate { [unowned self] response, error in
             guard let unwrappedResponse = response else { return }
-           
+            
             for route in unwrappedResponse.routes {
                 self.parkingMapView.add(route.polyline)
                 
