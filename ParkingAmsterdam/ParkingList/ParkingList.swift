@@ -102,8 +102,12 @@ class ParkingList: UITableViewController {
         cell.distanceKMLabel.text = "\(storeObject.distanceInMeters) km"
         
         cell.parkingGarageNameLabel.text = storeObject.Name
-        
-        cell.freeSpacesLabel.text = "\(storeObject.FreeSpaceShort ?? "0") Free"
+      
+        if storeObject.FreeSpaceLong == "" {
+            cell.freeSpacesLabel.text = "0 Free"
+        } else {
+            cell.freeSpacesLabel.text = "\(storeObject.FreeSpaceShort ?? "0") Free"
+        }
         
         return cell
         

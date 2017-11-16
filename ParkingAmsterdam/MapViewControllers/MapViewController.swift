@@ -2,7 +2,7 @@ import UIKit
 import MapKit
 import CoreLocation
 import Foundation
-
+import SVProgressHUD
 
 protocol HandleMapSearch: class {
     func dropPinZoomIn(_ placemark:MKPlacemark)
@@ -35,7 +35,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        SVProgressHUD.show()
         ParkingAmsterdamService.sharedInstance.getParkingData()
         //  ToDo Fix timer stuff
         Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(getParkingData) , userInfo: nil, repeats: true)
@@ -77,6 +77,7 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
@@ -116,8 +117,13 @@ class MapViewController: UIViewController, GarageDetailMapViewDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
     }
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
     
     override func viewDidAppear(_ animated: Bool) {
+//        SVProgressHUD.setBackgroundColor(UIColor.clear)
+
     }
     
     @IBAction func locationButton(_ sender: Any) {
